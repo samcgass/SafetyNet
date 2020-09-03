@@ -10,6 +10,7 @@
 		225FFADC25007C690030887F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADB25007C690030887F /* ButtonView.swift */; };
 		225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADD25007E7A0030887F /* FeelSafeView.swift */; };
 		225FFAE025008FEB0030887F /* MayICallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADF25008FEB0030887F /* MayICallView.swift */; };
+		225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE1250093BE0030887F /* DescribeMoodView.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
 		229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 		225FFADB25007C690030887F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		225FFADD25007E7A0030887F /* FeelSafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelSafeView.swift; sourceTree = "<group>"; };
 		225FFADF25008FEB0030887F /* MayICallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MayICallView.swift; sourceTree = "<group>"; };
+		225FFAE1250093BE0030887F /* DescribeMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeMoodView.swift; sourceTree = "<group>"; };
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				225FFADB25007C690030887F /* ButtonView.swift */,
 				225FFADD25007E7A0030887F /* FeelSafeView.swift */,
 				225FFADF25008FEB0030887F /* MayICallView.swift */,
+				225FFAE1250093BE0030887F /* DescribeMoodView.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
+				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,
 				229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */,
 				229BA4DF24FF0CF900BB0A56 /* ProgressView.swift in Sources */,
 			);
