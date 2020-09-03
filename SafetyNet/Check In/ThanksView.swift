@@ -35,7 +35,6 @@ struct ThanksView: View {
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: {})
             
-            
         }
     }
 }

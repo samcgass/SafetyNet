@@ -12,6 +12,9 @@
 		225FFAE025008FEB0030887F /* MayICallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADF25008FEB0030887F /* MayICallView.swift */; };
 		225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE1250093BE0030887F /* DescribeMoodView.swift */; };
 		225FFAE425009FC90030887F /* ThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE325009FC90030887F /* ThanksView.swift */; };
+		225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE62500A2CE0030887F /* AnswersView.swift */; };
+		225FFAE92500A50B0030887F /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE82500A50B0030887F /* QuestionsView.swift */; };
+		225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAEA2500A9560030887F /* SecondQuestionsView.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
 		229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */; };
@@ -51,6 +54,9 @@
 		225FFADF25008FEB0030887F /* MayICallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MayICallView.swift; sourceTree = "<group>"; };
 		225FFAE1250093BE0030887F /* DescribeMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeMoodView.swift; sourceTree = "<group>"; };
 		225FFAE325009FC90030887F /* ThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksView.swift; sourceTree = "<group>"; };
+		225FFAE62500A2CE0030887F /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
+		225FFAE82500A50B0030887F /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
+		225FFAEA2500A9560030887F /* SecondQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondQuestionsView.swift; sourceTree = "<group>"; };
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,9 +104,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		225FFADA25007B750030887F /* CheckIn */ = {
+		225FFADA25007B750030887F /* Check In */ = {
 			isa = PBXGroup;
 			children = (
+				225FFAE52500A2860030887F /* Second Questions */,
 				229BA4DC24FF0CBC00BB0A56 /* CheckInView.swift */,
 				225FFADB25007C690030887F /* ButtonView.swift */,
 				225FFADD25007E7A0030887F /* FeelSafeView.swift */,
@@ -108,7 +115,17 @@
 				225FFAE1250093BE0030887F /* DescribeMoodView.swift */,
 				225FFAE325009FC90030887F /* ThanksView.swift */,
 			);
-			path = CheckIn;
+			path = "Check In";
+			sourceTree = "<group>";
+		};
+		225FFAE52500A2860030887F /* Second Questions */ = {
+			isa = PBXGroup;
+			children = (
+				225FFAE62500A2CE0030887F /* AnswersView.swift */,
+				225FFAE82500A50B0030887F /* QuestionsView.swift */,
+				225FFAEA2500A9560030887F /* SecondQuestionsView.swift */,
+			);
+			path = "Second Questions";
 			sourceTree = "<group>";
 		};
 		229BA49D24FF05AA00BB0A56 = {
@@ -142,7 +159,7 @@
 				229BA4BA24FF05AD00BB0A56 /* Info.plist */,
 				229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */,
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
-				225FFADA25007B750030887F /* CheckIn */,
+				225FFADA25007B750030887F /* Check In */,
 				229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */,
 				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
 				229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */,
@@ -310,9 +327,12 @@
 			files = (
 				225FFAE025008FEB0030887F /* MayICallView.swift in Sources */,
 				229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */,
+				225FFAE92500A50B0030887F /* QuestionsView.swift in Sources */,
 				225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */,
 				225FFAE425009FC90030887F /* ThanksView.swift in Sources */,
+				225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* Emergency.swift in Sources */,
+				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
