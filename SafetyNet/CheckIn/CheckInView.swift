@@ -8,28 +8,6 @@
 
 import SwiftUI
 
-struct GradientBackgroundStyle: ButtonStyle {
-    
-    var stripeColor: Color
- 
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .padding()
-            .foregroundColor(.black)
-            .background(Color.white)
-            .cornerRadius(3)
-            .shadow(radius: 3, x: 0, y: 1)
-            .overlay(Rectangle()
-                .foregroundColor(stripeColor)
-                .frame(width: 5)
-                .cornerRadius(3, corners: [.topLeft, .bottomLeft]),
-                     alignment: .leading)
-            .padding(.horizontal, 20)
-        
-    }
-}
-
 struct CheckInView: View {
     var body: some View {
         
@@ -82,23 +60,6 @@ struct CheckInView: View {
     }
 }
 
-struct RoundedCorner: Shape {
-
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedCorner(radius: radius, corners: corners) )
-    }
-}
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225FFADC25007C690030887F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADB25007C690030887F /* ButtonStyle.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
 		229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		225FFADB25007C690030887F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225FFADA25007B750030887F /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				229BA4DC24FF0CBC00BB0A56 /* CheckInView.swift */,
+				225FFADB25007C690030887F /* ButtonStyle.swift */,
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
 		229BA49D24FF05AA00BB0A56 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +130,7 @@
 				229BA4BA24FF05AD00BB0A56 /* Info.plist */,
 				229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */,
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
-				229BA4DC24FF0CBC00BB0A56 /* CheckInView.swift */,
+				225FFADA25007B750030887F /* CheckIn */,
 				229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */,
 				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
 				229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */,
@@ -288,6 +299,7 @@
 				229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* Emergency.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
+				225FFADC25007C690030887F /* ButtonStyle.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
