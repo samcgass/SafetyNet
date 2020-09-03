@@ -8,6 +8,27 @@
 
 import SwiftUI
 
+struct ButtonView: View {
+    
+    var buttonLabel : String
+    var buttonColor : Color
+    var buttonAction : () -> Void
+    
+    var body: some View {
+        
+        Button(action: {}) {
+            Text(buttonLabel).fontWeight(.light)
+                .font(.title)
+        }.buttonStyle(GradientBackgroundStyle(
+            stripeColor: buttonColor))
+            .padding(.vertical)
+    }
+}
+
+
+
+
+
 struct GradientBackgroundStyle: ButtonStyle {
     
     var stripeColor: Color
@@ -50,11 +71,8 @@ extension View {
 
 struct ButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-            Text("Great!").fontWeight(.light)
-                .font(.title)
-        }.buttonStyle(GradientBackgroundStyle(
-            stripeColor: Color(red: 30/255, green: 150/255, blue: 50/255)))
-            .padding(.vertical)
-}
+        ButtonView(buttonLabel: "Great!",
+                   buttonColor: Color.green,
+                   buttonAction: {})
+    }
 }

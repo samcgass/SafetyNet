@@ -20,40 +20,26 @@ struct CheckInView: View {
             
             VStack {
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Great!").fontWeight(.light)
-                        .font(.title)
-                }.buttonStyle(GradientBackgroundStyle(
-                    stripeColor: Color(red: 30/255, green: 150/255, blue: 50/255)))
-                    .padding(.vertical)
+                ButtonView(buttonLabel: "Great!",
+                           buttonColor: Color(red: 30/255, green: 150/255, blue: 50/255),
+                           buttonAction: {})
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Good.").fontWeight(.light)
-                        .font(.title)
-                }.buttonStyle(GradientBackgroundStyle(
-                    stripeColor: Color(red: 100/255, green: 200/255, blue: 20/255)))
-                .padding(.vertical)
+                ButtonView(buttonLabel: "Good.",
+                           buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                           buttonAction: {})
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Okay.").fontWeight(.light)
-                        .font(.title)
-                }.buttonStyle(GradientBackgroundStyle(
-                    stripeColor: Color(red: 255/255, green: 191/255, blue: 0/255)))
-                .padding(.vertical)
+                ButtonView(buttonLabel: "Okay.",
+                           buttonColor: Color(red: 255/255, green: 191/255, blue: 0/255),
+                           buttonAction: {})
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Not Good.").fontWeight(.light)
-                        .font(.title)
-                }.buttonStyle(GradientBackgroundStyle(
-                    stripeColor: Color(red: 230/255, green: 130/255, blue: 0/255)))
-                .padding(.vertical)
+                ButtonView(buttonLabel: "Not Good.",
+                           buttonColor: Color(red: 230/255, green: 130/255, blue: 0/255),
+                           buttonAction: {})
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Really Bad.").fontWeight(.light)
-                        .font(.title)
-                }.buttonStyle(GradientBackgroundStyle(
-                    stripeColor: Color(red: 210/255, green: 34/255, blue: 45/255)))
-                .padding(.vertical)
+                ButtonView(buttonLabel: "Really Bad.",
+                           buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                           buttonAction: {})
+        
             }
         }
 

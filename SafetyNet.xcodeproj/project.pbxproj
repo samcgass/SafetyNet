@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		225FFADC25007C690030887F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADB25007C690030887F /* ButtonStyle.swift */; };
+		225FFADC25007C690030887F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADB25007C690030887F /* ButtonView.swift */; };
+		225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADD25007E7A0030887F /* FeelSafeView.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
 		229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */; };
@@ -42,7 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		225FFADB25007C690030887F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		225FFADB25007C690030887F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		225FFADD25007E7A0030887F /* FeelSafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelSafeView.swift; sourceTree = "<group>"; };
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				229BA4DC24FF0CBC00BB0A56 /* CheckInView.swift */,
-				225FFADB25007C690030887F /* ButtonStyle.swift */,
+				225FFADB25007C690030887F /* ButtonView.swift */,
+				225FFADD25007E7A0030887F /* FeelSafeView.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -297,9 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */,
+				225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* Emergency.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
-				225FFADC25007C690030887F /* ButtonStyle.swift in Sources */,
+				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
