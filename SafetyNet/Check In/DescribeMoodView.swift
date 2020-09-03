@@ -11,7 +11,7 @@ import SwiftUI
 struct DescribeMoodView: View {
     
     @State private var entry: String = ""
-    @State var submitText: Bool = false
+    @State private var submitText: Bool = false
     
     var body: some View {
         
