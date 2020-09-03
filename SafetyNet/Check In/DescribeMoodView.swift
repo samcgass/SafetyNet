@@ -11,11 +11,19 @@ import SwiftUI
 struct DescribeMoodView: View {
     
     @State private var entry: String = ""
+    @State var submitText: Bool = false
     
     var body: some View {
         
         
         VStack {
+            
+            NavigationLink(
+                destination: ThanksView(),
+                isActive: $submitText) {
+                    EmptyView()
+            }
+            
             
             Text("Would you like to describe how you're feeling today?")
                 .font(.title)
@@ -35,18 +43,22 @@ struct DescribeMoodView: View {
                 .cornerRadius(3)
                 .shadow(radius: 3, x: 0, y: 1)
                 .padding(.horizontal, 20)
-
+            
             
             Spacer()
             
             ButtonView(buttonLabel: "Done.",
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
-                       buttonAction: {})
+                       buttonAction: {
+                        self.submitText = true
+            })
             
             
             ButtonView(buttonLabel: "Skip for today",
                        buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
-                       buttonAction: {})
+                       buttonAction: {
+                        self.submitText = true
+            })
             
         }
     }
