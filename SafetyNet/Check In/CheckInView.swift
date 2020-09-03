@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CheckInView: View {
     
+    @Binding var tab: Int
     @State private var choice: Int? = 0
     
     var body: some View {
@@ -25,7 +26,7 @@ struct CheckInView: View {
                 VStack {
                     
                     NavigationLink(
-                        destination: DescribeMoodView(),
+                        destination: DescribeMoodView(tab: $tab),
                         tag: 1,
                         selection: $choice) {
                             EmptyView()
@@ -87,7 +88,7 @@ struct CheckInView: View {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView()
+        CheckInView(tab: Binding.constant(0))
     }
 }
 

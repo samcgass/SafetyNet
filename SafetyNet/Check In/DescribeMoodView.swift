@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DescribeMoodView: View {
     
+    @Binding var tab: Int
     @State private var entry: String = ""
     @State private var submitText: Bool = false
     
@@ -19,7 +20,7 @@ struct DescribeMoodView: View {
         VStack {
             
             NavigationLink(
-                destination: ThanksView(),
+                destination: ThanksView(tab: $tab),
                 isActive: $submitText) {
                     EmptyView()
             }
@@ -66,6 +67,6 @@ struct DescribeMoodView: View {
 
 struct DescribeMoodView_Previews: PreviewProvider {
     static var previews: some View {
-        DescribeMoodView()
+        DescribeMoodView(tab: Binding.constant(0))
     }
 }

@@ -10,17 +10,11 @@ import SwiftUI
 
 struct ThanksView: View {
     
-    @State private var goToProgress: Bool = false
+    @Binding var tab: Int
     
     var body: some View {
         
         VStack {
-            
-            NavigationLink(
-                destination: ProgressView(),
-                isActive: $goToProgress) {
-                    EmptyView()
-            }
             
             Text("Thanks for checking in!")
                 .font(.title)
@@ -43,7 +37,7 @@ struct ThanksView: View {
             ButtonView(buttonLabel: "See Progress",
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: {
-                        self.goToProgress = true
+                        self.tab = 1
             })
             
         }
@@ -52,6 +46,6 @@ struct ThanksView: View {
 
 struct ThanksView_Previews: PreviewProvider {
     static var previews: some View {
-        ThanksView()
+        ThanksView(tab: Binding.constant(0))
     }
 }
