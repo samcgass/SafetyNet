@@ -20,7 +20,7 @@ struct AnswersView: View {
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: next)
             
-            ButtonView(buttonLabel: "Sometimes.",
+            ButtonView(buttonLabel: "A few times.",
                        buttonColor: Color(red: 255/255, green: 191/255, blue: 0/255),
                        buttonAction: next)
             

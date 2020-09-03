@@ -16,10 +16,10 @@ struct ButtonView: View {
     
     var body: some View {
         
-        Button(action: {}) {
+        Button(action: buttonAction) {
             Text(buttonLabel).fontWeight(.light)
                 .font(.title)
-        }.buttonStyle(GradientBackgroundStyle(
+        }.buttonStyle(CheckInButtonStyle(
             stripeColor: buttonColor))
             .padding(.vertical)
     }
@@ -29,7 +29,7 @@ struct ButtonView: View {
 
 
 
-struct GradientBackgroundStyle: ButtonStyle {
+struct CheckInButtonStyle: ButtonStyle {
     
     var stripeColor: Color
  

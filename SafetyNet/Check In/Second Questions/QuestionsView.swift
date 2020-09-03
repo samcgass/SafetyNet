@@ -16,7 +16,7 @@ struct Question1View: View {
         
         VStack {
             
-            Text("How often were you bothered by the following today:")
+            Text("Today, how often were you bothered by the following:")
             .font(.title)
             .fontWeight(.light)
             .padding()
