@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct SecondQuestionsView: View {
+    
+    @Binding var tab: Int
+    
     var body: some View {
         VStack {
             
@@ -38,6 +41,6 @@ struct SecondQuestionsView: View {
 }
 struct SecondQuestionsView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondQuestionsView()
+        SecondQuestionsView(tab: Binding.constant(0))
     }
 }

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct MayICallView: View {
+    
+    @Binding var tab: Int
+    
     var body: some View {
         
         VStack {
@@ -42,6 +45,6 @@ struct MayICallView: View {
 
 struct MayICallView_Previews: PreviewProvider {
     static var previews: some View {
-        MayICallView()
+        MayICallView(tab: Binding.constant(0))
     }
 }

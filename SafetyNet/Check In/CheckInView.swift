@@ -28,14 +28,14 @@ struct CheckInView: View {
                             
                     }
                     NavigationLink(
-                        destination: SecondQuestionsView(),
+                        destination: SecondQuestionsView(tab: $tab),
                         tag: 2,
                         selection: $choice) {
                             EmptyView()
                             
                     }
                     NavigationLink(
-                        destination: FeelSafeView(),
+                        destination: FeelSafeView(tab: $tab),
                         tag: 3,
                         selection: $choice) {
                             EmptyView()
