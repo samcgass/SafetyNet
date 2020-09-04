@@ -18,11 +18,6 @@ struct CheckInView: View {
         NavigationView {
             VStack {
                 
-                Text("How are you feeling today?")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                
                 VStack {
                     
                     NavigationLink(
@@ -48,6 +43,12 @@ struct CheckInView: View {
                     }
                     
                 }
+                
+                Text("How are you feeling today?")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+                .fixedSize(horizontal: false, vertical: true)
                 
                 ButtonView(buttonLabel: "Great!",
                            buttonColor: Color(red: 30/255, green: 150/255, blue: 50/255),
