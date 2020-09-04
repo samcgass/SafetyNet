@@ -11,9 +11,16 @@ import SwiftUI
 struct SecondQuestionsView: View {
     
     @Binding var tab: Int
+    @State private var start: Bool = false
     
     var body: some View {
         VStack {
+            
+            NavigationLink(
+                destination: QuestionsView(tab: $tab),
+                isActive: $start) {
+                    EmptyView()
+            }
             
             Text("Let's answer a few more questions")
                 .font(.title)
@@ -35,7 +42,10 @@ struct SecondQuestionsView: View {
             
             ButtonView(buttonLabel: "Let's start",
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
-                       buttonAction: {})
+                       buttonAction: {
+                        self.start = true
+            })
+            
         }
     }
 }

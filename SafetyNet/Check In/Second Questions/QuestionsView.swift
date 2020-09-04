@@ -8,13 +8,21 @@
 
 import SwiftUI
 
-struct Question1View: View {
+struct QuestionsView: View {
     
-    @State private var questionNumber = 4
+    @Binding var tab: Int
+    @State private var questionNumber = 1
+    @State private var finished = false
     
     var body: some View {
         
         VStack {
+            
+            NavigationLink(
+                destination: DescribeMoodView(tab: $tab),
+                isActive: $finished) {
+                    EmptyView()
+            }
             
             Text("Today, how often were you bothered by the following:")
             .font(.title)
@@ -28,7 +36,11 @@ struct Question1View: View {
             .padding()
             .fixedSize(horizontal: false, vertical: true)
             
-            AnswersView(next: {})
+            AnswersView(next: {
+                self.questionNumber += 1
+                self.finished = finishedCheck(questionNumber: self.questionNumber)
+            })
+            
         }
     }
 }
@@ -59,8 +71,17 @@ func questionView(questionNumber: Int) -> Text {
     }
 }
 
+func finishedCheck(questionNumber: Int) -> Bool {
+    if questionNumber > 9 {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
 struct Question1View_Previews: PreviewProvider {
     static var previews: some View {
-        Question1View()
+        QuestionsView(tab: Binding.constant(0))
     }
 }

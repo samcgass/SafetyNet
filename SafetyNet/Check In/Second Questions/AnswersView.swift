@@ -33,7 +33,6 @@ struct AnswersView: View {
                        buttonAction: next)
             
             
-            
         }
         
     }
