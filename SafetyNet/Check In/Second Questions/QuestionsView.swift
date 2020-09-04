@@ -65,11 +65,11 @@ func questionView(questionNumber: Int) -> Text {
     case 7:
         return Text("Trouble concentrating on things such as reading or watching TV?")
     case 8:
-        return Text("Moving or speaking slowly, or becoming restlessly fidgety?")
+        return Text("Moving or speaking slowly, or becoming restless or fidgety?")
     case 9:
         return Text("Thoughts that you would be better off dead, or thoughts of hurting yourself?")
     default:
-        return Text("Little interest or pleasure in doing things?")
+        return Text("Thoughts that you would be better off dead, or thoughts of hurting yourself?")
         
     }
 }
