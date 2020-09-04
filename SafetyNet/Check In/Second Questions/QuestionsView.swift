@@ -25,21 +25,24 @@ struct QuestionsView: View {
             }
             
             Text("Today, how often were you bothered by the following:")
-            .font(.title)
+                .font(.title)
             .fontWeight(.light)
             .padding()
             .fixedSize(horizontal: false, vertical: true)
             
             questionView(questionNumber: questionNumber)
-            .font(.title)
+            .font(.headline)
             .fontWeight(.bold)
+                .frame(height: 50, alignment: .leading)
             .padding()
-            .fixedSize(horizontal: false, vertical: true)
+            .allowsTightening(true)
             
             AnswersView(next: {
                 self.questionNumber += 1
                 self.finished = finishedCheck(questionNumber: self.questionNumber)
             })
+            
+            Spacer()
             
         }
     }
@@ -58,13 +61,13 @@ func questionView(questionNumber: Int) -> Text {
     case 5:
         return Text("Poor appetite or overeating?")
     case 6:
-        return Text("Feeling bad about yourself — or that you are a failure or have let yourself or your family down?")
+        return Text("Feeling bad about yourself or feeling like a failure?")
     case 7:
-        return Text("Trouble concentrating on things, such as reading the newspaper or watching television?")
+        return Text("Trouble concentrating on things such as reading or watching TV?")
     case 8:
-        return Text("Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?")
+        return Text("Moving or speaking slowly, or becoming restlessly fidgety?")
     case 9:
-        return Text("Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?")
+        return Text("Thoughts that you would be better off dead, or thoughts of hurting yourself?")
     default:
         return Text("Little interest or pleasure in doing things?")
         
