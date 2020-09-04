@@ -9,9 +9,29 @@
 import SwiftUI
 
 struct FeelSafeView: View {
+    
+    @Binding var tab: Int
+    @State private var choice: String?
+    
     var body: some View {
         
         VStack {
+            
+            NavigationLink(
+                destination: SecondQuestionsView(tab: $tab),
+                tag: "Yes",
+                selection: $choice) {
+                    EmptyView()
+            }
+            
+            NavigationLink(
+                destination: MayICallView(tab: $tab),
+                tag: "No",
+                selection: $choice) {
+                    EmptyView()
+            }
+            
+            
             
             Text("I'm sorry to hear that. Do you feel safe?")
                 .font(.title)
@@ -27,12 +47,16 @@ struct FeelSafeView: View {
             
             ButtonView(buttonLabel: "Yes",
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
-                       buttonAction: {})
+                       buttonAction: {
+                        self.choice = "Yes"
+            })
             
             
             ButtonView(buttonLabel: "No",
                        buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
-                       buttonAction: {})
+                       buttonAction: {
+                        self.choice = "No"
+            })
             
         }
         
@@ -42,6 +66,6 @@ struct FeelSafeView: View {
 
 struct FeelSafeView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelSafeView()
+        FeelSafeView(tab: Binding.constant(0))
     }
 }
