@@ -9,8 +9,49 @@
 import SwiftUI
 
 struct Emergency: View {
+    
+//    @Binding var tab: Int
+//    @State private var emergency: Bool = false
+    
     var body: some View {
-        Text("Emergency")
+        
+        VStack {
+            
+//            NavigationLink(destination: Emergency(),
+//                           isActive: $emergency) {
+//                            EmptyView()
+//            }
+            
+            Text("Who would you like to call?")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            
+            Image("hotAirBallon")
+                .resizable()
+                .frame(width: 100, height: 100, alignment: .center)
+            
+            Spacer()
+            
+            EmergencyButtonView(buttonLabel: "911",
+                                buttonColor: Color.red,
+                       buttonAction: {
+//                        self.emergency = true
+            })
+            
+            
+            EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
+                                buttonColor: Color.red,
+                       buttonAction: {
+//                        self.tab = 2
+            })
+            
+            EmergencyButtonView(buttonLabel: "State\nSuicide\nHotline", buttonColor: Color.red, buttonAction: {})
+            
+            Spacer()
+            
+        }
+        
     }
 }
 

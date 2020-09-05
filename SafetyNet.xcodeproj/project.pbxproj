@@ -31,6 +31,7 @@
 		229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */; };
 		F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */; };
 		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
+		F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEC2504080A00242302 /* AreYouSureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
 		F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
+		F6A99DEC2504080A00242302 /* AreYouSureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouSureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			children = (
 				F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */,
 				229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */,
+				F6A99DEC2504080A00242302 /* AreYouSureView.swift */,
 			);
 			path = "Emergency View";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
+				F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
 				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,

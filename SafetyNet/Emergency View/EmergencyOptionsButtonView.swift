@@ -18,10 +18,13 @@ struct EmergencyButtonView: View {
         
         Button(action: buttonAction) {
             Text(buttonLabel).fontWeight(.bold)
-                .font(.title).opacity(0.6)
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding(.leading)
+                .opacity(0.6)
         }.buttonStyle(EmergencyButtonStyle(
             stripeColor: buttonColor))
-            .padding(.vertical, 9.0)
+            .padding(.vertical, 5.0)
     }
 }
 
@@ -36,7 +39,7 @@ struct EmergencyButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
-            .padding(.vertical,45)
+            .padding(.vertical,37)
             .foregroundColor(.black)
             .background(Color.white)
             .cornerRadius(3)
@@ -72,7 +75,7 @@ extension View {
 
 struct EmergencyButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        EmergencyButtonView(buttonLabel: "Emergency",
+        EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
                    buttonColor: Color.red,
                    buttonAction: {})
     }
