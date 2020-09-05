@@ -17,42 +17,43 @@ struct Emergency: View {
         
         NavigationView {
         
-        VStack {
-            
-            NavigationLink(destination: AreYouSureView(),
-                           isActive: $areYouSure) {
-                            EmptyView()
-            }
-            
-            Text("Who would you like to call?")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-            
-            Image("hotAirBallon")
-                .resizable()
-                .frame(width: 100, height: 100, alignment: .center)
-            
-            Spacer()
-            
-            EmergencyButtonView(buttonLabel: "911",
-                                buttonColor: Color.red,
-                       buttonAction: {
-                        self.areYouSure = true
-            })
-            
-            
-            EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
-                                buttonColor: Color.red,
-                       buttonAction: {
-//                        self.tab = 2
-            })
-            
-            EmergencyButtonView(buttonLabel: "State\nSuicide\nHotline", buttonColor: Color.red, buttonAction: {})
-            
-            Spacer()
-            
-        }
+            VStack {
+                
+                NavigationLink(destination: AreYouSureView(),
+                               isActive: $areYouSure) {
+                                EmptyView()
+                }
+                
+                Text("Who would you like to call?")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                
+                Image("hotAirBallon")
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
+                
+                Spacer()
+                
+                EmergencyButtonView(buttonLabel: "911",
+                                    buttonColor: Color.red,
+                           buttonAction: {
+                            self.areYouSure = true
+                })
+                
+                
+                EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
+                                    buttonColor: Color.red,
+                           buttonAction: {
+    //                        self.tab = 2
+                })
+                
+                EmergencyButtonView(buttonLabel: "State\nSuicide\nHotline", buttonColor: Color.red, buttonAction: {})
+                
+                Spacer()
+                
+            }.navigationBarTitle("Back")
+            .navigationBarHidden(true)
         }
     }
 }
