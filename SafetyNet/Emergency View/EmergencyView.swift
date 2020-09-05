@@ -11,16 +11,18 @@ import SwiftUI
 struct Emergency: View {
     
 //    @Binding var tab: Int
-//    @State private var emergency: Bool = false
+    @State private var areYouSure: Bool = false
     
     var body: some View {
         
+        NavigationView {
+        
         VStack {
             
-//            NavigationLink(destination: Emergency(),
-//                           isActive: $emergency) {
-//                            EmptyView()
-//            }
+            NavigationLink(destination: AreYouSureView(),
+                           isActive: $areYouSure) {
+                            EmptyView()
+            }
             
             Text("Who would you like to call?")
                 .font(.title)
@@ -36,7 +38,7 @@ struct Emergency: View {
             EmergencyButtonView(buttonLabel: "911",
                                 buttonColor: Color.red,
                        buttonAction: {
-//                        self.emergency = true
+                        self.areYouSure = true
             })
             
             
@@ -51,7 +53,7 @@ struct Emergency: View {
             Spacer()
             
         }
-        
+        }
     }
 }
 
