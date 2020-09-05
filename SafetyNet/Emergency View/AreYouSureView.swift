@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct AreYouSureView: View {
+    
     var body: some View {
+        
         VStack {
+            
             Text("Just to make sure, would you like to dial emergency services?")
                 .font(.title)
                 .fontWeight(.bold)
@@ -32,8 +35,11 @@ struct AreYouSureView: View {
             EmergencyButtonView(buttonLabel: "No", buttonColor: Color.red, buttonAction: {})
             
             Spacer()
+            
         }
+        
     }
+    
 }
 
 struct AreYouSureView_Previews: PreviewProvider {
