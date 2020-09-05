@@ -22,14 +22,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+        // Check if app has been opened before
+        let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = ContentView().environment(\.managedObjectContext, context)
 
+        let newUserView = NewUserView1(tab: Binding.constant(0))
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            if hasLaunchedBefore {
+                window.rootViewController = UIHostingController(rootView: contentView)
+            } else {
+                window.rootViewController = UIHostingController(rootView: newUserView)
+                UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            }
             self.window = window
             window.makeKeyAndVisible()
         }

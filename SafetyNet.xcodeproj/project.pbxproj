@@ -33,6 +33,9 @@
 		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
 		F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEC2504080A00242302 /* AreYouSureView.swift */; };
 		F6A99DEF25040F7400242302 /* DialingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEE25040F7400242302 /* DialingView.swift */; };
+		F7501F2C25043F4900E866A7 /* NewUserView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7501F2925043F4900E866A7 /* NewUserView1.swift */; };
+		F7501F2D25043F4900E866A7 /* NewUserView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7501F2A25043F4900E866A7 /* NewUserView3.swift */; };
+		F7501F2E25043F4900E866A7 /* NewUserView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7501F2B25043F4900E866A7 /* NewUserView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
 		F6A99DEC2504080A00242302 /* AreYouSureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouSureView.swift; sourceTree = "<group>"; };
 		F6A99DEE25040F7400242302 /* DialingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialingView.swift; sourceTree = "<group>"; };
+		F7501F2925043F4900E866A7 /* NewUserView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewUserView1.swift; path = "../../../../Auburn/Senior Project/SafetyNet/SafetyNet/New User/NewUserView1.swift"; sourceTree = "<group>"; };
+		F7501F2A25043F4900E866A7 /* NewUserView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewUserView3.swift; path = "../../../../Auburn/Senior Project/SafetyNet/SafetyNet/New User/NewUserView3.swift"; sourceTree = "<group>"; };
+		F7501F2B25043F4900E866A7 /* NewUserView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewUserView2.swift; path = "../../../../Auburn/Senior Project/SafetyNet/SafetyNet/New User/NewUserView2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 				229BA4BA24FF05AD00BB0A56 /* Info.plist */,
 				229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */,
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
+				F7501F2825043F0700E866A7 /* New User */,
 				225FFADA25007B750030887F /* Check In */,
 				F651C4BD250371D900B9B08B /* Settings View */,
 				229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */,
@@ -220,6 +227,16 @@
 				F6A99DEE25040F7400242302 /* DialingView.swift */,
 			);
 			path = "Emergency View";
+			sourceTree = "<group>";
+		};
+		F7501F2825043F0700E866A7 /* New User */ = {
+			isa = PBXGroup;
+			children = (
+				F7501F2925043F4900E866A7 /* NewUserView1.swift */,
+				F7501F2B25043F4900E866A7 /* NewUserView2.swift */,
+				F7501F2A25043F4900E866A7 /* NewUserView3.swift */,
+			);
+			path = "New User";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +380,7 @@
 				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
 				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
+				F7501F2C25043F4900E866A7 /* NewUserView1.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
@@ -371,9 +389,11 @@
 				F6A99DEF25040F7400242302 /* DialingView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
+				F7501F2E25043F4900E866A7 /* NewUserView2.swift in Sources */,
 				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,
 				229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */,
 				229BA4DF24FF0CF900BB0A56 /* ProgressView.swift in Sources */,
+				F7501F2D25043F4900E866A7 /* NewUserView3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
