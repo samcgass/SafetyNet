@@ -28,7 +28,9 @@
 		229BA4DF24FF0CF900BB0A56 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */; };
 		229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */; };
 		229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */; };
-		229BA4E524FF0DEA00BB0A56 /* Emergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E424FF0DEA00BB0A56 /* Emergency.swift */; };
+		229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */; };
+		F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */; };
+		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,9 @@
 		229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		229BA4E424FF0DEA00BB0A56 /* Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency.swift; sourceTree = "<group>"; };
+		229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
+		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +164,10 @@
 				229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */,
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
 				225FFADA25007B750030887F /* Check In */,
+				F651C4BD250371D900B9B08B /* Settings View */,
 				229BA4DE24FF0CF900BB0A56 /* ProgressView.swift */,
 				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
-				229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */,
-				229BA4E424FF0DEA00BB0A56 /* Emergency.swift */,
+				F651C4C0250373A300B9B08B /* Emergency View */,
 			);
 			path = SafetyNet;
 			sourceTree = "<group>";
@@ -192,6 +196,24 @@
 				229BA4D024FF05AD00BB0A56 /* Info.plist */,
 			);
 			path = SafetyNetUITests;
+			sourceTree = "<group>";
+		};
+		F651C4BD250371D900B9B08B /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */,
+				F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */,
+			);
+			path = "Settings View";
+			sourceTree = "<group>";
+		};
+		F651C4C0250373A300B9B08B /* Emergency View */ = {
+			isa = PBXGroup;
+			children = (
+				F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */,
+				229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */,
+			);
+			path = "Emergency View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,13 +347,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */,
 				225FFAE025008FEB0030887F /* MayICallView.swift in Sources */,
 				229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */,
 				225FFAE92500A50B0030887F /* QuestionsView.swift in Sources */,
 				225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */,
 				225FFAE425009FC90030887F /* ThanksView.swift in Sources */,
 				225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */,
-				229BA4E524FF0DEA00BB0A56 /* Emergency.swift in Sources */,
+				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
+				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
