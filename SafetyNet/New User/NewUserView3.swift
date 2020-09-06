@@ -52,7 +52,7 @@ struct NewUserView3: View {
                         
                         // Link to daily check in
                         NavigationLink(
-                            destination: CheckInView(tab: Binding.constant(0)),
+                            destination: ContentView(),
                         tag: 3,
                         selection: $choice) {
                             EmptyView()
@@ -67,6 +67,9 @@ struct NewUserView3: View {
                                     .frame(width: 200.0, height: 50.0)
                                     .background(Color(red: 0.4, green: 0.0, blue: 0.9, opacity: 1.0))
                             }
+                            .navigationBarTitle("")
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true)
                             .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                             .padding()
                         
