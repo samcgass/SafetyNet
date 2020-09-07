@@ -16,13 +16,14 @@ struct GraphView: View {
     
     var body: some View {
         //MARK: Begin Stack
+        NavigationView {
         ScrollView(.vertical) {
         ZStack {
             VStack {
                 
-                Text("Your Progress")
-                    .font(.system(size: 34))
-                    .fontWeight(.heavy)
+              //  Text("Your Progress")
+               //     .font(.system(size: 34))
+                 //   .fontWeight(.heavy)
                 
                 //MARK: Picker
                 Picker(selection: $pickerSelectedItem, label: Text("")) {
@@ -120,8 +121,9 @@ struct GraphView: View {
         }
             
             Spacer()
-    }.navigationBarTitle("Your Progress")
+    }.navigationBarTitle("Progress")
         //MARK: End Stack
+    } ///////
     }
     
 }
