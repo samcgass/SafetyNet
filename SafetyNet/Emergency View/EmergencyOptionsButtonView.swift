@@ -46,7 +46,7 @@ struct EmergencyButtonStyle: ButtonStyle {
             .shadow(radius: 3, x: 0, y: 1)
             .overlay(Rectangle()
                 .foregroundColor(stripeColor)
-                .frame(width: 60)
+                .frame(width: 5)
                         .opacity(0.85)
                 .cornerRadius(3, corners: [.topLeft, .bottomLeft]),
                      alignment: .leading)

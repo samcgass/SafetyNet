@@ -42,13 +42,13 @@ struct Emergency: View {
                 })
                 
                 
-                EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
+                EmergencyButtonView(buttonLabel: "National Suicide Hotline",
                                     buttonColor: Color.red,
                            buttonAction: {
     //                        self.tab = 2
                 })
                 
-                EmergencyButtonView(buttonLabel: "State\nSuicide\nHotline", buttonColor: Color.red, buttonAction: {})
+                EmergencyButtonView(buttonLabel: "State Suicide Hotline", buttonColor: Color.red, buttonAction: {})
                 
                 Spacer()
                 
