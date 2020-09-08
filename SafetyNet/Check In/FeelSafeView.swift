@@ -38,7 +38,7 @@ struct FeelSafeView: View {
                 .fontWeight(.bold)
                 .padding()
             
-            Text("It's okay to share your thoughts. We're hear to support you.")
+            Text("It's okay to share your thoughts. We're here to support you.")
                 .font(.subheadline)
                 .fontWeight(.regular)
                 .padding()
