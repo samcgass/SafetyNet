@@ -29,10 +29,20 @@ struct DialingView: View {
             
             //Have the phone prompt come up to confirm and dial the call
             
+        }.onAppear() {
+            emergencyDial()
         }
         
     }
     
+}
+
+// Important: Placeholder phone numbers used to avoid accidents
+
+func emergencyDial() {
+    let tel = "tel://411"
+    guard let url = URL(string: tel) else { return }
+    UIApplication.shared.open(url)
 }
 
 struct DialingView_Previews: PreviewProvider {
