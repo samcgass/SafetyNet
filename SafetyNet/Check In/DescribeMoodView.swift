@@ -10,9 +10,12 @@ import SwiftUI
 
 struct DescribeMoodView: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
+    var score: Int64
     @State private var entry: String = ""
     @State private var submitText: Bool = false
+    @State private var submitTextLowScore: Bool = false
     
     var body: some View {
         
@@ -22,6 +25,12 @@ struct DescribeMoodView: View {
             NavigationLink(
                 destination: ThanksView(tab: $tab),
                 isActive: $submitText) {
+                    EmptyView()
+            }
+            
+            NavigationLink(
+                destination: ThanksLowScoreView(tab: $tab),
+                isActive: $submitTextLowScore) {
                     EmptyView()
             }
             
@@ -51,14 +60,40 @@ struct DescribeMoodView: View {
             ButtonView(buttonLabel: "Done.",
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: {
-                        self.submitText = true
+                        let checkin = CheckIn(context: self.managedObjectContext)
+                        checkin.score = score
+                        checkin.entry = entry
+                        checkin.date = Date()
+                        do {
+                            try self.managedObjectContext.save()
+                        } catch {
+                            
+                        }
+                        if score < 4 {
+                            self.submitTextLowScore = true
+                        } else {
+                            self.submitText = true
+                        }
             })
             
             
             ButtonView(buttonLabel: "Skip for today",
                        buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
                        buttonAction: {
-                        self.submitText = true
+                        let checkin = CheckIn(context: self.managedObjectContext)
+                        checkin.score = score
+                        checkin.entry = ""
+                        checkin.date = Date()
+                        do {
+                            try self.managedObjectContext.save()
+                        } catch {
+                            
+                        }
+                        if score < 4 {
+                            self.submitTextLowScore = true
+                        } else {
+                            self.submitText = true
+                        }
             })
             
         }
@@ -67,6 +102,6 @@ struct DescribeMoodView: View {
 
 struct DescribeMoodView_Previews: PreviewProvider {
     static var previews: some View {
-        DescribeMoodView(tab: Binding.constant(0))
+        DescribeMoodView(tab: Binding.constant(0), score: 1)
     }
 }

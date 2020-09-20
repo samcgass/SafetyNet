@@ -11,6 +11,7 @@ import SwiftUI
 struct QuestionsView: View {
     
     @Binding var tab: Int
+    var score: Int64
     @State private var questionNumber = 1
     @State private var finished = false
     
@@ -19,7 +20,7 @@ struct QuestionsView: View {
         VStack {
             
             NavigationLink(
-                destination: DescribeMoodView(tab: $tab),
+                destination: DescribeMoodView(tab: $tab, score: score),
                 isActive: $finished) {
                     EmptyView()
             }
@@ -85,6 +86,6 @@ func finishedCheck(questionNumber: Int) -> Bool {
 
 struct Question1View_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionsView(tab: Binding.constant(0))
+        QuestionsView(tab: Binding.constant(0), score: 4)
     }
 }

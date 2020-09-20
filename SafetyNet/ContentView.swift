@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
+    @Environment(\.managedObjectContext) var managedObjectContext
  
     var body: some View {
         TabView(selection: $selection){
