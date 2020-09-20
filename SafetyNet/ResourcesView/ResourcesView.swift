@@ -10,26 +10,52 @@ import SwiftUI
 
 struct ResourcesView: View {
     
+    @State var selectedTab = 0
+    
     var body: some View {
         
+//        VStack (alignment: .center) {
+//
+//            Text("Resources")
+//                .font(.title)
+//                .fontWeight(.semibold)
+//                .padding()
+//
+//            TabView {
+//                LocalView()
+//                    .tabItem {
+//                        Text("In Person")
+//                }
+//
+//                OnlineView()
+//                    .tabItem {
+//                        Text("Online")
+//                }
+//            }
+//        }
+        
         VStack (alignment: .center) {
-            
             Text("Resources")
                 .font(.title)
                 .fontWeight(.semibold)
                 .padding()
             
-            TabView {
+            // Create tabs
+            Picker(selection: $selectedTab, label: Text("Resources")) {
+                Text("In Person").tag(0)
+                Text("Online").tag(1)
+            }.pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal, 24)
+            
+            // Switch views for in-person and online tabs
+            if (selectedTab == 0) {
                 LocalView()
-                    .tabItem {
-                        Text("In Person")
-                }
-                
-                OnlineView()
-                    .tabItem {
-                        Text("Online")
-                }
             }
+            else if (selectedTab == 1) {
+                OnlineView()
+            }
+            
+            
         }
     }
 }

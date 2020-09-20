@@ -182,8 +182,8 @@
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
 				F7501F2825043F0700E866A7 /* New User */,
 				225FFADA25007B750030887F /* Check In */,
+				F784356825157313003D38DC /* ResourcesView */,
 				F651C4BD250371D900B9B08B /* Settings View */,
-				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
 				69CDBD3225056B8600B5F881 /* ProgressViews */,
 				F651C4C0250373A300B9B08B /* Emergency View */,
 			);
@@ -254,6 +254,14 @@
 				2203E00E25044CCB0024D3BC /* NewUserView3.swift */,
 			);
 			path = "New User";
+			sourceTree = "<group>";
+		};
+		F784356825157313003D38DC /* ResourcesView */ = {
+			isa = PBXGroup;
+			children = (
+				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
+			);
+			path = ResourcesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
