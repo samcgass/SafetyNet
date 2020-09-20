@@ -15,54 +15,50 @@ struct Emergency: View {
     
     var body: some View {
         
-        NavigationView {
-        
-            VStack {
-                
-                NavigationLink(destination: AreYouSureView(),
-                               isActive: $areYouSure) {
-                                EmptyView()
-                }
-                
-                Text("Who would you like to call?")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                
-                Image("hotAirBallon")
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                
-                Spacer()
-                
-                EmergencyButtonView(buttonLabel: "911",
-                                    buttonColor: Color.red,
-                           buttonAction: {
-                            self.areYouSure = true
-                })
-                
-                // Important: Placeholder phone numbers used to avoid accidents
-                
-                EmergencyButtonView(buttonLabel: "National Suicide Hotline",
-                                    buttonColor: Color.red,
-                           buttonAction: {
-                            let tel = "tel://411"
-                            guard let url = URL(string: tel) else { return }
-                            UIApplication.shared.open(url)
-                })
-                
-                // Important: Placeholder phone numbers used to avoid accidents
-                
-                EmergencyButtonView(buttonLabel: "State Suicide Hotline", buttonColor: Color.red, buttonAction: {
-                    let tel = "tel://311"
-                    guard let url = URL(string: tel) else { return }
-                    UIApplication.shared.open(url)
-                })
-                
-                Spacer()
-                
-            }.navigationBarTitle("Back")
-            .navigationBarHidden(true)
+        VStack {
+            
+            NavigationLink(destination: AreYouSureView(),
+                           isActive: $areYouSure) {
+                            EmptyView()
+            }
+            
+            Text("Who would you like to call?")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            
+            Image("hotAirBallon")
+                .resizable()
+                .frame(width: 100, height: 100, alignment: .center)
+            
+            Spacer()
+            
+            EmergencyButtonView(buttonLabel: "911",
+                                buttonColor: Color.red,
+                       buttonAction: {
+                        self.areYouSure = true
+            })
+            
+            // Important: Placeholder phone numbers used to avoid accidents
+            
+            EmergencyButtonView(buttonLabel: "National Suicide Hotline",
+                                buttonColor: Color.red,
+                       buttonAction: {
+                        let tel = "tel://411"
+                        guard let url = URL(string: tel) else { return }
+                        UIApplication.shared.open(url)
+            })
+            
+            // Important: Placeholder phone numbers used to avoid accidents
+            
+            EmergencyButtonView(buttonLabel: "State Suicide Hotline", buttonColor: Color.red, buttonAction: {
+                let tel = "tel://311"
+                guard let url = URL(string: tel) else { return }
+                UIApplication.shared.open(url)
+            })
+            
+            Spacer()
+            
         }
     }
 }
