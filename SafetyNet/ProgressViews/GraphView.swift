@@ -16,15 +16,16 @@ struct GraphView: View {
     
     var body: some View {
         //MARK: Begin Stack
-        NavigationView {
+
         ScrollView(.vertical) {
         ZStack {
             VStack {
-                
-              //  Text("Your Progress")
-               //     .font(.system(size: 34))
-                 //   .fontWeight(.heavy)
-                
+                VStack {
+                Text("Progress")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .padding()
+            }
                 //MARK: Picker
                 Picker(selection: $pickerSelectedItem, label: Text("")) {
                     Text("This Week").tag(0)
@@ -32,81 +33,22 @@ struct GraphView: View {
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 24)
              
-            //MARK: Graph
-                HStack (spacing: 16) {
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.green)
-                            
-                        }
-                        Text("S").padding(.top, 8)
-                    }
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 170).foregroundColor(.orange)
-                            
-                        }
-                        Text("M").padding(.top, 8)
-                    }
-                    
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 90).foregroundColor(.red)
-                            
-                        }
-                        Text("T").padding(.top, 8)
-                    }
-                    
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
-                            
-                        }
-                        Text("W").padding(.top, 8)
-                    }
-                    
-                    
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.green)
-                            
-                        }
-                        Text("R").padding(.top, 8)
-                    }
-                    
-                    
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 100).foregroundColor(.red)
-                            
-                        }
-                        Text("F").padding(.top, 8)
-                    }
-                    
-                    
-                    
-                    VStack {
-                        ZStack (alignment: .bottom) {
-                            Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                            Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
-                            
-                        }
-                        Text("S").padding(.top, 8)
-                    }
-                    
-                    
-                    
-                    
-            
-                }.padding(.top, 24)
                 
+                if pickerSelectedItem == 0 {
                 VStack(alignment: .leading) {
+
+                    HStack {
+
+                        weekView()
+                    }.padding(.horizontal, 75)
+                }
+                }
+                    else if pickerSelectedItem == 1 {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                allTimeView()
+                            }.padding(.horizontal, 75)                }
+                    }
                     HStack {
                 Text("Streak: 7 days!").padding(.top, 26)
                 
@@ -121,13 +63,98 @@ struct GraphView: View {
         }
             
             Spacer()
-    }.navigationBarTitle("Progress")
+
         //MARK: End Stack
     } ///////
-    }
-    
 }
+    
 
+
+struct weekView: View {
+    var body: some View {
+ //MARK: Graph
+     HStack (spacing: 16) {
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.green)
+                 
+             }
+             Text("S").padding(.top, 8)
+         }
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 170).foregroundColor(.orange)
+                 
+             }
+             Text("M").padding(.top, 8)
+         }
+         
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 90).foregroundColor(.red)
+                 
+             }
+             Text("T").padding(.top, 8)
+         }
+         
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
+                 
+             }
+             Text("W").padding(.top, 8)
+         }
+         
+         
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.green)
+                 
+             }
+             Text("R").padding(.top, 8)
+         }
+         
+         
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 100).foregroundColor(.red)
+                 
+             }
+             Text("F").padding(.top, 8)
+         }
+         
+         
+         
+         VStack {
+             ZStack (alignment: .bottom) {
+                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
+                 Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
+                 
+             }
+             Text("S").padding(.top, 8)
+         }
+         
+         
+         
+         
+ 
+     }.padding(.top, 24)
+    }
+ }
+
+struct allTimeView: View {
+    var body: some View {
+        HStack {
+            Text("The picker view is working!").padding(.top, 24)
+        }
+    }
+}
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         GraphView()
