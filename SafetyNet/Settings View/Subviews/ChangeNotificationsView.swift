@@ -10,6 +10,10 @@ import SwiftUI
 
 struct ChangeNotificationsView: View {
     
+    @State var isCheckInOn: Bool = true
+    @State var isStreaksOn: Bool = true
+    @State var isHealthTipsOn: Bool = true
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -25,8 +29,10 @@ struct ChangeNotificationsView: View {
             List {
 
                 // Check-in Toggle
-                Toggle(isOn: .constant(true), label: {
+                Toggle(isOn: $isCheckInOn, label: {
                     Text("Check-in reminders")
+                        .fontWeight(.medium)
+                        
                 })
                 .toggleStyle(SwitchToggleStyle(tint: Color(red: 0.4, green: 0.0, blue: 0.9, opacity: 0.6)))
                 
@@ -35,22 +41,24 @@ struct ChangeNotificationsView: View {
                     .opacity(0.8)
                 
                 // Streak Toggle
-                Toggle(isOn: .constant(true)) {
+                Toggle(isOn: $isStreaksOn) {
                     Text("Streaks")
+                        .fontWeight(.medium)
                 }
                 .toggleStyle(SwitchToggleStyle(tint: Color(red: 0.4, green: 0.0, blue: 0.9, opacity: 0.6)))
                 
-                Text("Toggle Hint")
+                Text("Earn streaks for checking in")
                     .font(.footnote)
                     .opacity(0.8)
                 
                 // Tip Toggle
-                Toggle(isOn: .constant(true)) {
+                Toggle(isOn: $isHealthTipsOn) {
                     Text("Health Tips")
+                        .fontWeight(.medium)
                 }
                 .toggleStyle(SwitchToggleStyle(tint: Color(red: 0.4, green: 0.0, blue: 0.9, opacity: 0.6)))
                 
-                Text("Toggle Hint")
+                Text("Receive tips throughout the day to encourage a good mood")
                     .font(.footnote)
                     .opacity(0.8)
                 
