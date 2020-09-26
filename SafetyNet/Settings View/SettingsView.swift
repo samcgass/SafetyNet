@@ -14,6 +14,13 @@ struct SettingsView: View {
             VStack {
                 VStack {
                     
+//                    NavigationLink(
+//                        destination: View(tab: $tab),
+//                        tag: ,
+//                        selection: $) {
+//                            EmptyView()
+//                        }
+                    
                     SettingsButtonView(buttonLabel: "Your name",
                                        buttonColor: Color.purple,
                                buttonAction: {})

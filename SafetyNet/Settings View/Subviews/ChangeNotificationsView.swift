@@ -6,6 +6,8 @@
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
+// CAUTION: Toggle colors will not work unless the Target Deployment is changed to iOS 14.0
+
 import SwiftUI
 
 struct ChangeNotificationsView: View {
@@ -21,7 +23,7 @@ struct ChangeNotificationsView: View {
             // Title bar
             HStack {
                 Text("Notifications")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.medium)
             }.padding()
             

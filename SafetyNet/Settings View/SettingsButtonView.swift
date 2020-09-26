@@ -17,8 +17,8 @@ struct SettingsButtonView: View {
     var body: some View {
         
         Button(action: buttonAction) {
-            Text(buttonLabel).fontWeight(.semibold)
-                .font(.title).opacity(0.75)
+            Text(buttonLabel).fontWeight(.medium)
+                .font(.title2).opacity(0.75)
         }.buttonStyle(SettingsButtonStyle(
             stripeColor: buttonColor))
             .padding(.vertical, 9.0)

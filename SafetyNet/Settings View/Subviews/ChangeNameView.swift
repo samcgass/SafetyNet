@@ -15,12 +15,12 @@ struct ChangeNameView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             
             // Title bar
             HStack {
                 Text("What should I call you?")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.medium)
             }.padding()
 
