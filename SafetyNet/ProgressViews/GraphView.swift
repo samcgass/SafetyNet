@@ -46,7 +46,10 @@ struct GraphView: View {
                     else if pickerSelectedItem == 1 {
                         VStack(alignment: .leading) {
                             HStack {
-                                allTimeView()
+                                allTimeView(dataPoints: ChartData.oneMonth.normalized)
+                                    .stroke(Color.green)
+                                    .frame(width: 300, height: 300)
+                                    .border(Color.black)
                             }.padding(.horizontal, 75)                }
                     }
                     HStack {
@@ -145,14 +148,42 @@ struct weekView: View {
          
  
      }.padding(.top, 24)
+     .frame(width: 300, height: 300)
+     .border(Color.black)
     }
  }
 
-struct allTimeView: View {
-    var body: some View {
-        HStack {
-            Text("The picker view is working!").padding(.top, 24)
+struct allTimeView: Shape {
+    var dataPoints: [CGFloat]
+    
+    func path(in rect: CGRect) -> Path {
+        func point(at ix: Int) -> CGPoint {
+            let point = dataPoints[ix]
+            let x = rect.width * CGFloat(ix) / CGFloat(dataPoints.count - 1)
+            let y = (1 - point) * rect.height
+            
+            return CGPoint(x: x, y: y)
         }
+        
+        return Path { p in
+            guard dataPoints.count > 1 else { return}
+            let start = dataPoints[0]
+            p.move(to: CGPoint(x: 0, y: (1 - start) * rect.height))
+            
+            for idx in dataPoints.indices {
+                p.addLine(to: point(at: idx))
+            }
+        }
+    }
+}
+
+
+extension Array where Element == CGFloat {
+    var normalized: [CGFloat] {
+        if let min = self.min(), let max = self.max() {
+            return self.map { ($0 - min) / (max - min)}
+        }
+        return []
     }
 }
 struct GraphView_Previews: PreviewProvider {
