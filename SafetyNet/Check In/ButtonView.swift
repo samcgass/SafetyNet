@@ -21,7 +21,7 @@ struct ButtonView: View {
                 .font(.title)
         }.buttonStyle(CheckInButtonStyle(
             stripeColor: buttonColor))
-            .padding(.vertical)
+            .padding(.vertical, 10)
     }
 }
 
