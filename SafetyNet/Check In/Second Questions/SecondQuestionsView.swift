@@ -11,14 +11,14 @@ import SwiftUI
 struct SecondQuestionsView: View {
     
     @Binding var tab: Int
-    var score: Int64
+    @Binding var score: Int64
     @State private var start: Bool = false
     
     var body: some View {
         VStack {
             
             NavigationLink(
-                destination: QuestionsView(tab: $tab, score: score),
+                destination: QuestionsView(tab: $tab, score: $score),
                 isActive: $start) {
                     EmptyView()
             }
@@ -52,6 +52,6 @@ struct SecondQuestionsView: View {
 }
 struct SecondQuestionsView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondQuestionsView(tab: Binding.constant(0), score: 2)
+        SecondQuestionsView(tab: Binding.constant(0), score: Binding.constant(2))
     }
 }

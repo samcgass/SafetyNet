@@ -12,7 +12,7 @@ struct MayICallView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    var score: Int64
+    @Binding var score: Int64
     @State private var goToEmergency: Bool = false
     @State private var goToDescribe: Bool = false
     
@@ -25,7 +25,7 @@ struct MayICallView: View {
                             EmptyView()
             }
             
-            NavigationLink(destination: DescribeMoodView(tab: $tab, score: score),
+            NavigationLink(destination: DescribeMoodView(tab: $tab, score: $score),
                            isActive: $goToDescribe) {
                             EmptyView()
             }
@@ -72,6 +72,6 @@ struct MayICallView: View {
 
 struct MayICallView_Previews: PreviewProvider {
     static var previews: some View {
-        MayICallView(tab: Binding.constant(0), score: 1)
+        MayICallView(tab: Binding.constant(0), score: Binding.constant(1))
     }
 }

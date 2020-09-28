@@ -12,9 +12,9 @@ struct DescribeMoodView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    var score: Int64
+    @Binding var score: Int64
     @State private var entry: String = ""
-    @State private var submitText: Bool = false
+    @State private var submitText: Int?
     @State private var submitTextLowScore: Bool = false
     
     var body: some View {
@@ -22,15 +22,16 @@ struct DescribeMoodView: View {
         
         VStack {
             
+            
             NavigationLink(
                 destination: ThanksView(tab: $tab),
-                isActive: $submitText) {
+                tag: 2, selection: $submitText) {
                     EmptyView()
             }
             
             NavigationLink(
                 destination: ThanksLowScoreView(tab: $tab),
-                isActive: $submitTextLowScore) {
+                tag: 1, selection: $submitText) {
                     EmptyView()
             }
             
@@ -61,7 +62,7 @@ struct DescribeMoodView: View {
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
-                        checkin.score = score
+                        checkin.score = self.score
                         checkin.entry = entry
                         checkin.date = Date()
                         do {
@@ -69,10 +70,10 @@ struct DescribeMoodView: View {
                         } catch {
                             
                         }
-                        if score < 4 {
-                            self.submitTextLowScore = true
+                        if self.score < 4 {
+                            self.submitText = 1
                         } else {
-                            self.submitText = true
+                            self.submitText = 2
                         }
             })
             
@@ -81,7 +82,7 @@ struct DescribeMoodView: View {
                        buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
-                        checkin.score = score
+                        checkin.score = self.score
                         checkin.entry = ""
                         checkin.date = Date()
                         do {
@@ -89,10 +90,10 @@ struct DescribeMoodView: View {
                         } catch {
                             
                         }
-                        if score < 4 {
-                            self.submitTextLowScore = true
+                        if self.score < 4 {
+                            self.submitText = 1
                         } else {
-                            self.submitText = true
+                            self.submitText = 2
                         }
             })
             
@@ -102,6 +103,6 @@ struct DescribeMoodView: View {
 
 struct DescribeMoodView_Previews: PreviewProvider {
     static var previews: some View {
-        DescribeMoodView(tab: Binding.constant(0), score: 1)
+        DescribeMoodView(tab: Binding.constant(0), score: Binding.constant(1))
     }
 }

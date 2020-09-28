@@ -11,7 +11,7 @@ import SwiftUI
 struct FeelSafeView: View {
     
     @Binding var tab: Int
-    var score: Int64
+    @Binding var score: Int64
     @State private var choice: String?
     
     var body: some View {
@@ -19,14 +19,14 @@ struct FeelSafeView: View {
         VStack {
             
             NavigationLink(
-                destination: SecondQuestionsView(tab: $tab, score: score),
+                destination: SecondQuestionsView(tab: $tab, score: $score),
                 tag: "Yes",
                 selection: $choice) {
                     EmptyView()
             }
             
             NavigationLink(
-                destination: MayICallView(tab: $tab, score: score),
+                destination: MayICallView(tab: $tab, score: $score),
                 tag: "No",
                 selection: $choice) {
                     EmptyView()
@@ -67,6 +67,6 @@ struct FeelSafeView: View {
 
 struct FeelSafeView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelSafeView(tab: Binding.constant(0), score: 3)
+        FeelSafeView(tab: Binding.constant(0), score: Binding.constant(3))
     }
 }
