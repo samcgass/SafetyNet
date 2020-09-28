@@ -18,14 +18,14 @@ struct ChangeNotificationsView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+//        VStack(alignment: .leading) {
             
             // Title bar
-            HStack {
-                Text("Notifications")
-                    .font(.title)
-                    .fontWeight(.medium)
-            }.padding()
+//            HStack {
+//                Text("Notifications")
+//                    .font(.title)
+//                    .fontWeight(.medium)
+//            }.padding()
             
             // Notification Toggles
             List {
@@ -64,9 +64,9 @@ struct ChangeNotificationsView: View {
                     .font(.footnote)
                     .opacity(0.8)
                 
-            }
+            }.navigationBarTitle("Notfications", displayMode: .automatic)
             
-        }
+//        }
         
     }
     

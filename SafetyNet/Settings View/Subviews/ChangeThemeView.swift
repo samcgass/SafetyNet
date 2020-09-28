@@ -17,14 +17,14 @@ struct ChangeThemeView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+//        VStack(alignment: .leading) {
             
-            // Title bar
-            HStack {
-                Text("Change Theme")
-                    .font(.title)
-                    .fontWeight(.medium)
-            }.padding()
+//            // Title bar
+//            HStack {
+//                Text("Change Theme")
+//                    .font(.title)
+//                    .fontWeight(.medium)
+//            }.padding()
             
             // Toggles
             List {
@@ -57,8 +57,10 @@ struct ChangeThemeView: View {
                 }
                 
             }
+            .navigationBarTitle("Change Theme", displayMode: .automatic)
+//            .navigationBarBackButtonHidden(false)
             
-        }
+//        }
         
     }
     

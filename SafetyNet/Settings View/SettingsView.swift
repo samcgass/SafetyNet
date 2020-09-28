@@ -9,29 +9,59 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+//    @Binding var tab: Int
+    @State private var setting: Int? = 0
+    
     var body: some View {
+        
         NavigationView {
+            
             VStack {
+                
                 VStack {
                     
-//                    NavigationLink(
-//                        destination: View(tab: $tab),
-//                        tag: ,
-//                        selection: $) {
-//                            EmptyView()
-//                        }
+                    // Your name Button
+                    NavigationLink(
+                        destination: ChangeNameView(),
+                        tag: 1,
+                        selection: $setting) {
+                            EmptyView()
+                        }
                     
                     SettingsButtonView(buttonLabel: "Your name",
                                        buttonColor: Color.purple,
-                               buttonAction: {})
+                               buttonAction: {
+                                self.setting = 1
+                               })
+                    
+                    // Notifications Button
+                    NavigationLink(
+                        destination: ChangeNotificationsView(),
+                        tag: 2,
+                        selection: $setting) {
+                            EmptyView()
+                        }
                     
                     SettingsButtonView(buttonLabel: "Notifications",
                                        buttonColor: Color.purple,
-                               buttonAction: {})
+                               buttonAction: {
+                                self.setting = 2
+                               })
+                    
+                    // Theme Button
+                    NavigationLink(
+                        destination: ChangeThemeView(),
+                        tag: 3,
+                        selection: $setting) {
+                            EmptyView()
+                        }
                     
                     SettingsButtonView(buttonLabel: "Theme",
                                        buttonColor: Color.purple,
-                               buttonAction: {})
+                               buttonAction: {
+                                self.setting = 3
+                               })
                     
                     SettingsButtonView(buttonLabel: "Location",
                                        buttonColor: Color.purple,
@@ -44,9 +74,13 @@ struct SettingsView: View {
                 }.navigationBarTitle("Settings", displayMode: .large)
                 
                 Spacer().frame(height: 150)
+            
             }
+            
         }
+        
     }
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {
