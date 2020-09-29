@@ -12,8 +12,9 @@ struct QuestionsView: View {
     
     @Binding var tab: Int
     @Binding var score: Int64
+    @State private var secondScore: Int = 0
     @State private var questionNumber = 1
-    @State private var finished = false
+    @State private var path: Int? = 0
     
     var body: some View {
         
@@ -21,7 +22,15 @@ struct QuestionsView: View {
             
             NavigationLink(
                 destination: DescribeMoodView(tab: $tab, score: $score),
-                isActive: $finished) {
+                tag: 1,
+                selection: $path) {
+                    EmptyView()
+            }
+            
+            NavigationLink(
+                destination: MayICallView(tab: $tab, score: $score),
+                tag: 2,
+                selection: $path) {
                     EmptyView()
             }
             
@@ -38,10 +47,41 @@ struct QuestionsView: View {
             .padding()
             .allowsTightening(true)
             
-            AnswersView(next: {
-                self.questionNumber += 1
-                self.finished = finishedCheck(questionNumber: self.questionNumber)
-            })
+            VStack {
+                
+                ButtonView(buttonLabel: "Not at all.",
+                           buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                           buttonAction: {
+                            self.questionNumber += 1
+                            self.path = finishedCheck(questionNumber: self.questionNumber, score: secondScore)
+                           })
+                
+                ButtonView(buttonLabel: "A few times.",
+                           buttonColor: Color(red: 255/255, green: 191/255, blue: 0/255),
+                           buttonAction: {
+                            self.questionNumber += 1
+                            self.secondScore += 1
+                            self.path = finishedCheck(questionNumber: self.questionNumber, score: secondScore)
+                           })
+                
+                ButtonView(buttonLabel: "Many times.",
+                           buttonColor: Color(red: 230/255, green: 130/255, blue: 0/255),
+                           buttonAction: {
+                            self.questionNumber += 1
+                            self.secondScore += 2
+                            self.path = finishedCheck(questionNumber: self.questionNumber, score: secondScore)
+                           })
+                
+                ButtonView(buttonLabel: "Almost all the time.",
+                           buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                           buttonAction: {
+                            self.questionNumber += 1
+                            self.secondScore += 3
+                            self.path = finishedCheck(questionNumber: self.questionNumber, score: secondScore)
+                           })
+                
+                
+            }
             
             Spacer()
             
@@ -75,16 +115,19 @@ func questionView(questionNumber: Int) -> Text {
     }
 }
 
-func finishedCheck(questionNumber: Int) -> Bool {
-    if questionNumber > 9 {
-        return true
+func finishedCheck(questionNumber: Int, score: Int) -> Int {
+    if questionNumber < 9 {
+        return 0
+    }
+    else if score < 15 {
+        return 1
     }
     else {
-        return false
+        return 2
     }
 }
 
-struct Question1View_Previews: PreviewProvider {
+struct QuestionsView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionsView(tab: Binding.constant(0), score: Binding.constant(4))
     }
