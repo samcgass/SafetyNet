@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CheckInView: View {
     @Binding var tab: Int
-    @Binding var score: Int64
+    @State var score: Int64 = 0
     @State private var path: Int? = 0
     
     var body: some View {
@@ -93,7 +93,7 @@ struct CheckInView: View {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView(tab: Binding.constant(0), score: Binding.constant(0))
+        CheckInView(tab: Binding.constant(0))
     }
 }
 
