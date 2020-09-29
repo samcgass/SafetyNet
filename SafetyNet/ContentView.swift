@@ -14,7 +14,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            CheckInView(tab: $selection, score: Binding.constant(0))
+            CheckInView(tab: $selection)
                 .font(.title)
                 .tabItem {
                     VStack {
