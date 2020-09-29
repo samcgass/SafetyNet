@@ -46,7 +46,8 @@ struct DescribeMoodView: View {
                 .fontWeight(.regular)
                 .padding()
             
-            TextField("How do you feel?", text: $entry)
+            
+            TextBoxView(text: $entry).frame(numLines: 7)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
                 .foregroundColor(.black)
@@ -83,7 +84,7 @@ struct DescribeMoodView: View {
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
                         checkin.score = self.score
-                        checkin.entry = ""
+                        checkin.entry = entry
                         checkin.date = Date()
                         do {
                             try self.managedObjectContext.save()

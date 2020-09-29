@@ -32,6 +32,7 @@
 		229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */; };
 		229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */; };
 		229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */; };
+		22B414292522C1EA00583047 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B414282522C1EA00583047 /* TextBoxView.swift */; };
 		6913E85F25056C920019AE43 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913E85C25056C920019AE43 /* ProgressView.swift */; };
 		6913E86025056C920019AE43 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913E85D25056C920019AE43 /* Progress.swift */; };
 		6913E86125056C920019AE43 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913E85E25056C920019AE43 /* GraphView.swift */; };
@@ -91,6 +92,7 @@
 		229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		229BA4E424FF0DEA00BB0A56 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		22B414282522C1EA00583047 /* TextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
 		6913E85C25056C920019AE43 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		6913E85D25056C920019AE43 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		6913E85E25056C920019AE43 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				225FFAE1250093BE0030887F /* DescribeMoodView.swift */,
 				225FFAE325009FC90030887F /* ThanksView.swift */,
 				221850412518002100128A7F /* ThanksLowScoreView.swift */,
+				22B414282522C1EA00583047 /* TextBoxView.swift */,
 			);
 			path = "Check In";
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				6913E86125056C920019AE43 /* GraphView.swift in Sources */,
 				69B40DD8252128B100F05250 /* AllTimeGraphData.swift in Sources */,
 				F6A99DEF25040F7400242302 /* DialingView.swift in Sources */,
+				22B414292522C1EA00583047 /* TextBoxView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
 				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,
