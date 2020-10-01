@@ -9,8 +9,25 @@
 import SwiftUI
 
 struct CheckInHistoryView: View {
+    
+    @FetchRequest(
+        entity: CheckIn.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \CheckIn.date, ascending: false)
+        ]
+    ) var checkins: FetchedResults<CheckIn>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVStack {
+                ForEach(checkins, id: \.self) { checkin in
+                    HistoryRow(score: checkin.score, entry: checkin.entry!, date: checkin.date!)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, -10)
+                }
+            }
+            
+        }
     }
 }
 

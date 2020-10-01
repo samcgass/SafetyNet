@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HistoryRow: View {
     
-    var score: Int
+    var score: Int64
     var entry: String
     var date: Date
     
@@ -20,7 +20,7 @@ struct HistoryRow: View {
         return formatter
     }()
     
-    fileprivate func scoreToText(score: Int) -> Text {
+    fileprivate func scoreToText(score: Int64) -> Text {
         switch score {
         case 5:
             return Text("Great")
@@ -36,7 +36,7 @@ struct HistoryRow: View {
             return Text("error")
         }
     }
-    fileprivate func scoreToColor(score: Int) -> Color {
+    fileprivate func scoreToColor(score: Int64) -> Color {
         switch score {
         case 5:
             return Color(red: 30/255, green: 150/255, blue: 50/255)
@@ -65,11 +65,13 @@ struct HistoryRow: View {
                     
                     Spacer()
                     
-                    Text("\(date, formatter: Self.taskDateFormat)").foregroundColor(.gray)
+                    Text("\(date, formatter: Self.taskDateFormat)")
+                        .foregroundColor(.gray)
+                        .font(.caption)
                 }.padding(.bottom, 1)
                 
                 HStack {
-                    Text(entry).font(.caption)
+                    Text(entry).font(.body)
                     Spacer()
                 }
                 
