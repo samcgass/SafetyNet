@@ -51,7 +51,7 @@ struct NewUserView3: View {
                         
                         // Link to daily check in
                         NavigationLink(
-                            destination: ContentView(),
+                            destination: NewUserContentView(),
                         tag: 3,
                         selection: $choice) {
                             EmptyView()
@@ -68,7 +68,7 @@ struct NewUserView3: View {
                             }
                             .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                             .padding()
-                        
+                    
                         // Spacer
                         Spacer()
                         Spacer()
@@ -76,6 +76,7 @@ struct NewUserView3: View {
         }
     }
 
+// Preview
     struct NewUserView3_Previews: PreviewProvider {
         static var previews: some View {
             NewUserView3(tab: Binding.constant(0), username: Binding.constant(""))
