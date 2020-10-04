@@ -37,7 +37,7 @@ struct NewUserView1: View {
                                 .fontWeight(.semibold)
                                 .padding()
                             
-                            Text("I'm SafetyNet - your personal recovery companion. Ready to dig in?")
+                            Text("I'm SafetyNet - your personal wellness companion. Ready to dig in?")
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)

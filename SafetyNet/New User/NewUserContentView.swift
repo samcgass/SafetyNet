@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  NewUserContentView.swift
 //  SafetyNet
 //
-//  Created by Sam Gass on 9/1/20.
+//  Created by Haden Stuart on 10/3/20.
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct NewUserContentView: View {
     @State private var selection = 0
     @Environment(\.managedObjectContext) var managedObjectContext
  
@@ -23,6 +23,8 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
+                .hiddenNavigationBarStyle()
+            
             ProgressView()
                 .font(.title)
                 .tabItem {
@@ -32,6 +34,8 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+                .hiddenNavigationBarStyle()
+            
             ResourcesView()
                 .font(.title)
                 .tabItem {
@@ -41,21 +45,30 @@ struct ContentView: View {
                     }
                 }
                 .tag(2)
-            SettingsView()
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gearshape")
-                        Text("Settings")
-                    }
-                }
-                .tag(3)
+                .hiddenNavigationBarStyle()
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+// ViewModifiers.swift
+struct HiddenNavigationBar: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
+
+extension View {
+    func hiddenNavigationBarStyle() -> some View {
+        modifier(HiddenNavigationBar())
+    }
+}
+
+struct NewUserContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewUserContentView()
+    }
+}
+

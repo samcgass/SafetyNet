@@ -13,32 +13,12 @@ struct ResourcesView: View {
     @State var selectedTab = 0
     
     var body: some View {
-        
-//        VStack (alignment: .center) {
-//
-//            Text("Resources")
-//                .font(.title)
-//                .fontWeight(.semibold)
-//                .padding()
-//
-//            TabView {
-//                LocalView()
-//                    .tabItem {
-//                        Text("In Person")
-//                }
-//
-//                OnlineView()
-//                    .tabItem {
-//                        Text("Online")
-//                }
-//            }
-//        }
-        
+                
         VStack (alignment: .center) {
             Text("Resources")
                 .font(.title)
                 .fontWeight(.semibold)
-                .padding()
+                .padding([.top], 15)
             
             // Create tabs
             Picker(selection: $selectedTab, label: Text("Resources")) {
@@ -237,8 +217,6 @@ struct LocalView: View {
                 
             }.listStyle(GroupedListStyle())
         }
-        
-        
     }
 }
 
@@ -248,11 +226,23 @@ struct OnlineView: View {
         
         VStack {
             
+            ButtonView(buttonLabel: "Sleep Foundation",
+                buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
+                buttonAction: {
+                    UIApplication.shared.open(URL(string: "https://www.sleepfoundation.org/articles/sleep-hygiene")!)
+             })
+            
+            ButtonView(buttonLabel: "Mindfullness Help",
+                buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
+                buttonAction: {
+                    UIApplication.shared.open(URL(string: "https://medschool.ucsd.edu/som/fmph/research/mindfulness/mindfulness-resources/Pages/default.aspx")!)
+             })
+            
             ButtonView(buttonLabel: "Bliss Online Therapy",
                 buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
                 buttonAction: {
                     UIApplication.shared.open(URL(string: "https://cimhs.com/")!)
-                        })
+             })
             
             ButtonView(buttonLabel: "7Cups Support Chatroom",
                 buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
@@ -271,6 +261,8 @@ struct OnlineView: View {
                buttonAction: {
                     UIApplication.shared.open(URL(string: "https://www.mhanational.org/self-help-tools")!)
             })
+            
+            Spacer()
             
         }
     }
