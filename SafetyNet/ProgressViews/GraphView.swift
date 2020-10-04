@@ -16,15 +16,13 @@ struct GraphView: View {
     
     var body: some View {
         //MARK: Begin Stack
-
+        NavigationView {
         ScrollView(.vertical) {
+        
         ZStack {
             VStack {
                 VStack {
-                Text("Progress")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding()
+               
             }
                 //MARK: Picker
                 Picker(selection: $pickerSelectedItem, label: Text("")) {
@@ -52,18 +50,30 @@ struct GraphView: View {
                                     .border(Color.black)
                             }.padding(.horizontal, 75)                }
                     }
-                    HStack {
-                Text("Streak: 7 days!").padding(.top, 26)
+                VStack {
                 
-            Spacer()
+                    NavigationLink(destination: CheckInHistoryView()) {
+                        Text("Journal")
+                            .foregroundColor(.white)
+                            .padding(12)
+                    }
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                    
                 }
                     HStack {
                         Text("Your mood has improved since yesterday!").padding(.top, 24)
                     }
+            
             }
+            
                 Spacer()
+            
             } //ZSTACK ENDS HERE
-        }
+            
+        }.navigationBarTitle("Progress")//ScrollView ends here
+        }.navigationBarTitle("Progress")
+        
             
             Spacer()
 
@@ -76,6 +86,9 @@ struct GraphView: View {
 struct weekView: View {
     var body: some View {
  //MARK: Graph
+ //MARK: MAKE BUTON
+        
+    
      HStack (spacing: 16) {
          VStack {
              ZStack (alignment: .bottom) {
@@ -151,6 +164,7 @@ struct weekView: View {
      .frame(width: 300, height: 300)
      .border(Color.black)
     }
+    
  }
 
 struct allTimeView: Shape {
@@ -185,6 +199,24 @@ extension Array where Element == CGFloat {
         }
         return []
     }
+}
+
+struct JournalView: View {
+    var body: some View {
+        VStack {
+            NavigationView {
+                NavigationLink(destination: CheckInHistoryView()) {
+                    Text("Journal")
+                        .padding(12)
+                }
+                .background(Color.blue)
+                .cornerRadius(12)
+                .navigationBarTitle(Text("Journal"))
+            }
+            
+        }
+    }
+    
 }
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {

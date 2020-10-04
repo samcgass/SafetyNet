@@ -13,11 +13,13 @@ struct ProgressView: View {
         
         VStack {
             GraphView()
+        
 
     
         }
     }
 }
+
 
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
