@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             CheckInView(tab: $selection)
-                .font(.title)
+//                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "checkmark.circle")
@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             ProgressView()
-                .font(.title)
+//                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "chart.bar")
@@ -33,7 +33,7 @@ struct ContentView: View {
                 }
                 .tag(1)
             ResourcesView()
-                .font(.title)
+//                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "person.3")
@@ -42,7 +42,7 @@ struct ContentView: View {
                 }
                 .tag(2)
             SettingsView()
-                .font(.title)
+//                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "gearshape")
