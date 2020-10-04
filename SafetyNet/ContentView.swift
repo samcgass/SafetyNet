@@ -41,6 +41,15 @@ struct ContentView: View {
                     }
                 }
                 .tag(2)
+            SettingsView()
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gearshape")
+                        Text("Settings")
+                    }
+                }
+                .tag(3)
         }
     }
 }
