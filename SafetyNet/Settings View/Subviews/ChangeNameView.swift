@@ -23,32 +23,25 @@ struct ChangeNameView: View {
                     .font(.title)
                     .fontWeight(.medium)
             }.padding()
-
-            List {
+            
+            LazyVStack(alignment: .center) {
                 
                 HStack {
-                    // Some real lazy spacing, but it works
-                    Spacer()
-                    
-                    VStack (alignment: .center, spacing: 10) {
-                        
-                        Text("Edit your name. Use your real name \n or a nickname - it's totally up to you!")
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                            .frame(width: 300.0, height: 50.0)
-                            .padding()
-                        
-                        TextField("  My name is...", text: $username)
-                            .frame(width: 300.0, height: 50.0)
-                            .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
-                    }
-                    
-                    Spacer()
-                    
+                    Text("Edit your name. Use your real name \n or a nickname - it's totally up to you!")
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .frame(width: 300.0, height: 50.0)
+                        .padding()
+                }
+                
+                HStack {
+                    TextField("  My name is...", text: $username)
+                        .frame(width: 300.0, height: 50.0)
+                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
                 }
                 
             }
-                
+            Spacer()
         }
         
     }
