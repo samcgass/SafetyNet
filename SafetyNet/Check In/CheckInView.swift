@@ -84,7 +84,7 @@ struct CheckInView: View {
                             self.path = 3
                            })
                 
-            }.navigationBarTitle("Check-In")
+            }.navigationBarTitle("Check-In", displayMode: .inline)
             .navigationBarItems(trailing:
                                     BuoyButton(destination: Emergency())
             )

@@ -71,7 +71,7 @@ struct SettingsView: View {
                                        buttonColor: Color.purple,
                                buttonAction: {})
                     
-                }.navigationBarTitle("Settings", displayMode: .large)
+                }.navigationBarTitle("Settings", displayMode: .inline)
                 
                 Spacer().frame(height: 150)
             
