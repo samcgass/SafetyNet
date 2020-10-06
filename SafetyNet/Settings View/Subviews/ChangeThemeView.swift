@@ -58,6 +58,9 @@ struct ChangeThemeView: View {
                 
             }
             .navigationBarTitle("Change Theme", displayMode: .automatic)
+            .navigationBarItems(trailing:
+                                    BuoyButton(destination: Emergency())
+            )
 //            .navigationBarBackButtonHidden(false)
             
 //        }

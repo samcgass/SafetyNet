@@ -75,7 +75,9 @@ struct SettingsView: View {
                 
                 Spacer().frame(height: 150)
             
-            }
+            }.navigationBarItems(trailing:
+                                    BuoyButton(destination: Emergency())
+            )
             
         }
         

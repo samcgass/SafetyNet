@@ -47,7 +47,9 @@ struct SecondQuestionsView: View {
                         self.start = true
             })
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
     }
 }
 struct SecondQuestionsView_Previews: PreviewProvider {

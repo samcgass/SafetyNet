@@ -39,7 +39,9 @@ struct ThanksLowScoreView: View {
                         self.tab = 2
             })
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+                            )
     }
 }
 

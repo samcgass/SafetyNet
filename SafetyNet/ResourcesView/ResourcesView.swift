@@ -36,7 +36,9 @@ struct ResourcesView: View {
             }
             
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
     }
 }
 
@@ -216,7 +218,9 @@ struct LocalView: View {
                 .padding()
                 
             }.listStyle(GroupedListStyle())
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
     }
 }
 

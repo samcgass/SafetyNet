@@ -44,6 +44,7 @@
 		F6982BE72523A99500C734ED /* ChangeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE42523A99500C734ED /* ChangeThemeView.swift */; };
 		F6982BE82523A99500C734ED /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE52523A99500C734ED /* ChangeNameView.swift */; };
 		F6982BE92523A99500C734ED /* ChangeNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */; };
+		F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A0D024252991CD0047ADA7 /* BuoyButton.swift */; };
 		F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEC2504080A00242302 /* AreYouSureView.swift */; };
 		F6A99DEF25040F7400242302 /* DialingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEE25040F7400242302 /* DialingView.swift */; };
 		F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B7FC1325293F0E0048930A /* NewUserContentView.swift */; };
@@ -110,6 +111,7 @@
 		F6982BE42523A99500C734ED /* ChangeThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeView.swift; sourceTree = "<group>"; };
 		F6982BE52523A99500C734ED /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNotificationsView.swift; sourceTree = "<group>"; };
+		F6A0D024252991CD0047ADA7 /* BuoyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuoyButton.swift; sourceTree = "<group>"; };
 		F6A99DEC2504080A00242302 /* AreYouSureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouSureView.swift; sourceTree = "<group>"; };
 		F6A99DEE25040F7400242302 /* DialingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialingView.swift; sourceTree = "<group>"; };
 		F7B7FC1325293F0E0048930A /* NewUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserContentView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				F651C4BD250371D900B9B08B /* Settings View */,
 				69CDBD3225056B8600B5F881 /* ProgressViews */,
 				F651C4C0250373A300B9B08B /* Emergency View */,
+				F6A0D024252991CD0047ADA7 /* BuoyButton.swift */,
 			);
 			path = SafetyNet;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
 				22516DB32523FB6F0042B10A /* CheckInHistoryView.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
+				F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,

@@ -40,7 +40,9 @@ struct ThanksView: View {
                         self.tab = 1
             })
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
     }
 }
 

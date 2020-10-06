@@ -22,14 +22,14 @@ struct FeelSafeView: View {
                 destination: SecondQuestionsView(tab: $tab, score: $score),
                 tag: "Yes",
                 selection: $choice) {
-                    EmptyView()
+                EmptyView()
             }
             
             NavigationLink(
                 destination: MayICallView(tab: $tab, score: $score),
                 tag: "No",
                 selection: $choice) {
-                    EmptyView()
+                EmptyView()
             }
             
             
@@ -50,16 +50,18 @@ struct FeelSafeView: View {
                        buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
                        buttonAction: {
                         self.choice = "Yes"
-            })
+                       })
             
             
             ButtonView(buttonLabel: "No",
                        buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
                        buttonAction: {
                         self.choice = "No"
-            })
+                       })
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
         
         
     }

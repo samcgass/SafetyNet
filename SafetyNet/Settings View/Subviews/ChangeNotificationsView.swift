@@ -65,6 +65,9 @@ struct ChangeNotificationsView: View {
                     .opacity(0.8)
                 
             }.navigationBarTitle("Notfications", displayMode: .automatic)
+            .navigationBarItems(trailing:
+                                    BuoyButton(destination: Emergency())
+            )
             
 //        }
         

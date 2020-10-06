@@ -98,7 +98,9 @@ struct DescribeMoodView: View {
                         }
             })
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+                            )
     }
 }
 

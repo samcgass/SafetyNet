@@ -71,7 +71,11 @@ struct GraphView: View {
             
             } //ZSTACK ENDS HERE
             
-        }.navigationBarTitle("Progress")//ScrollView ends here
+        }.navigationBarTitle("Progress")
+        .navigationBarItems(trailing:
+                                                                BuoyButton(destination: Emergency())
+                                        )
+        //ScrollView ends here
         }.navigationBarTitle("Progress")
         
             

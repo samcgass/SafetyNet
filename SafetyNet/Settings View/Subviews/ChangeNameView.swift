@@ -42,7 +42,9 @@ struct ChangeNameView: View {
                 
             }
             Spacer()
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
         
     }
     

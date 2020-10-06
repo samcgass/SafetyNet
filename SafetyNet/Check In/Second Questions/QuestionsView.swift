@@ -85,7 +85,9 @@ struct QuestionsView: View {
             
             Spacer()
             
-        }
+        }.navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency())
+        )
     }
 }
 
