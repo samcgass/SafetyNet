@@ -18,7 +18,7 @@ struct EmergencyButtonView: View {
         
         Button(action: buttonAction) {
             Text(buttonLabel).fontWeight(.bold)
-                .font(.title)
+                .font(.title2)
                 .multilineTextAlignment(.center)
                 .padding(.leading)
                 .opacity(0.6)

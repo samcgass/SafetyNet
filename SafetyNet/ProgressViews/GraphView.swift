@@ -71,7 +71,7 @@ struct GraphView: View {
             
             } //ZSTACK ENDS HERE
             
-        }.navigationBarTitle("Progress", displayMode: .inline)
+        }.navigationBarTitle("Progress", displayMode: .large)
         .navigationBarItems(trailing:
                                     BuoyButton(destination: Emergency())
         )
