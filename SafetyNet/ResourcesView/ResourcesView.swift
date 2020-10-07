@@ -13,32 +13,32 @@ struct ResourcesView: View {
     @State var selectedTab = 0
     
     var body: some View {
+        
+        NavigationView {
+            
+            VStack (alignment: .center) {
                 
-        VStack (alignment: .center) {
-            Text("Resources")
-                .font(.title)
-                .fontWeight(.semibold)
-                .padding([.top], 15)
-            
-            // Create tabs
-            Picker(selection: $selectedTab, label: Text("Resources")) {
-                Text("In Person").tag(0)
-                Text("Online").tag(1)
-            }.pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal, 24)
-            
-            // Switch views for in-person and online tabs
-            if (selectedTab == 0) {
-                LocalView()
+                Picker(selection: $selectedTab, label: Text("Resources")) {
+                    Text("In Person").tag(0)
+                    Text("Online").tag(1)
+                }.pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal, 6)
+                
+                // Switch views for in-person and online tabs
+                if (selectedTab == 0) {
+                    LocalView()
+                }
+                else if (selectedTab == 1) {
+                    OnlineView()
+                }
+                
+                
             }
-            else if (selectedTab == 1) {
-                OnlineView()
-            }
-            
-            
-        }.navigationBarItems(trailing:
-                                BuoyButton(destination: Emergency())
-        )
+            .navigationBarTitle("Resources",
+                                 displayMode: .large)
+            .navigationBarItems(trailing:
+                                BuoyButton(destination: Emergency()))
+        }
     }
 }
 
@@ -260,11 +260,11 @@ struct OnlineView: View {
                     UIApplication.shared.open(URL(string: "https://www.blackdoginstitute.org.au/resources-support/")!)
              })
             
-            ButtonView(buttonLabel: "Online Self Help Tools",
-               buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
-               buttonAction: {
-                    UIApplication.shared.open(URL(string: "https://www.mhanational.org/self-help-tools")!)
-            })
+//            ButtonView(buttonLabel: "Online Self Help Tools",
+//               buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
+//               buttonAction: {
+//                    UIApplication.shared.open(URL(string: "https://www.mhanational.org/self-help-tools")!)
+//            })
             
             Spacer()
             
