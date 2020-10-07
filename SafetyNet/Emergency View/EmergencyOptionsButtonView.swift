@@ -50,7 +50,7 @@ struct EmergencyButtonStyle: ButtonStyle {
                         .opacity(0.85)
                 .cornerRadius(3, corners: [.topLeft, .bottomLeft]),
                      alignment: .leading)
-            .padding(.horizontal, 70)
+            .padding(.horizontal, 20)
         
     }
 }
