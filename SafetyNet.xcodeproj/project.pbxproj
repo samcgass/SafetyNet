@@ -13,6 +13,7 @@
 		221850422518002100128A7F /* ThanksLowScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221850412518002100128A7F /* ThanksLowScoreView.swift */; };
 		22516DB32523FB6F0042B10A /* CheckInHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22516DB22523FB6F0042B10A /* CheckInHistoryView.swift */; };
 		22516DB8252585340042B10A /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22516DB7252585340042B10A /* HistoryRow.swift */; };
+		225187C42537B3D400FB814F /* resources.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 225187C32537B3D400FB814F /* resources.sqlite */; };
 		225FFADC25007C690030887F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADB25007C690030887F /* ButtonView.swift */; };
 		225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADD25007E7A0030887F /* FeelSafeView.swift */; };
 		225FFAE025008FEB0030887F /* MayICallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFADF25008FEB0030887F /* MayICallView.swift */; };
@@ -74,6 +75,7 @@
 		221850412518002100128A7F /* ThanksLowScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksLowScoreView.swift; sourceTree = "<group>"; };
 		22516DB22523FB6F0042B10A /* CheckInHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInHistoryView.swift; sourceTree = "<group>"; };
 		22516DB7252585340042B10A /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		225187C32537B3D400FB814F /* resources.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = resources.sqlite; path = ../../../Resources/resources.sqlite; sourceTree = "<group>"; };
 		225FFADB25007C690030887F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		225FFADD25007E7A0030887F /* FeelSafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelSafeView.swift; sourceTree = "<group>"; };
 		225FFADF25008FEB0030887F /* MayICallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MayICallView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		F784356825157313003D38DC /* ResourcesView */ = {
 			isa = PBXGroup;
 			children = (
+				225187C32537B3D400FB814F /* resources.sqlite */,
 				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
 			);
 			path = ResourcesView;
@@ -406,6 +409,7 @@
 				229BA4B924FF05AD00BB0A56 /* LaunchScreen.storyboard in Resources */,
 				229BA4B624FF05AD00BB0A56 /* Preview Assets.xcassets in Resources */,
 				229BA4B324FF05AD00BB0A56 /* Assets.xcassets in Resources */,
+				225187C42537B3D400FB814F /* resources.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
