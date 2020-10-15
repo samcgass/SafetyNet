@@ -49,17 +49,9 @@ struct NewUserView3: View {
                         // Spacer
                         Spacer()
                         
-                        // Link to daily check in
-                        NavigationLink(
-                            destination: NewUserContentView(),
-                        tag: 3,
-                        selection: $choice) {
-                            EmptyView()
-                        }
-                        
                         // Button
                         Button(action: {
-                            self.choice = 3
+                            self.tab = 0
                             }) {
                                 Text("Begin!")
                                     .foregroundColor(Color.white)
