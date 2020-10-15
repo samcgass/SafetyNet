@@ -17,16 +17,22 @@ struct CheckInHistoryView: View {
         ]
     ) var checkins: FetchedResults<CheckIn>
     
+    
+    
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(checkins, id: \.self) { checkin in
-                    HistoryRow(score: checkin.score, entry: checkin.entry!, date: checkin.date!)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, -10)
+                if checkins.count <= 0 {
+                    Text("No Check-ins yet!")
+                }
+                else {
+                    ForEach(checkins, id: \.self) { checkin in
+                        HistoryRow(score: checkin.score, entry: checkin.entry!, date: checkin.date!)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, -10)
+                    }
                 }
             }
-            
         }
     }
 }
