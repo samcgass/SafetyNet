@@ -10,8 +10,9 @@ import SwiftUI
 
 struct NewUserView2: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    @State private var username: String = ""
+    @State private var name: String = ""
     @State private var choice: Int? = 0
                 
                 var body: some View {
@@ -39,13 +40,13 @@ struct NewUserView2: View {
                             }
                             
                             // Text box
-                            TextField("My name is...", text: $username)
+                            TextField(" My name is...", text: $name)
                                 .frame(width: 300.0, height: 50.0)
                                 .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
                              
                             // Link to next view
                             NavigationLink(
-                                destination: NewUserView3(tab: $tab, username: $username),
+                                destination: NewUserView3(tab: $tab, username: $name),
                                 tag: 2,
                                 selection: $choice) {
                                     EmptyView()
@@ -54,7 +55,16 @@ struct NewUserView2: View {
                             
                             // Button
                             Button(action: {
+                                let username = Username(context: self.managedObjectContext)
+                                username.name = name
+                                do {
+                                    try self.managedObjectContext.save()
+                                } catch {
+                                    
+                                }
+                                // Next view
                                 self.choice = 2
+                                
                                 }) {
                                     Text("Next step")
                                         .foregroundColor(Color.white)
