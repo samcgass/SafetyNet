@@ -12,13 +12,17 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    private(set) static var shared: SceneDelegate?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
+        
+        // Used for Dark Mode
+        Self.shared = self
+        
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -31,6 +35,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            
+            // restore from defaults initial or previously stored style
+            let style = UserDefaults.standard.integer(forKey: "LastStyle")
+            window.overrideUserInterfaceStyle = (style == 0 ? .light : UIUserInterfaceStyle(rawValue: style)!)
+            
             window.rootViewController = UIHostingController(rootView: contentView)
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
             self.window = window

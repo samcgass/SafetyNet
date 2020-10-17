@@ -12,25 +12,17 @@ struct ChangeThemeView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @State var isDarkOn: Bool = false
+//    @State var isDarkOn: Bool = false
     @State var isMatchSystemOn: Bool = false
+    @State var model = ToggleModel()
     
     var body: some View {
-        
-//        VStack(alignment: .leading) {
-            
-//            // Title bar
-//            HStack {
-//                Text("Change Theme")
-//                    .font(.title)
-//                    .fontWeight(.medium)
-//            }.padding()
-            
+                    
             // Toggles
             List {
 
                 // Dark Mode Toggle
-                Toggle(isOn: $isDarkOn, label: {
+                Toggle(isOn: $model.isDark, label: {
                     Text("Dark mode")
                         .fontWeight(.medium)
                         
@@ -42,7 +34,7 @@ struct ChangeThemeView: View {
                     .opacity(0.8)
                 
                 // Match System Toggle, Appears if Dark Mode Toggle is On
-                if isDarkOn {
+                if model.isDark {
                     
                     Toggle(isOn: $isMatchSystemOn, label: {
                         Text("Match System Appearance")

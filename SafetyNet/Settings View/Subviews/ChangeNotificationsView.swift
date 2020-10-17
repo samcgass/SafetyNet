@@ -6,15 +6,13 @@
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
-// CAUTION: Toggle colors will not work unless the Target Deployment is changed to iOS 14.0
-
 import SwiftUI
 
 struct ChangeNotificationsView: View {
     
-    @State var isCheckInOn: Bool = true
-    @State var isStreaksOn: Bool = true
-    @State var isHealthTipsOn: Bool = true
+    @State var isCheckInOn: Bool = false
+    @State var isStreaksOn: Bool = false
+    @State var isHealthTipsOn: Bool = false
     
     var body: some View {
         
