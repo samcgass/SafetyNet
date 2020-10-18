@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct ResourceDetailView: View {
-    var id: Int32
     
     var body: some View {
 //        let db = openDatabase()
@@ -21,6 +20,6 @@ struct ResourceDetailView: View {
 
 struct ResourceDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ResourceDetailView(id: 1)
+        ResourceDetailView()
     }
 }
