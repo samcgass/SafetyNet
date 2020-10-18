@@ -51,6 +51,7 @@
 		F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEC2504080A00242302 /* AreYouSureView.swift */; };
 		F6A99DEF25040F7400242302 /* DialingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEE25040F7400242302 /* DialingView.swift */; };
 		F6B6BF49253A956300ACCECF /* ToggleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B6BF48253A956300ACCECF /* ToggleModel.swift */; };
+		F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70017E3253BB334009FAFDD /* NewUserViewZip.swift */; };
 		F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B7FC1325293F0E0048930A /* NewUserContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		F6A99DEC2504080A00242302 /* AreYouSureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouSureView.swift; sourceTree = "<group>"; };
 		F6A99DEE25040F7400242302 /* DialingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialingView.swift; sourceTree = "<group>"; };
 		F6B6BF48253A956300ACCECF /* ToggleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleModel.swift; sourceTree = "<group>"; };
+		F70017E3253BB334009FAFDD /* NewUserViewZip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewZip.swift; sourceTree = "<group>"; };
 		F7B7FC1325293F0E0048930A /* NewUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +296,7 @@
 			children = (
 				2203E01025044CCB0024D3BC /* NewUserView1.swift */,
 				2203E00F25044CCB0024D3BC /* NewUserView2.swift */,
+				F70017E3253BB334009FAFDD /* NewUserViewZip.swift */,
 				2203E00E25044CCB0024D3BC /* NewUserView3.swift */,
 				F7B7FC1325293F0E0048930A /* NewUserContentView.swift */,
 			);
@@ -457,6 +460,7 @@
 				2203E01325044CCB0024D3BC /* NewUserView1.swift in Sources */,
 				2203E01225044CCB0024D3BC /* NewUserView2.swift in Sources */,
 				22516DB8252585340042B10A /* HistoryRow.swift in Sources */,
+				F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
 				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,

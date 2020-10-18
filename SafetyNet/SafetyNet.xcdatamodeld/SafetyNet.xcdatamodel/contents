@@ -8,8 +8,12 @@
     <entity name="Username" representedClassName="Username" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ZipCode" representedClassName="ZipCode" syncable="YES" codeGenerationType="class">
+        <attribute name="zip" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
         <element name="CheckIn" positionX="170.5078125" positionY="-87.6171875" width="128" height="43"/>
         <element name="Username" positionX="-63" positionY="9" width="128" height="58"/>
+        <element name="ZipCode" positionX="54" positionY="-36" width="128" height="58"/>
     </elements>
 </model>

@@ -1,18 +1,18 @@
 //
-//  NewUserView2.swift
+//  NewUserViewZip.swift
 //  SafetyNet
 //
-//  Created by Haden Stuart on 9/4/20.
+//  Created by Haden Stuart on 10/17/20.
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
 import SwiftUI
 
-struct NewUserView2: View {
+struct NewUserViewZip: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    @State private var name: String = ""
+    @State private var zip: Int?
     @State private var choice: Int? = 0
                 
                 var body: some View {
@@ -27,26 +27,30 @@ struct NewUserView2: View {
                             // Text stack
                             VStack (alignment: .center, spacing: 10) {
                               
-                                Text("What should I call you?")
+                                Text("Where should I look \n for resources?")
                                     .font(.title)
                                     .fontWeight(.semibold)
-                                    .padding()
-                                
-                                Text("You're real name or a nickname - it's totally up to you!")
                                     .multilineTextAlignment(.center)
                                     .lineLimit(2)
-                                    .frame(width: 300.0, height: 50.0)
+                                    .padding()
+                                    .frame(height: 100.0)
+                                
+                                Text("This could be your current zip code or wherever you would like to see resources at.")
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(3)
+                                    .frame(width: 300.0, height: 65.0)
                                     .padding()
                             }
                             
                             // Text box
-                            TextField(" My name is...", text: $name)
+                        TextField(" My zip code is...", value: $zip, formatter: NumberFormatter())
                                 .frame(width: 300.0, height: 50.0)
                                 .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
+                                .keyboardType(UIKeyboardType.decimalPad)
                              
                             // Link to next view
                             NavigationLink(
-                                destination: NewUserViewZip(tab: $tab),
+                                destination: NewUserView3(tab: $tab),
                                 tag: 2,
                                 selection: $choice) {
                                     EmptyView()
@@ -55,8 +59,8 @@ struct NewUserView2: View {
                             
                             // Button
                             Button(action: {
-                                let username = Username(context: self.managedObjectContext)
-                                username.name = name
+                                let userZip = ZipCode(context: self.managedObjectContext)
+                                    userZip.zip = Int32(zip!)
                                 do {
                                     try self.managedObjectContext.save()
                                 } catch {
@@ -79,13 +83,14 @@ struct NewUserView2: View {
                             Spacer()
                             Spacer()
                             Spacer()
+                            Spacer()
                             
                     }
             }
-        }
-
-    struct NewUserView2_Previews: PreviewProvider {
-        static var previews: some View {
-            NewUserView2(tab: Binding.constant(0))
-        }
     }
+
+struct NewUserViewZip_Previews: PreviewProvider {
+    static var previews: some View {
+        NewUserViewZip(tab: Binding.constant(0))
+    }
+}
