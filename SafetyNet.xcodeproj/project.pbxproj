@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2202410E253BA48B00D9A7ED /* ResourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2202410D253BA48B00D9A7ED /* ResourceDetailView.swift */; };
+		22024113253BAB3A00D9A7ED /* databaseDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22024112253BAB3A00D9A7ED /* databaseDriver.swift */; };
 		2203E01125044CCB0024D3BC /* NewUserView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203E00E25044CCB0024D3BC /* NewUserView3.swift */; };
 		2203E01225044CCB0024D3BC /* NewUserView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203E00F25044CCB0024D3BC /* NewUserView2.swift */; };
 		2203E01325044CCB0024D3BC /* NewUserView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203E01025044CCB0024D3BC /* NewUserView1.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2202410D253BA48B00D9A7ED /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
+		22024112253BAB3A00D9A7ED /* databaseDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = databaseDriver.swift; sourceTree = "<group>"; };
 		2203E00E25044CCB0024D3BC /* NewUserView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserView3.swift; sourceTree = "<group>"; };
 		2203E00F25044CCB0024D3BC /* NewUserView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserView2.swift; sourceTree = "<group>"; };
 		2203E01025044CCB0024D3BC /* NewUserView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserView1.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			children = (
 				22AC3B8F2537B552000E094E /* resources.sqlite */,
 				229BA4E024FF0D2E00BB0A56 /* ResourcesView.swift */,
+				2202410D253BA48B00D9A7ED /* ResourceDetailView.swift */,
+				22024112253BAB3A00D9A7ED /* databaseDriver.swift */,
 			);
 			path = ResourcesView;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
 				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
+				22024113253BAB3A00D9A7ED /* databaseDriver.swift in Sources */,
 				22516DB32523FB6F0042B10A /* CheckInHistoryView.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */,
@@ -474,6 +481,7 @@
 				F6982BE72523A99500C734ED /* ChangeThemeView.swift in Sources */,
 				F6982BE82523A99500C734ED /* ChangeNameView.swift in Sources */,
 				229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */,
+				2202410E253BA48B00D9A7ED /* ResourceDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
