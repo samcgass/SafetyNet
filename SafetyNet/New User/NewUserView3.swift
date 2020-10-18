@@ -11,8 +11,14 @@ import SwiftUI
 struct NewUserView3: View {
     
     @Binding var tab: Int
-    @Binding var username: String
     @State private var choice: Int? = 0
+    
+    @FetchRequest(
+        entity: Username.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Username.name, ascending: false)
+        ]
+    ) var username: FetchedResults<Username>
         
             var body: some View {
                 VStack(alignment: .center,
@@ -22,7 +28,6 @@ struct NewUserView3: View {
                         Image("NewUser1")
                             .frame(height: 100.0)
                         
-                        
                         // Spacer
                         Spacer()
                         Spacer()
@@ -30,7 +35,7 @@ struct NewUserView3: View {
                         // Text stack
                         VStack (alignment: .center, spacing: 0.0) {
                           
-                            Text("Nice to meet you, \(username)!")
+                            Text("Nice to meet you, \(username[0].name!)!")
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .lineLimit(2)
@@ -71,6 +76,6 @@ struct NewUserView3: View {
 // Preview
     struct NewUserView3_Previews: PreviewProvider {
         static var previews: some View {
-            NewUserView3(tab: Binding.constant(0), username: Binding.constant(""))
+            NewUserView3(tab: Binding.constant(0))
         }
     }
