@@ -22,11 +22,37 @@ struct ResourceLocalView: View {
         let currentZip = fetchedZip[0].zip
         let db = openDatabase()
         let resources = getResourceFromZip(db: db!, zip: currentZip!)
-        
+        let resource = getResource(db: db!, id: 1)
+
         VStack {
             
             List {
                 
+                // getResource Button
+                Button(action: {
+                    // Resource detail info
+                }) {
+                    HStack(spacing: 40) {
+                        
+                        // Person icon
+                        Image(systemName: "person")
+                        
+                        // Text stack
+                        VStack (alignment: .leading) {
+                            Text("\(resource.name1)")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                            Text("getResource button")
+                                .font(.subheadline)
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.gray)
+                        }
+                    }
+                }.frame(height: 50.0)
+                .padding()
+                
+                // getResourceFromZip button
                 Button(action: {
                     // Resource detail info
                 }) {
@@ -41,7 +67,7 @@ struct ResourceLocalView: View {
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
-                            Text("\(resources.name2)")
+                            Text("getResourceFromZip button")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(Color.gray)
