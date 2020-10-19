@@ -19,9 +19,9 @@ struct ResourceLocalView: View {
         
     var body: some View {
         
-        let currentZip = fetchedZip[0].zip
+        let currentZip = fetchedZip[0].zip!
         let db = openDatabase()
-        let resources = getResourceFromZip(db: db!, zip: currentZip!)
+        let resources = getResourceFromZip(db: db!, zip: currentZip)
         let resource = getResource(db: db!, id: 1)
 
         VStack {
