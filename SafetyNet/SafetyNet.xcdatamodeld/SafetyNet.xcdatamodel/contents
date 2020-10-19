@@ -9,7 +9,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ZipCode" representedClassName="ZipCode" syncable="YES" codeGenerationType="class">
-        <attribute name="zip" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="CheckIn" positionX="170.5078125" positionY="-87.6171875" width="128" height="43"/>

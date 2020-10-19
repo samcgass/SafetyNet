@@ -68,6 +68,48 @@ func getResource(db: OpaquePointer, id: Int64) -> Resource {
     return Resource(values: columns)
 }
 
+func getResourceFromZip(db: OpaquePointer, zip: String) -> Resource {
+    var statement: OpaquePointer?
+    var result: [Resource]?
+    var columns = [String]()
+    
+    if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE zip = \(zip) LIMIT 1", -1, &statement, nil) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error preparing select: \(errmsg)")
+    }
+    
+    while sqlite3_step(statement) == SQLITE_ROW {
+        var count = 0
+        var i: Int32 = 0
+        columns = [String]()
+        
+        while i < 17 {
+            if let column = sqlite3_column_text(statement, i) {
+                columns.append(String(cString: column))
+            }
+            else {
+                columns.append("")
+            }
+            i += 1
+        }
+        result![count] = Resource(values: columns)
+        count += 1
+    }
+    
+    if (columns.count == 0) {
+        columns = Array(repeating: "None", count: 17)
+        print("error no statements returned from query")
+    }
+    
+    if sqlite3_finalize(statement) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error finalizing prepared statement: \(errmsg)")
+    }
+    
+    statement = nil
+    return Resource(values: columns)
+}
+
 
 class Resource {
     let id: Int

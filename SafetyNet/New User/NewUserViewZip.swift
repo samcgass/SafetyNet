@@ -12,7 +12,7 @@ struct NewUserViewZip: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    @State private var zip: Int?
+    @State private var zip: String = ""
     @State private var choice: Int? = 0
                 
                 var body: some View {
@@ -43,7 +43,7 @@ struct NewUserViewZip: View {
                             }
                             
                             // Text box
-                        TextField(" My zip code is...", value: $zip, formatter: NumberFormatter())
+                        TextField(" My zip code is...", text: $zip)
                                 .frame(width: 300.0, height: 50.0)
                                 .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
                                 .keyboardType(UIKeyboardType.decimalPad)
@@ -60,7 +60,7 @@ struct NewUserViewZip: View {
                             // Button
                             Button(action: {
                                 let userZip = ZipCode(context: self.managedObjectContext)
-                                    userZip.zip = Int32(zip!)
+                                    userZip.zip = zip
                                 do {
                                     try self.managedObjectContext.save()
                                 } catch {
