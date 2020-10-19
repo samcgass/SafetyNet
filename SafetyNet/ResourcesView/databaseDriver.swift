@@ -10,13 +10,12 @@ import Foundation
 import SQLite3
 
 func openDatabase() -> OpaquePointer? {
-    let fileURL = try! FileManager
-        .default
-        .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("resources.sqlite")
-
+    guard let fileURL = Bundle.main.path(forResource: "resources", ofType: "sqlite") else {
+        print("file not found")
+        return nil
+    }
     var db: OpaquePointer?
-    guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
+    guard sqlite3_open(fileURL, &db) == SQLITE_OK else {
         print("error opening database")
         sqlite3_close(db)
         db = nil
