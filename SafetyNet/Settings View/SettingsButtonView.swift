@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsButtonView: View {
     
     var buttonLabel : String
-    var buttonColor : Color
+//    var buttonColor : Color
     var buttonAction : () -> Void
     
     var body: some View {
@@ -19,8 +19,7 @@ struct SettingsButtonView: View {
         Button(action: buttonAction) {
             Text(buttonLabel).fontWeight(.medium)
                 .font(.title2).opacity(0.75)
-        }.buttonStyle(SettingsButtonStyle(
-            stripeColor: buttonColor))
+        }.buttonStyle(SettingsButtonStyle())
             .padding(.vertical, 9.0)
     }
 }
@@ -31,18 +30,18 @@ struct SettingsButtonView: View {
 
 struct SettingsButtonStyle: ButtonStyle {
     
-    var stripeColor: Color
+//    var stripeColor: Color
  
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("buttonBackground"))
             .cornerRadius(3)
             .shadow(radius: 3, x: 0, y: 1)
             .overlay(Rectangle()
-                .foregroundColor(stripeColor)
+                .foregroundColor(Color("settingsButtonAccent"))
                 .frame(width: 5)
                 .opacity(0.7)
                 .cornerRadius(3, corners: [.topLeft, .bottomLeft]),
@@ -73,7 +72,6 @@ extension View {
 struct SettingsButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         SettingsButtonView(buttonLabel: "Great!",
-                   buttonColor: Color.purple,
                    buttonAction: {})
     }
 }

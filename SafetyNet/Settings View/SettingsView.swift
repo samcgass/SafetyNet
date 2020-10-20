@@ -30,7 +30,6 @@ struct SettingsView: View {
                         }
                     
                     SettingsButtonView(buttonLabel: "Your name",
-                                       buttonColor: Color.purple,
                                buttonAction: {
                                 self.setting = 1
                                })
@@ -44,7 +43,6 @@ struct SettingsView: View {
                         }
                     
                     SettingsButtonView(buttonLabel: "Notifications",
-                                       buttonColor: Color.purple,
                                buttonAction: {
                                 self.setting = 2
                                })
@@ -58,17 +56,14 @@ struct SettingsView: View {
                         }
                     
                     SettingsButtonView(buttonLabel: "Theme",
-                                       buttonColor: Color.purple,
                                buttonAction: {
                                 self.setting = 3
                                })
                     
                     SettingsButtonView(buttonLabel: "Location",
-                                       buttonColor: Color.purple,
                                buttonAction: {})
                     
                     SettingsButtonView(buttonLabel: "Your data",
-                                       buttonColor: Color.purple,
                                buttonAction: {})
                     
                 }.navigationBarTitle("Settings", displayMode: .large)
