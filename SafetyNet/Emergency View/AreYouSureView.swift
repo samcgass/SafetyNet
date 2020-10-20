@@ -37,9 +37,9 @@ struct AreYouSureView: View {
 
             Spacer()
             
-            EmergencyButtonView(buttonLabel: "Yes", buttonColor: Color.red, buttonAction: {self.dial = true})
+            EmergencyButtonView(buttonLabel: "Yes", buttonAction: {self.dial = true})
             
-            EmergencyButtonView(buttonLabel: "No", buttonColor: Color.red, buttonAction: {})
+            EmergencyButtonView(buttonLabel: "No", buttonAction: {})
             
             Spacer()
             

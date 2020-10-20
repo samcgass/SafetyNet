@@ -11,7 +11,7 @@ import SwiftUI
 struct EmergencyButtonView: View {
     
     var buttonLabel : String
-    var buttonColor : Color
+//    var buttonColor : Color
     var buttonAction : () -> Void
     
     var body: some View {
@@ -22,8 +22,7 @@ struct EmergencyButtonView: View {
                 .multilineTextAlignment(.center)
                 .padding(.leading)
                 .opacity(0.6)
-        }.buttonStyle(EmergencyButtonStyle(
-            stripeColor: buttonColor))
+        }.buttonStyle(EmergencyButtonStyle())
             .padding(.vertical, 5.0)
     }
 }
@@ -34,18 +33,18 @@ struct EmergencyButtonView: View {
 
 struct EmergencyButtonStyle: ButtonStyle {
     
-    var stripeColor: Color
+//    var stripeColor: Color
  
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding(.vertical,37)
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("buttonBackground"))
             .cornerRadius(3)
             .shadow(radius: 3, x: 0, y: 1)
             .overlay(Rectangle()
-                .foregroundColor(stripeColor)
+                .foregroundColor(Color("emergencyButtonAccent"))
                 .frame(width: 5)
                         .opacity(0.85)
                 .cornerRadius(3, corners: [.topLeft, .bottomLeft]),
@@ -76,7 +75,6 @@ extension View {
 struct EmergencyButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         EmergencyButtonView(buttonLabel: "National\nSuicide\nHotline",
-                   buttonColor: Color.red,
                    buttonAction: {})
     }
 }

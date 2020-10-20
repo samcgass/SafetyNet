@@ -34,7 +34,6 @@ struct Emergency: View {
             Spacer()
             
             EmergencyButtonView(buttonLabel: "911",
-                                buttonColor: Color.red,
                        buttonAction: {
                         self.areYouSure = true
             })
@@ -42,8 +41,7 @@ struct Emergency: View {
             // Important: Placeholder phone numbers used to avoid accidents
             
             EmergencyButtonView(buttonLabel: "National Suicide Hotline",
-                                buttonColor: Color.red,
-                       buttonAction: {
+                                buttonAction: {
                         let tel = "tel://411"
                         guard let url = URL(string: tel) else { return }
                         UIApplication.shared.open(url)
@@ -51,7 +49,7 @@ struct Emergency: View {
             
             // Important: Placeholder phone numbers used to avoid accidents
             
-            EmergencyButtonView(buttonLabel: "State Suicide Hotline", buttonColor: Color.red, buttonAction: {
+            EmergencyButtonView(buttonLabel: "State Suicide Hotline", buttonAction: {
                 let tel = "tel://311"
                 guard let url = URL(string: tel) else { return }
                 UIApplication.shared.open(url)
