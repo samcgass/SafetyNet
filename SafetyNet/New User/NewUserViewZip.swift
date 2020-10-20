@@ -59,7 +59,7 @@ struct NewUserViewZip: View {
                             
                             // Button
                             Button(action: {
-                                let userZip = ZipCode(context: self.managedObjectContext)
+                                let userZip = User(context: self.managedObjectContext)
                                     userZip.zip = zip
                                 do {
                                     try self.managedObjectContext.save()

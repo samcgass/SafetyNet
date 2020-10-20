@@ -14,11 +14,11 @@ struct NewUserView3: View {
     @State private var choice: Int? = 0
     
     @FetchRequest(
-        entity: Username.entity(),
+        entity: User.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \Username.name, ascending: false)
+            NSSortDescriptor(keyPath: \User.name, ascending: false)
         ]
-    ) var username: FetchedResults<Username>
+    ) var username: FetchedResults<User>
         
             var body: some View {
                 VStack(alignment: .center,

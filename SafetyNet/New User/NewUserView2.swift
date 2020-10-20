@@ -55,7 +55,7 @@ struct NewUserView2: View {
                             
                             // Button
                             Button(action: {
-                                let username = Username(context: self.managedObjectContext)
+                                let username = User(context: self.managedObjectContext)
                                 username.name = name
                                 do {
                                     try self.managedObjectContext.save()

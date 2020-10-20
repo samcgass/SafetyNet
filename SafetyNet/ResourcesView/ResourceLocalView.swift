@@ -11,39 +11,37 @@ import SwiftUI
 struct ResourceLocalView: View {
     
     @FetchRequest(
-        entity: ZipCode.entity(),
+        entity: User.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \ZipCode.zip, ascending: false)
+            NSSortDescriptor(keyPath: \User.zip, ascending: false)
         ]
-    ) var fetchedZip: FetchedResults<ZipCode>
+    ) var fetchedZip: FetchedResults<User>
         
     var body: some View {
         
         let currentZip = fetchedZip[0].zip!
         let db = openDatabase()
-        let resources = getResourceFromZip(db: db!, zip: currentZip)
-        let resource = getResource(db: db!, id: 1)
-
+        let resources: [Resource] = getResourceFromZip(db: db!, zip: currentZip)
+        
+        
         VStack {
             
             List {
                 
-                // getResource Button
+                // Default resource
                 Button(action: {
                     // Resource detail info
                 }) {
                     HStack(spacing: 40) {
-                        
-                        // Person icon
+
                         Image(systemName: "person")
                         
-                        // Text stack
                         VStack (alignment: .leading) {
-                            Text("\(resource.name1)")
+                            Text("Default Resource")
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color("resourceText"))
-                            Text("getResource button")
+                            Text("resource for when no local resources appear")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(Color.gray)
@@ -52,30 +50,28 @@ struct ResourceLocalView: View {
                 }.frame(height: 50.0)
                 .padding()
                 
-                // getResourceFromZip button
-                Button(action: {
-                    // Resource detail info
-                }) {
-                    HStack(spacing: 40) {
-                        
-                        // Person icon
-                        Image(systemName: "person")
-                        
-                        // Text stack
-                        VStack (alignment: .leading) {
-                            Text("\(resources.name1)")
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color("resourceText"))
-                            Text("getResourceFromZip button")
-                                .font(.subheadline)
-                                .fontWeight(.regular)
-                                .foregroundColor(Color.gray)
+                ForEach(0 ..< resources.count) {index in
+                    Button(action: {
+                        // Resource detail info
+                    }) {
+                        HStack(spacing: 40) {
+
+                            Image(systemName: "person")
+
+                            VStack (alignment: .leading) {
+                                Text("\(resources[index].name1)")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color("resourceText"))
+                                Text("\(resources[index].name2)")
+                                    .font(.subheadline)
+                                    .fontWeight(.regular)
+                                    .foregroundColor(Color.gray)
+                            }
                         }
-                    }
-                }.frame(height: 50.0)
-                .padding()
-                
+                    }.frame(height: 50.0)
+                    .padding()
+                }
                 
             }.listStyle(GroupedListStyle())
         }.navigationBarItems(trailing:

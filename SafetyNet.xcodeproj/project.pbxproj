@@ -25,7 +25,6 @@
 		225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAEA2500A9560030887F /* SecondQuestionsView.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
-		229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */; };
 		229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4B024FF05AA00BB0A56 /* ContentView.swift */; };
 		229BA4B324FF05AD00BB0A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229BA4B224FF05AD00BB0A56 /* Assets.xcassets */; };
 		229BA4B624FF05AD00BB0A56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229BA4B524FF05AD00BB0A56 /* Preview Assets.xcassets */; };
@@ -55,6 +54,7 @@
 		F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70017E3253BB334009FAFDD /* NewUserViewZip.swift */; };
 		F70182D7253D03BC004DB533 /* ResourceLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182D6253D03BC004DB533 /* ResourceLocalView.swift */; };
 		F70182DF253D0446004DB533 /* ResourceOnlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182DE253D0446004DB533 /* ResourceOnlineView.swift */; };
+		F781F32B253EBF6800CDC314 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F781F329253EBF6800CDC314 /* SafetyNet.xcdatamodeld */; };
 		F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B7FC1325293F0E0048930A /* NewUserContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,6 @@
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		229BA4AE24FF05AA00BB0A56 /* SafetyNet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SafetyNet.xcdatamodel; sourceTree = "<group>"; };
 		229BA4B024FF05AA00BB0A56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		229BA4B224FF05AD00BB0A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229BA4B524FF05AD00BB0A56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		F70017E3253BB334009FAFDD /* NewUserViewZip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewZip.swift; sourceTree = "<group>"; };
 		F70182D6253D03BC004DB533 /* ResourceLocalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLocalView.swift; sourceTree = "<group>"; };
 		F70182DE253D0446004DB533 /* ResourceOnlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOnlineView.swift; sourceTree = "<group>"; };
+		F781F32A253EBF6800CDC314 /* SafetyNet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SafetyNet.xcdatamodel; sourceTree = "<group>"; };
 		F7B7FC1325293F0E0048930A /* NewUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 				229BA4B224FF05AD00BB0A56 /* Assets.xcassets */,
 				229BA4B724FF05AD00BB0A56 /* LaunchScreen.storyboard */,
 				229BA4BA24FF05AD00BB0A56 /* Info.plist */,
-				229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */,
+				F781F329253EBF6800CDC314 /* SafetyNet.xcdatamodeld */,
 				229BA4B424FF05AD00BB0A56 /* Preview Content */,
 				F7501F2825043F0700E866A7 /* New User */,
 				225FFADA25007B750030887F /* Check In */,
@@ -467,6 +467,7 @@
 				225FFAE425009FC90030887F /* ThanksView.swift in Sources */,
 				225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */,
 				2203E01325044CCB0024D3BC /* NewUserView1.swift in Sources */,
+				F781F32B253EBF6800CDC314 /* SafetyNet.xcdatamodeld in Sources */,
 				2203E01225044CCB0024D3BC /* NewUserView2.swift in Sources */,
 				22516DB8252585340042B10A /* HistoryRow.swift in Sources */,
 				F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */,
@@ -480,7 +481,6 @@
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
-				229BA4AF24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
 				F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */,
 				F70182DF253D0446004DB533 /* ResourceOnlineView.swift in Sources */,
@@ -824,12 +824,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		229BA4AD24FF05AA00BB0A56 /* SafetyNet.xcdatamodeld */ = {
+		F781F329253EBF6800CDC314 /* SafetyNet.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				229BA4AE24FF05AA00BB0A56 /* SafetyNet.xcdatamodel */,
+				F781F32A253EBF6800CDC314 /* SafetyNet.xcdatamodel */,
 			);
-			currentVersion = 229BA4AE24FF05AA00BB0A56 /* SafetyNet.xcdatamodel */;
+			currentVersion = F781F32A253EBF6800CDC314 /* SafetyNet.xcdatamodel */;
 			path = SafetyNet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
