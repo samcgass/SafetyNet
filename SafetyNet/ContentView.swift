@@ -11,6 +11,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var selection = initialSelectionValue()
     @Environment(\.managedObjectContext) var managedObjectContext
+    
+    init() {
+            //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "navBarText")!]
+
+            //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "navBarText")!]
+        }
+    
  
     var body: some View {
         

@@ -38,7 +38,7 @@ struct CheckInButtonStyle: ButtonStyle {
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("buttonBackground"))
             .cornerRadius(3)
             .shadow(radius: 3, x: 0, y: 1)
             .overlay(Rectangle()
