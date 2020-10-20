@@ -94,6 +94,17 @@ struct weekView: View {
         
     
      HStack (spacing: 16) {
+        
+    // Call to BarView to create bars. TODO: Add statements that
+    // indicate how many bars need to be made.
+        BarView()
+        BarView()
+        BarView()
+        BarView()
+        BarView()
+        BarView()
+        BarView()
+        /*
          VStack {
              ZStack (alignment: .bottom) {
                  Capsule().frame(width: 20, height: 200).foregroundColor(.white)
@@ -163,7 +174,7 @@ struct weekView: View {
          
          
          
- 
+ */
      }.padding(.top, 24)
      .frame(width: 300, height: 300)
      .border(Color.black)
