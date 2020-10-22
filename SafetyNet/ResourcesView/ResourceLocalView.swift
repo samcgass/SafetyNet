@@ -9,61 +9,47 @@
 import SwiftUI
 
 struct ResourceLocalView: View {
+        
+    @FetchRequest(
+        entity: Location.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Location.latitude, ascending: false)
+        ]
+    ) var fetchedLat: FetchedResults<Location>
     
     @FetchRequest(
-        entity: User.entity(),
+        entity: Location.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \User.zip, ascending: false)
+            NSSortDescriptor(keyPath: \Location.longitude, ascending: false)
         ]
-    ) var fetchedZip: FetchedResults<User>
+    ) var fetchedLong: FetchedResults<Location>
         
     var body: some View {
-        
-        let currentZip = fetchedZip[0].zip!
+
+        let currentLat = fetchedLat[0].latitude
+        let currentLong = fetchedLong[0].longitude
         let db = openDatabase()
-        let resources: [Resource] = getResourceFromZip(db: db!, zip: currentZip)
+        let resources: [Resource] = getResourceFromLocation(db: db!, latitude: currentLat!, longitude: currentLong!)
         
         
         VStack {
             
             List {
-                
                 // Default resource
-                Button(action: {
-                    // Resource detail info
-                }) {
-                    HStack(spacing: 40) {
-
-                        Image(systemName: "person")
-                        
-                        VStack (alignment: .leading) {
-                            Text("Default Resource")
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color("resourceText"))
-                            Text("resource for when no local resources appear")
-                                .font(.subheadline)
-                                .fontWeight(.regular)
-                                .foregroundColor(Color.gray)
-                        }
-                    }
-                }.frame(height: 50.0)
-                .padding()
-                
-                ForEach(0 ..< resources.count) {index in
+                if (resources[0].name1 == "None") {
                     Button(action: {
                         // Resource detail info
                     }) {
                         HStack(spacing: 40) {
 
                             Image(systemName: "person")
-
+                            
                             VStack (alignment: .leading) {
-                                Text("\(resources[index].name1)")
+                                Text("Default resource")
                                     .font(.title)
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color("resourceText"))
-                                Text("\(resources[index].name2)")
+                                Text("This resource appears when no resources found locally")
                                     .font(.subheadline)
                                     .fontWeight(.regular)
                                     .foregroundColor(Color.gray)
@@ -71,6 +57,31 @@ struct ResourceLocalView: View {
                         }
                     }.frame(height: 50.0)
                     .padding()
+                    
+                } else {
+                    // Database resources
+                    ForEach(0 ..< resources.count) {index in
+                        Button(action: {
+                            // Resource detail info
+                        }) {
+                            HStack(spacing: 40) {
+
+                                Image(systemName: "person")
+
+                                VStack (alignment: .leading) {
+                                    Text("\(resources[index].name1)")
+                                        .font(.title)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(Color("resourceText"))
+                                    Text("\(resources[index].name2)")
+                                        .font(.subheadline)
+                                        .fontWeight(.regular)
+                                        .foregroundColor(Color.gray)
+                                }
+                            }
+                        }.frame(height: 50.0)
+                        .padding()
+                    }
                 }
                 
             }.listStyle(GroupedListStyle())

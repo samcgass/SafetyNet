@@ -66,5 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required to find local resources in your area</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required to find local resources in your area</string>
 </dict>
 </plist>

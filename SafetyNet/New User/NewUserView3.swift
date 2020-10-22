@@ -12,7 +12,8 @@ struct NewUserView3: View {
     
     @Binding var tab: Int
     @State private var choice: Int? = 0
-    
+        
+    // Core data request variable
     @FetchRequest(
         entity: User.entity(),
         sortDescriptors: [

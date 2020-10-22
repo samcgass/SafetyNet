@@ -14,7 +14,7 @@ struct NewUserView2: View {
     @Binding var tab: Int
     @State private var name: String = ""
     @State private var choice: Int? = 0
-                
+                    
                 var body: some View {
                     VStack(alignment: .center,
                            spacing: 30) {
@@ -46,12 +46,12 @@ struct NewUserView2: View {
                              
                             // Link to next view
                             NavigationLink(
-                                destination: NewUserViewZip(tab: $tab),
+                                destination: NewUserView3(tab: $tab),
                                 tag: 2,
                                 selection: $choice) {
                                     EmptyView()
                                 }
-
+                            
                             
                             // Button
                             Button(action: {

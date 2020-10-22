@@ -68,12 +68,14 @@ func getResource(db: OpaquePointer, id: Int64) -> Resource {
     return Resource(values: columns)
 }
 
-func getResourceFromZip(db: OpaquePointer, zip: String) -> [Resource] {
+func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: String) -> [Resource] {
     var statement: OpaquePointer?
     var columns = [String]()
     var result = [Resource]()
+    let latitudeEnd = calculateRadius(coordStr: latitude, radiusOffset: 0.5)
+    let longitudeEnd = calculateRadius(coordStr: longitude, radiusOffset: 0.5)
     
-    if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE zip = \(zip)", -1, &statement, nil) != SQLITE_OK {
+    if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE latitude BETWEEN \(latitude) AND \(latitudeEnd) AND longitude BETWEEN \(longitude) AND \(longitudeEnd)", -1, &statement, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error preparing select: \(errmsg)")
     }
@@ -94,15 +96,26 @@ func getResourceFromZip(db: OpaquePointer, zip: String) -> [Resource] {
         result.append(Resource(values: columns))
     }
     
+    
     if sqlite3_finalize(statement) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error finalizing prepared statement: \(errmsg)")
+    }
+    
+    if (columns.count == 0) {
+        return [Resource(values: Array(repeating: "None", count: 17))]
     }
     
     statement = nil
     return result
 }
 
+func calculateRadius(coordStr: String, radiusOffset: Float) -> String {
+    let coordFloat = (coordStr as NSString).floatValue
+    let result = coordFloat + radiusOffset
+    
+    return String(result)
+}
 
 class Resource {
     let id: Int

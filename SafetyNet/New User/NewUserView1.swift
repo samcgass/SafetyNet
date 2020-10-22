@@ -12,6 +12,13 @@ struct NewUserView1: View {
     
     @Binding var tab: Int
     @State private var choice: Int? = 0
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var locationManager = LocationManager()
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
             
             var body: some View {
                 
@@ -55,6 +62,15 @@ struct NewUserView1: View {
                             
                         // Button
                         Button(action: {
+                            
+                            let userLatitude = Location(context: self.managedObjectContext)
+                            userLatitude.latitude = currentLatitude
+                            let userLongitude = Location(context: self.managedObjectContext)
+                            userLongitude.longitude = currentLongitude
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch { }
+                        
                             self.choice = 1
                         }) {
                             Text("Get Started")
