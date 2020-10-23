@@ -56,6 +56,7 @@
 		F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70017E3253BB334009FAFDD /* NewUserViewZip.swift */; };
 		F70182D7253D03BC004DB533 /* ResourceLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182D6253D03BC004DB533 /* ResourceLocalView.swift */; };
 		F70182DF253D0446004DB533 /* ResourceOnlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182DE253D0446004DB533 /* ResourceOnlineView.swift */; };
+		F75174B925438DE00019E064 /* RadiusCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75174B825438DE00019E064 /* RadiusCalculator.swift */; };
 		F781F32B253EBF6800CDC314 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F781F329253EBF6800CDC314 /* SafetyNet.xcdatamodeld */; };
 		F783B3622541345F00A4005D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783B3612541345F00A4005D /* LocationManager.swift */; };
 		F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B7FC1325293F0E0048930A /* NewUserContentView.swift */; };
@@ -134,6 +135,7 @@
 		F70017E3253BB334009FAFDD /* NewUserViewZip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewZip.swift; sourceTree = "<group>"; };
 		F70182D6253D03BC004DB533 /* ResourceLocalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLocalView.swift; sourceTree = "<group>"; };
 		F70182DE253D0446004DB533 /* ResourceOnlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOnlineView.swift; sourceTree = "<group>"; };
+		F75174B825438DE00019E064 /* RadiusCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusCalculator.swift; sourceTree = "<group>"; };
 		F781F32A253EBF6800CDC314 /* SafetyNet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SafetyNet.xcdatamodel; sourceTree = "<group>"; };
 		F783B3612541345F00A4005D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F7B7FC1325293F0E0048930A /* NewUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserContentView.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				F70182DE253D0446004DB533 /* ResourceOnlineView.swift */,
 				2202410D253BA48B00D9A7ED /* ResourceDetailView.swift */,
 				22024112253BAB3A00D9A7ED /* databaseDriver.swift */,
+				F75174B825438DE00019E064 /* RadiusCalculator.swift */,
 			);
 			path = ResourcesView;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				6913E86025056C920019AE43 /* Progress.swift in Sources */,
 				225FFAE425009FC90030887F /* ThanksView.swift in Sources */,
 				225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */,
+				F75174B925438DE00019E064 /* RadiusCalculator.swift in Sources */,
 				2203E01325044CCB0024D3BC /* NewUserView1.swift in Sources */,
 				F781F32B253EBF6800CDC314 /* SafetyNet.xcdatamodeld in Sources */,
 				2203E01225044CCB0024D3BC /* NewUserView2.swift in Sources */,
@@ -678,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SafetyNet/Preview Content\"";
-				DEVELOPMENT_TEAM = KTR9AY2NCY;
+				DEVELOPMENT_TEAM = 6FKG7XX5BU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SafetyNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -699,7 +703,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SafetyNet/Preview Content\"";
-				DEVELOPMENT_TEAM = KTR9AY2NCY;
+				DEVELOPMENT_TEAM = 6FKG7XX5BU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SafetyNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

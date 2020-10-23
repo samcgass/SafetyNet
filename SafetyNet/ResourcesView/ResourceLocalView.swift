@@ -23,15 +23,23 @@ struct ResourceLocalView: View {
             NSSortDescriptor(keyPath: \Location.longitude, ascending: false)
         ]
     ) var fetchedLong: FetchedResults<Location>
+    
+    @FetchRequest(
+        entity: Location.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Location.radius, ascending: false)
+        ]
+    ) var fetchedRadius: FetchedResults<Location>
         
     var body: some View {
 
         let currentLat = fetchedLat[0].latitude
         let currentLong = fetchedLong[0].longitude
+        let currentRadius = fetchedRadius[0].radius
         let db = openDatabase()
-        // at some point we need to close this database, not sure how
-        let resources: [Resource] = getResourceFromLocation(db: db!, latitude: currentLat!, longitude: currentLong!)
-        
+        let resources: [Resource] = getResourceFromLocation(db: db!, latitude: currentLat!, longitude: currentLong!, radius: currentRadius!)
+        // Line below should close database I assume
+        let _: () = closeDatabase(db: db)
         
         VStack {
             

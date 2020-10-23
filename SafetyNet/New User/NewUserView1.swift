@@ -67,6 +67,8 @@ struct NewUserView1: View {
                             userLatitude.latitude = currentLatitude
                             let userLongitude = Location(context: self.managedObjectContext)
                             userLongitude.longitude = currentLongitude
+                            let defaultRadius = Location(context: self.managedObjectContext)
+                            defaultRadius.radius = "25"
                             do {
                                 try self.managedObjectContext.save()
                             } catch { }

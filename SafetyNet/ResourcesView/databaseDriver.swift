@@ -68,12 +68,12 @@ func getResource(db: OpaquePointer, id: Int) -> Resource {
     return Resource(values: columns)
 }
 
-func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: String) -> [Resource] {
+func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: String, radius: String) -> [Resource] {
     var statement: OpaquePointer?
     var columns = [String]()
     var result = [Resource]()
-    let latitudeEnd = calculateRadius(coordStr: latitude, radiusOffset: 0.5)
-    let longitudeEnd = calculateRadius(coordStr: longitude, radiusOffset: 0.5)
+    let latitudeEnd = calculateLatitudeRadius(coordStr: latitude, radiusOffset: radius)
+    let longitudeEnd = calculateLongitudeRadius(coordLatStr: latitude, coordLongStr: longitude, radiusOffset: radius)
     
     if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE latitude BETWEEN \(latitude) AND \(latitudeEnd) AND longitude BETWEEN \(longitude) AND \(longitudeEnd)", -1, &statement, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -108,13 +108,6 @@ func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: Str
     
     statement = nil
     return result
-}
-
-func calculateRadius(coordStr: String, radiusOffset: Float) -> String {
-    let coordFloat = (coordStr as NSString).floatValue
-    let result = coordFloat + radiusOffset
-    
-    return String(result)
 }
 
 class Resource {
