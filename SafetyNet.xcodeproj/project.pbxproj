@@ -44,6 +44,8 @@
 		69B40DD8252128B100F05250 /* AllTimeGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B40DD7252128B100F05250 /* AllTimeGraphData.swift */; };
 		F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */; };
 		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
+		F68CFBF22542680400E6014E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CFBF12542680400E6014E /* User.swift */; };
+		F68CFBF42542691500E6014E /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CFBF32542691500E6014E /* EditUserView.swift */; };
 		F6982BE72523A99500C734ED /* ChangeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE42523A99500C734ED /* ChangeThemeView.swift */; };
 		F6982BE82523A99500C734ED /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE52523A99500C734ED /* ChangeNameView.swift */; };
 		F6982BE92523A99500C734ED /* ChangeNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */; };
@@ -120,6 +122,8 @@
 		69B40DD7252128B100F05250 /* AllTimeGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimeGraphData.swift; sourceTree = "<group>"; };
 		F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
+		F68CFBF12542680400E6014E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F68CFBF32542691500E6014E /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 		F6982BE42523A99500C734ED /* ChangeThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeView.swift; sourceTree = "<group>"; };
 		F6982BE52523A99500C734ED /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNotificationsView.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				F6A0D024252991CD0047ADA7 /* BuoyButton.swift */,
 				F70017E3253BB334009FAFDD /* NewUserViewZip.swift */,
 				F7E515BD2541487D008E6A3D /* No longer used */,
+				F68CFBF12542680400E6014E /* User.swift */,
 			);
 			path = SafetyNet;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				F6982BE42523A99500C734ED /* ChangeThemeView.swift */,
 				F6982BE52523A99500C734ED /* ChangeNameView.swift */,
 				F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */,
+				F68CFBF32542691500E6014E /* EditUserView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				69ACEAEC253E9BBC00ECBCF6 /* BarView.swift in Sources */,
 				22024113253BAB3A00D9A7ED /* databaseDriver.swift in Sources */,
 				22516DB32523FB6F0042B10A /* CheckInHistoryView.swift in Sources */,
+				F68CFBF22542680400E6014E /* User.swift in Sources */,
 				229BA4E324FF0DCC00BB0A56 /* SettingsView.swift in Sources */,
 				F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
@@ -502,6 +509,7 @@
 				F6A99DEF25040F7400242302 /* DialingView.swift in Sources */,
 				22B414292522C1EA00583047 /* TextBoxView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
+				F68CFBF42542691500E6014E /* EditUserView.swift in Sources */,
 				F783B3622541345F00A4005D /* LocationManager.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
 				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,

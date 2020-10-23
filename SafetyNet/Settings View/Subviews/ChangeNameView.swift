@@ -10,8 +10,11 @@ import SwiftUI
 
 struct ChangeNameView: View {
     
-    // This needs to be made public here and on NewUserView2
-    @State private var username: String = ""
+    // Core Data property wrappers
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    // The user class has an `allUsersFetchRequest` static function that can be used here
+    @FetchRequest(fetchRequest: User.allUsersFetchRequest()) var users: FetchedResults<User>
     
     var body: some View {
         
@@ -34,14 +37,23 @@ struct ChangeNameView: View {
                         .padding()
                 }
                 
-                HStack {
-                    TextField("  My name is...", text: $username)
-                        .frame(width: 300.0, height: 50.0)
-                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
-                }
-                
             }
             Spacer()
+            
+            List {
+                Section(header: Text("Tap your name to change it")) {
+                    ForEach(self.users) { user in
+                        NavigationLink(destination: EditUserView(user: user)) {
+                            VStack(alignment: .leading) {
+                                Text(user.name ?? "")
+                                    .font(.headline)
+                            }
+                        }
+                    }
+                }
+                .font(.headline)
+            }
+            
         }.navigationBarItems(trailing:
                                 BuoyButton(destination: Emergency())
         )

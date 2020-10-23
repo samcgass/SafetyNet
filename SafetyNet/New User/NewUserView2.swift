@@ -40,7 +40,7 @@ struct NewUserView2: View {
                             }
                             
                             // Text box
-                            TextField(" My name is...", text: $name)
+                        TextField(" My name is...", text: self.$name)
                                 .frame(width: 300.0, height: 50.0)
                                 .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
                              
@@ -56,7 +56,7 @@ struct NewUserView2: View {
                             // Button
                             Button(action: {
                                 let username = User(context: self.managedObjectContext)
-                                username.name = name
+                                username.name = self.name
                                 do {
                                     try self.managedObjectContext.save()
                                 } catch {
