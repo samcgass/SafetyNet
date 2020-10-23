@@ -231,7 +231,6 @@
 				F651C4C0250373A300B9B08B /* Emergency View */,
 				F6A0D024252991CD0047ADA7 /* BuoyButton.swift */,
 				F70017E3253BB334009FAFDD /* NewUserViewZip.swift */,
-				F7E515BD2541487D008E6A3D /* No longer used */,
 				F68CFBF12542680400E6014E /* User.swift */,
 			);
 			path = SafetyNet;
@@ -331,13 +330,6 @@
 				22024112253BAB3A00D9A7ED /* databaseDriver.swift */,
 			);
 			path = ResourcesView;
-			sourceTree = "<group>";
-		};
-		F7E515BD2541487D008E6A3D /* No longer used */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "No longer used";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
