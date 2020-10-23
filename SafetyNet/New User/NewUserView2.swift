@@ -40,9 +40,10 @@ struct NewUserView2: View {
                             }
                             
                             // Text box
-                        TextField(" My name is...", text: self.$name)
+                        TextField("   My name is...", text: self.$name)
                                 .frame(width: 300.0, height: 50.0)
                                 .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
+                                .cornerRadius(7)
                              
                             // Link to next view
                             NavigationLink(
