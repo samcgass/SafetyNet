@@ -34,7 +34,7 @@ func closeDatabase(db: OpaquePointer?) {
     return
 }
 
-func getResource(db: OpaquePointer, id: Int64) -> Resource {
+func getResource(db: OpaquePointer, id: Int) -> Resource {
     var statement: OpaquePointer?
     if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE id = \(id) LIMIT 1", -1, &statement, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
