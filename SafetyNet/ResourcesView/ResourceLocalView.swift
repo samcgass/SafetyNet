@@ -29,6 +29,7 @@ struct ResourceLocalView: View {
         let currentLat = fetchedLat[0].latitude
         let currentLong = fetchedLong[0].longitude
         let db = openDatabase()
+        // at some point we need to close this database, not sure how
         let resources: [Resource] = getResourceFromLocation(db: db!, latitude: currentLat!, longitude: currentLong!)
         
         
@@ -61,12 +62,10 @@ struct ResourceLocalView: View {
                 } else {
                     // Database resources
                     ForEach(0 ..< resources.count) {index in
-                        Button(action: {
-                            // Resource detail info
-                        }) {
+                        NavigationLink(destination: ResourceDetailView(db: db!, id: resources[index].id)) {
                             HStack(spacing: 40) {
-
-                                Image(systemName: "person")
+                                // bug here where row remains highlighted after viewing detailed view and coming back
+                                //Image(systemName: "person")
 
                                 VStack (alignment: .leading) {
                                     Text("\(resources[index].name1)")
