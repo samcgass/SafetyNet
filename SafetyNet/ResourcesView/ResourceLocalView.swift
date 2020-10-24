@@ -39,7 +39,7 @@ struct ResourceLocalView: View {
         let db = openDatabase()
         let resources: [Resource] = getResourceFromLocation(db: db!, latitude: currentLat!, longitude: currentLong!, radius: currentRadius!)
         // Line below should close database I assume
-        let _: () = closeDatabase(db: db)
+//        let _: () = closeDatabase(db: db)
         
         VStack {
             
