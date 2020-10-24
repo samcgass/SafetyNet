@@ -25,10 +25,10 @@ struct NewUserView1: View {
                 NavigationView {
                     
                     VStack(alignment: .center,
-                        spacing: 30) {
+                           spacing: 30) {
                         
                         // Top image
-                            Image("NewUser1")
+                        Image("NewUser1")
                             .frame(height: 210.0)
                             .padding()
                         
@@ -51,16 +51,16 @@ struct NewUserView1: View {
                                 .frame(width: 300.0, height: 50)
                                 .padding()
                         }
-                
+
                         // Link to next view
                         NavigationLink(
                             destination: NewUserView2(tab: $tab),
                             tag: 1,
                             selection: $choice) {
-                                EmptyView()
-                            }
+                            EmptyView()
+                        }
                             
-                        // Button
+                            // Button
                         Button(action: {
                             
                             let userLatitude = Location(context: self.managedObjectContext)
@@ -72,7 +72,7 @@ struct NewUserView1: View {
                             do {
                                 try self.managedObjectContext.save()
                             } catch { }
-                        
+                            
                             self.choice = 1
                         }) {
                             Text("Get Started")
@@ -80,14 +80,14 @@ struct NewUserView1: View {
                                 .frame(width: 200.0, height: 50.0)
                                 .background(Color(red: 0.4, green: 0.0, blue: 0.9, opacity: 1.0))
                         }
-                        .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(10.0)
                         .padding()
-                            
+                        
                         // Spacer
                         Spacer()
                         Spacer()
                         Spacer()
-                    
+                        
                         
                     }
                 }

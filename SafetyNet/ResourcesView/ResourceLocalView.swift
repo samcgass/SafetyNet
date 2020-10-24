@@ -77,7 +77,7 @@ struct ResourceLocalView: View {
 
                                 VStack (alignment: .leading) {
                                     Text("\(resources[index].name1)")
-                                        .font(.title)
+                                        .font(.title3)
                                         .fontWeight(.semibold)
                                         .foregroundColor(Color("resourceText"))
                                     Text("\(resources[index].name2)")
