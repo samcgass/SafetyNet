@@ -12,7 +12,7 @@ struct ResourceOnlineView: View {
     
     var body: some View {
         
-        VStack {
+        ScrollView {
             
             ButtonView(buttonLabel: "Sleep Foundation",
                 buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),

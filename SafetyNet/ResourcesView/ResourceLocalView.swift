@@ -41,9 +41,9 @@ struct ResourceLocalView: View {
         // Line below should close database I assume
 //        let _: () = closeDatabase(db: db)
         
-        VStack {
+        ScrollView {
             
-            List {
+            LazyVStack {
                 // Default resource
                 if (resources[0].name1 == "None") {
                     Button(action: {
@@ -51,7 +51,7 @@ struct ResourceLocalView: View {
                     }) {
                         HStack(spacing: 40) {
 
-                            Image(systemName: "person")
+                            //Image(systemName: "person")
                             
                             VStack (alignment: .leading) {
                                 Text("Default resource")
@@ -71,7 +71,6 @@ struct ResourceLocalView: View {
                     // Database resources
                     ForEach(0 ..< resources.count) {index in
                         NavigationLink(destination: ResourceDetailView(db: db!, id: resources[index].id)) {
-                            HStack(spacing: 40) {
                                 // bug here where row remains highlighted after viewing detailed view and coming back
                                 //Image(systemName: "person")
 
@@ -80,14 +79,17 @@ struct ResourceLocalView: View {
                                         .font(.title3)
                                         .fontWeight(.semibold)
                                         .foregroundColor(Color("resourceText"))
-                                    Text("\(resources[index].name2)")
-                                        .font(.subheadline)
-                                        .fontWeight(.regular)
-                                        .foregroundColor(Color.gray)
+                                    if !resources[index].name2.isEmpty {
+                                        Text("\(resources[index].name2)")
+                                            .font(.subheadline)
+                                            .fontWeight(.regular)
+                                            .foregroundColor(Color.gray)
+                                    }
+
                                 }
-                            }
-                        }.frame(height: 50.0)
-                        .padding()
+                        }.buttonStyle(CheckInButtonStyle(stripeColor: Color(red: 25/255, green: 160/255, blue: 235/255)))
+                        .padding(.vertical, 5)
+                        .multilineTextAlignment(.center)
                     }
                 }
                 

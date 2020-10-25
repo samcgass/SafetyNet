@@ -15,13 +15,47 @@ struct ResourceDetailView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
     
     var body: some View {
-        let resource = getResource(db: db!, id: id)
-        MapView(resource: resource).ignoresSafeArea()
-        Text(resource.name1).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        Text(resource.name2).font(.headline)
-        Text("Call: \(resource.phone)").font(.subheadline)
-        Text("Website: \(resource.website)").font(.subheadline)
-        Text("Address: \(resource.street1)\n\(resource.street2)").font(.subheadline)
+        VStack {
+            let resource = getResource(db: db!, id: id)
+            MapView(resource: resource).ignoresSafeArea().frame(height: 225, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            ScrollView {
+                Text(resource.name1)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
+                    .padding(.horizontal, 5)
+                Text(resource.name2)
+                    .font(.headline)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal, 5)
+                if resource.street2.isEmpty {
+                    Text("\(resource.street1)")
+                        .font(.headline)
+                        .fontWeight(.regular)
+                        .padding(.vertical, 5)
+                }
+                else {
+                    VStack {
+                        Text(resource.street1)
+                            .font(.headline)
+                            .fontWeight(.regular)
+                        Text(resource.street2)
+                            .font(.headline)
+                            .fontWeight(.regular)
+                    }.padding(5)
+                }
+
+                ButtonView(buttonLabel: resource.phone, buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255), buttonAction: {
+                    let phoneLink = "tel://" + resource.phone.components(separatedBy: " ")[0].trimmingCharacters(in: CharacterSet(charactersIn: "-"))
+                    UIApplication.shared.open(URL(string: phoneLink)!)
+                })
+                ButtonView(buttonLabel: "Website", buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255), buttonAction: {
+                    UIApplication.shared.open(URL(string: resource.website)!)
+                })
+            }
+
+            Spacer()
+        }
+
     }
 }
 
@@ -33,7 +67,7 @@ struct MapView: UIViewRepresentable {
         
         let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(resource.latitude), longitude: CLLocationDegrees(resource.longitude))
         
-        mapView.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003))
+        mapView.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         
         let annotation = MKPointAnnotation()
@@ -41,6 +75,7 @@ struct MapView: UIViewRepresentable {
         annotation.subtitle = resource.name2
         annotation.coordinate = coordinate
         mapView.addAnnotation(annotation)
+        mapView.selectedAnnotations = [annotation]
         
         return mapView
     }
