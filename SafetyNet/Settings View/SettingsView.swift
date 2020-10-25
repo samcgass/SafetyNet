@@ -48,17 +48,17 @@ struct SettingsView: View {
                                })
                     
                     // Theme Button
-                    NavigationLink(
-                        destination: ChangeThemeView(),
-                        tag: 3,
-                        selection: $setting) {
-                            EmptyView()
-                        }
-                    
-                    SettingsButtonView(buttonLabel: "Theme",
-                               buttonAction: {
-                                self.setting = 3
-                               })
+//                    NavigationLink(
+//                        destination: ChangeThemeView(),
+//                        tag: 3,
+//                        selection: $setting) {
+//                            EmptyView()
+//                        }
+//                    
+//                    SettingsButtonView(buttonLabel: "Theme",
+//                               buttonAction: {
+//                                self.setting = 3
+//                               })
                     
                     SettingsButtonView(buttonLabel: "Location",
                                buttonAction: {})

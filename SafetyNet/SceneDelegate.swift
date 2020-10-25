@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Used for Dark Mode
         Self.shared = self
+        // End
         
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -36,9 +37,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            // restore from defaults initial or previously stored style
-            let style = UserDefaults.standard.integer(forKey: "LastStyle")
-            window.overrideUserInterfaceStyle = (style == 0 ? .light : UIUserInterfaceStyle(rawValue: style)!)
+            // Used for Dark Mode: restore from defaults initial or previously stored style
+//            let style = UserDefaults.standard.integer(forKey: "LastStyle")
+//            window.overrideUserInterfaceStyle = (style == 0 ? .light : UIUserInterfaceStyle(rawValue: style)!)
+            //End
             
             window.rootViewController = UIHostingController(rootView: contentView)
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")

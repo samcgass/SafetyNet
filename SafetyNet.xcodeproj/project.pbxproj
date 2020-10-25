@@ -46,13 +46,11 @@
 		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
 		F68CFBF22542680400E6014E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CFBF12542680400E6014E /* User.swift */; };
 		F68CFBF42542691500E6014E /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CFBF32542691500E6014E /* EditUserView.swift */; };
-		F6982BE72523A99500C734ED /* ChangeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE42523A99500C734ED /* ChangeThemeView.swift */; };
 		F6982BE82523A99500C734ED /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE52523A99500C734ED /* ChangeNameView.swift */; };
 		F6982BE92523A99500C734ED /* ChangeNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */; };
 		F6A0D025252991CD0047ADA7 /* BuoyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A0D024252991CD0047ADA7 /* BuoyButton.swift */; };
 		F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEC2504080A00242302 /* AreYouSureView.swift */; };
 		F6A99DEF25040F7400242302 /* DialingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A99DEE25040F7400242302 /* DialingView.swift */; };
-		F6B6BF49253A956300ACCECF /* ToggleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B6BF48253A956300ACCECF /* ToggleModel.swift */; };
 		F70017E4253BB334009FAFDD /* NewUserViewZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70017E3253BB334009FAFDD /* NewUserViewZip.swift */; };
 		F70182D7253D03BC004DB533 /* ResourceLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182D6253D03BC004DB533 /* ResourceLocalView.swift */; };
 		F70182DF253D0446004DB533 /* ResourceOnlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70182DE253D0446004DB533 /* ResourceOnlineView.swift */; };
@@ -125,13 +123,11 @@
 		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
 		F68CFBF12542680400E6014E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F68CFBF32542691500E6014E /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
-		F6982BE42523A99500C734ED /* ChangeThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeView.swift; sourceTree = "<group>"; };
 		F6982BE52523A99500C734ED /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNotificationsView.swift; sourceTree = "<group>"; };
 		F6A0D024252991CD0047ADA7 /* BuoyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuoyButton.swift; sourceTree = "<group>"; };
 		F6A99DEC2504080A00242302 /* AreYouSureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouSureView.swift; sourceTree = "<group>"; };
 		F6A99DEE25040F7400242302 /* DialingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialingView.swift; sourceTree = "<group>"; };
-		F6B6BF48253A956300ACCECF /* ToggleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleModel.swift; sourceTree = "<group>"; };
 		F70017E3253BB334009FAFDD /* NewUserViewZip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewZip.swift; sourceTree = "<group>"; };
 		F70182D6253D03BC004DB533 /* ResourceLocalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLocalView.swift; sourceTree = "<group>"; };
 		F70182DE253D0446004DB533 /* ResourceOnlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceOnlineView.swift; sourceTree = "<group>"; };
@@ -282,7 +278,6 @@
 				F6982BE32523A99500C734ED /* Subviews */,
 				229BA4E224FF0DCC00BB0A56 /* SettingsView.swift */,
 				F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */,
-				F6B6BF48253A956300ACCECF /* ToggleModel.swift */,
 			);
 			path = "Settings View";
 			sourceTree = "<group>";
@@ -301,7 +296,6 @@
 		F6982BE32523A99500C734ED /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				F6982BE42523A99500C734ED /* ChangeThemeView.swift */,
 				F6982BE52523A99500C734ED /* ChangeNameView.swift */,
 				F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */,
 				F68CFBF32542691500E6014E /* EditUserView.swift */,
@@ -473,7 +467,6 @@
 				225FFAE92500A50B0030887F /* QuestionsView.swift in Sources */,
 				F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */,
 				225FFADE25007E7A0030887F /* FeelSafeView.swift in Sources */,
-				F6B6BF49253A956300ACCECF /* ToggleModel.swift in Sources */,
 				6913E85F25056C920019AE43 /* ProgressView.swift in Sources */,
 				6913E86025056C920019AE43 /* Progress.swift in Sources */,
 				225FFAE425009FC90030887F /* ThanksView.swift in Sources */,
@@ -510,7 +503,6 @@
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
 				225FFAE2250093BE0030887F /* DescribeMoodView.swift in Sources */,
 				2203E01125044CCB0024D3BC /* NewUserView3.swift in Sources */,
-				F6982BE72523A99500C734ED /* ChangeThemeView.swift in Sources */,
 				F6982BE82523A99500C734ED /* ChangeNameView.swift in Sources */,
 				229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */,
 				2202410E253BA48B00D9A7ED /* ResourceDetailView.swift in Sources */,
