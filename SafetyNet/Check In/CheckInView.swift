@@ -12,6 +12,9 @@ struct CheckInView: View {
     @Binding var tab: Int
     @State var score: Int64 = 0
     @State private var path: Int? = 0
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: User.allUsersFetchRequest()) var users: FetchedResults<User>
+
     
     var body: some View {
         
@@ -42,12 +45,21 @@ struct CheckInView: View {
                     }
                     
                 }
-                
-                Text("How are you feeling today?")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                    .fixedSize(horizontal: false, vertical: true)
+                let name = users[0].name
+                if name == nil || name!.isEmpty {
+                    Text("How are you feeling today?")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding()
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                else {
+                    Text("\(name!), how are you feeling today?")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding()
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 
                 ButtonView(buttonLabel: "Great!",
                            buttonColor: Color(red: 30/255, green: 150/255, blue: 50/255),
