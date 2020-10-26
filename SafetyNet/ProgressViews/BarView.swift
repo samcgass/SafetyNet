@@ -12,6 +12,13 @@ struct BarView: View {
     var score: Int64
     var date: Date
     
+    static let taskDateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd"
+        return formatter
+    }()
+    
+    
     fileprivate func scoreToColor(score: Int64) -> Color {
         switch score {
         case 5:
@@ -45,6 +52,7 @@ struct BarView: View {
             return 0
         }
     }
+    
     var body: some View {
         VStack {
             ZStack (alignment: .bottom) {
@@ -52,7 +60,7 @@ struct BarView: View {
                 Capsule().frame(width: 20, height: scoreToHeight(score: score)).foregroundColor(scoreToColor(score: score))
                 
             }
-            Text("S").padding(.top, 8)
+            Text("\(date, formatter: Self.taskDateFormat)").fontWeight(.thin)
         }
     }
 }

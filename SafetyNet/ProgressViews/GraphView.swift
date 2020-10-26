@@ -11,7 +11,6 @@ import SwiftUI
 struct GraphView: View {
     
 
-    
     @State var pickerSelectedItem = 0
     @State var emptyGraph = 0
     
@@ -32,7 +31,7 @@ struct GraphView: View {
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 24)
              
-                
+       
                 if pickerSelectedItem == 0 {
                 VStack(alignment: .leading) {
 
@@ -95,100 +94,30 @@ struct GraphView: View {
 
 
 struct weekView: View {
-    @State var emptyGraph = 1
+
+    @FetchRequest(
+        entity: CheckIn.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \CheckIn.date, ascending: false)
+        ]
+    ) var checkins: FetchedResults<CheckIn>
     var body: some View {
  //MARK: Graph
- //MARK: MAKE BUTON
         
     
      HStack (spacing: 16) {
         
-    // Call to BarView to create bars. TODO: Add statements that
-    // indicate how many bars need to be made.
-        
-        if emptyGraph == 0 {
-            Text("\t   No data yet.\n Try doing a check-in!")
-            
-        } else {
-        BarView(score: 1, date: Date())
-        BarView(score: 2, date: Date())
-        BarView(score: 3, date: Date())
-        BarView(score: 4, date: Date())
-        BarView(score: 5, date: Date())
-        BarView(score: 4, date: Date())
-        BarView(score: 3, date: Date())
+        // if there are no checkins, this will be shown
+        if checkins.count <= 0 {
+            Text("  No check-ins yet.\nTry doing a check-in!")
         }
-        /*
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.green)
-                 
-             }
-             Text("S").padding(.top, 8)
-         }
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 170).foregroundColor(.orange)
-                 
-             }
-             Text("M").padding(.top, 8)
-         }
-         
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 90).foregroundColor(.red)
-                 
-             }
-             Text("T").padding(.top, 8)
-         }
-         
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
-                 
-             }
-             Text("W").padding(.top, 8)
-         }
-         
-         
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.green)
-                 
-             }
-             Text("R").padding(.top, 8)
-         }
-         
-         
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 100).foregroundColor(.red)
-                 
-             }
-             Text("F").padding(.top, 8)
-         }
-         
-         
-         
-         VStack {
-             ZStack (alignment: .bottom) {
-                 Capsule().frame(width: 20, height: 200).foregroundColor(.white)
-                 Capsule().frame(width: 20, height: 155).foregroundColor(.orange)
-                 
-             }
-             Text("S").padding(.top, 8)
-         }
-         
-         
-         
-         
- */
+        //Here I need to make the bars dynamic
+        else {
+            ForEach(checkins, id: \.self) { checkin in
+                BarView(score: checkin.score, date: checkin.date!)
+
+            }
+        }
      }.padding(.top, 24)
      .frame(width: 300, height: 300)
      .border(Color.black)
@@ -196,6 +125,7 @@ struct weekView: View {
     
  }
 
+//MARK: All Time View
 struct allTimeView: Shape {
     var dataPoints: [CGFloat]
     
@@ -220,6 +150,8 @@ struct allTimeView: Shape {
     }
 }
 
+//MARK: Empty All Time Graph
+// Fix later. Couldn't implement border in an if statment above like weekly graph
 struct emptyAllTimeGraph: View {
     var body: some View {
         VStack {
@@ -238,6 +170,7 @@ extension Array where Element == CGFloat {
     }
 }
 
+//MARK: Journal View
 struct JournalView: View {
     var body: some View {
         VStack {
@@ -255,6 +188,8 @@ struct JournalView: View {
     }
     
 }
+
+//MARK: Preview
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
