@@ -95,7 +95,7 @@ struct GraphView: View {
 
 
 struct weekView: View {
-    @State var emptyGraph = 0
+    @State var emptyGraph = 1
     var body: some View {
  //MARK: Graph
  //MARK: MAKE BUTON
@@ -110,13 +110,13 @@ struct weekView: View {
             Text("\t   No data yet.\n Try doing a check-in!")
             
         } else {
-        BarView()
-        BarView()
-        BarView()
-        BarView()
-        BarView()
-        BarView()
-        BarView()
+        BarView(score: 1, date: Date())
+        BarView(score: 2, date: Date())
+        BarView(score: 3, date: Date())
+        BarView(score: 4, date: Date())
+        BarView(score: 5, date: Date())
+        BarView(score: 4, date: Date())
+        BarView(score: 3, date: Date())
         }
         /*
          VStack {

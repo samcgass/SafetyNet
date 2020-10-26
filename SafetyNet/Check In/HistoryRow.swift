@@ -36,7 +36,7 @@ struct HistoryRow: View {
             return Text("error")
         }
     }
-    fileprivate func scoreToColor(score: Int64) -> Color {
+    fileprivate func scoreToColor(score: Int64) -> Color{
         switch score {
         case 5:
             return Color(red: 30/255, green: 150/255, blue: 50/255)
