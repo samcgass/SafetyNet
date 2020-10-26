@@ -13,6 +13,7 @@ struct GraphView: View {
 
     
     @State var pickerSelectedItem = 0
+    @State var emptyGraph = 0
     
     var body: some View {
         //MARK: Begin Stack
@@ -44,11 +45,17 @@ struct GraphView: View {
                     else if pickerSelectedItem == 1 {
                         VStack(alignment: .leading) {
                             HStack {
+                                if emptyGraph == 0 {
+                                    emptyAllTimeGraph()
+                                }
+                                else {
                                 allTimeView(dataPoints: ChartData.oneMonth.normalized)
                                     .stroke(Color.green)
                                     .frame(width: 300, height: 300)
                                     .border(Color.black)
-                            }.padding(.horizontal, 75)                }
+                                }
+                            }.padding(.horizontal, 75)
+                        }
                     }
                 VStack {
                 
@@ -62,7 +69,7 @@ struct GraphView: View {
                     
                 }
                     HStack {
-                        Text("Your mood has improved since yesterday!").padding(.top, 24)
+                       TipView()
                     }
             
             }
@@ -88,6 +95,7 @@ struct GraphView: View {
 
 
 struct weekView: View {
+    @State var emptyGraph = 0
     var body: some View {
  //MARK: Graph
  //MARK: MAKE BUTON
@@ -97,6 +105,11 @@ struct weekView: View {
         
     // Call to BarView to create bars. TODO: Add statements that
     // indicate how many bars need to be made.
+        
+        if emptyGraph == 0 {
+            Text("\t   No data yet.\n Try doing a check-in!")
+            
+        } else {
         BarView()
         BarView()
         BarView()
@@ -104,6 +117,7 @@ struct weekView: View {
         BarView()
         BarView()
         BarView()
+        }
         /*
          VStack {
              ZStack (alignment: .bottom) {
@@ -206,7 +220,15 @@ struct allTimeView: Shape {
     }
 }
 
-
+struct emptyAllTimeGraph: View {
+    var body: some View {
+        VStack {
+            Text("\t\tNot enough data.\n Try doing more check-ins!")
+        }.padding(.top, 24)
+        .frame(width: 300, height: 300)
+        .border(Color.black)    }
+    
+}
 extension Array where Element == CGFloat {
     var normalized: [CGFloat] {
         if let min = self.min(), let max = self.max() {
@@ -235,7 +257,9 @@ struct JournalView: View {
 }
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView()
+        Group {
+            GraphView()
+        }
     }
 }
 
