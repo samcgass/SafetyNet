@@ -12,7 +12,13 @@ struct GraphView: View {
     
 
     @State var pickerSelectedItem = 0
-    @State var emptyGraph = 0
+    
+    @FetchRequest(
+        entity: CheckIn.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \CheckIn.date, ascending: false)
+        ]
+    ) var checkins: FetchedResults<CheckIn>
     
     var body: some View {
         //MARK: Begin Stack
@@ -44,7 +50,7 @@ struct GraphView: View {
                     else if pickerSelectedItem == 1 {
                         VStack(alignment: .leading) {
                             HStack {
-                                if emptyGraph == 0 {
+                                if checkins.count < 7 {
                                     emptyAllTimeGraph()
                                 }
                                 else {
