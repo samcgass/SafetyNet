@@ -10,7 +10,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-//    @Binding var tab: Int
     @State private var setting: Int? = 0
     
     var body: some View {
@@ -47,21 +46,18 @@ struct SettingsView: View {
                                 self.setting = 2
                                })
                     
-                    // Theme Button
-//                    NavigationLink(
-//                        destination: ChangeThemeView(),
-//                        tag: 3,
-//                        selection: $setting) {
-//                            EmptyView()
-//                        }
-//                    
-//                    SettingsButtonView(buttonLabel: "Theme",
-//                               buttonAction: {
-//                                self.setting = 3
-//                               })
+                    // Location Button
+                    NavigationLink(
+                        destination: ChangeLocationView(),
+                        tag: 3,
+                        selection: $setting) {
+                            EmptyView()
+                        }
                     
                     SettingsButtonView(buttonLabel: "Location",
-                               buttonAction: {})
+                               buttonAction: {
+                                self.setting = 3
+                               })
                     
                     SettingsButtonView(buttonLabel: "Your data",
                                buttonAction: {})

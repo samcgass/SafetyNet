@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20B5012d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CheckIn" representedClassName="CheckIn" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="-39496800" usesScalarValueType="NO"/>
         <attribute name="entry" attributeType="String"/>
         <attribute name="score" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+    <entity name="Location" representedClassName=".Location" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="String"/>
         <attribute name="radius" optional="YES" attributeType="String"/>
@@ -16,7 +16,7 @@
     </entity>
     <elements>
         <element name="CheckIn" positionX="170.5078125" positionY="-87.6171875" width="128" height="43"/>
-        <element name="Location" positionX="117" positionY="-45" width="128" height="88"/>
+        <element name="Location" positionX="117" positionY="-45" width="128" height="74"/>
         <element name="User" positionX="54" positionY="-36" width="128" height="59"/>
     </elements>
 </model>
