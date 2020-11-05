@@ -102,11 +102,49 @@ func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: Str
         print("error finalizing prepared statement: \(errmsg)")
     }
     
-    if (columns.count == 0) {
+    statement = nil
+    if (result.count == 0) {
         return [Resource(values: Array(repeating: "None", count: 17))]
+    }
+    return result
+}
+
+func getOnlineResource(db: OpaquePointer) -> [OnlineResource] {
+    var statement: OpaquePointer?
+    var columns = [String]()
+    var result = [OnlineResource]()
+    
+    if sqlite3_prepare_v2(db, "SELECT * FROM OnlineResources", -1, &statement, nil) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error preparing select: \(errmsg)")
+    }
+    
+    while sqlite3_step(statement) == SQLITE_ROW {
+        var i: Int32 = 0
+        columns = [String]()
+        
+        while i < 6 {
+            if let column = sqlite3_column_text(statement, i) {
+                columns.append(String(cString: column))
+            }
+            else {
+                columns.append("")
+            }
+            i += 1
+        }
+        result.append(OnlineResource(values: columns))
+    }
+    
+    
+    if sqlite3_finalize(statement) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error finalizing prepared statement: \(errmsg)")
     }
     
     statement = nil
+    if (result.count == 0) {
+        return [OnlineResource(values: Array(repeating: "None", count: 6))]
+    }
     return result
 }
 
@@ -132,5 +170,18 @@ class Resource {
         self.website = values[14]
         self.latitude = Float(values[15]) ?? 0.0
         self.longitude = Float(values[16]) ?? 0.0
+    }
+}
+
+class OnlineResource {
+    let id: Int
+    let name, website, description, cost, category: String
+    init(values: Array<String>) {
+        self.id = Int(values[0]) ?? 0
+        self.name = values[1]
+        self.website = values[2]
+        self.description = values[3]
+        self.cost = values[4]
+        self.category = values[5]
     }
 }
