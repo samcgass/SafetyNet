@@ -60,6 +60,7 @@
 		F75174B925438DE00019E064 /* RadiusCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75174B825438DE00019E064 /* RadiusCalculator.swift */; };
 		F781F32B253EBF6800CDC314 /* SafetyNet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F781F329253EBF6800CDC314 /* SafetyNet.xcdatamodeld */; };
 		F783B3622541345F00A4005D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783B3612541345F00A4005D /* LocationManager.swift */; };
+		F793D3812558F3FD00AFC809 /* AskLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F793D3802558F3FD00AFC809 /* AskLocationView.swift */; };
 		F7B7FC1425293F0E0048930A /* NewUserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B7FC1325293F0E0048930A /* NewUserContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		F75174B825438DE00019E064 /* RadiusCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusCalculator.swift; sourceTree = "<group>"; };
 		F781F32A253EBF6800CDC314 /* SafetyNet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SafetyNet.xcdatamodel; sourceTree = "<group>"; };
 		F783B3612541345F00A4005D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F793D3802558F3FD00AFC809 /* AskLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskLocationView.swift; sourceTree = "<group>"; };
 		F7B7FC1325293F0E0048930A /* NewUserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,6 +335,7 @@
 			children = (
 				2203E01025044CCB0024D3BC /* NewUserView1.swift */,
 				2203E00F25044CCB0024D3BC /* NewUserView2.swift */,
+				F793D3802558F3FD00AFC809 /* AskLocationView.swift */,
 				2203E00E25044CCB0024D3BC /* NewUserView3.swift */,
 				F7B7FC1325293F0E0048930A /* NewUserContentView.swift */,
 				F783B3612541345F00A4005D /* LocationManager.swift */,
@@ -504,6 +507,7 @@
 				22516DB8252585340042B10A /* HistoryRow.swift in Sources */,
 				F70182D7253D03BC004DB533 /* ResourceLocalView.swift in Sources */,
 				F666A1C6254E14BC00DA2AB0 /* EditLocationView.swift in Sources */,
+				F793D3812558F3FD00AFC809 /* AskLocationView.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
 				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,

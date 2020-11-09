@@ -1,54 +1,62 @@
 //
-//  NewUserView2.swift
+//  AskLocationView.swift
 //  SafetyNet
 //
-//  Created by Haden Stuart on 9/4/20.
+//  Created by Haden Stuart on 11/8/20.
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
 import SwiftUI
+import CoreLocation
 
-struct NewUserView2: View {
+struct AskLocationView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
-    @State private var name: String = ""
     @State private var choice: Int? = 0
+    let locationPrompt = CLLocationManager()
+    
+    @ObservedObject var locationManager = LocationManager()
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
                     
                 var body: some View {
                     VStack(alignment: .center,
                            spacing: 30) {
                             
                             // Top image
+                        Button (action: {
+                            locationPrompt.requestWhenInUseAuthorization()
+                            
+                        }) {
                             Image("NewUser1")
                                 .frame(height: 260.0)
                                 .padding()
+                        }
                             
+                            Spacer()
+                        
                             // Text stack
                             VStack (alignment: .center, spacing: 10) {
                               
-                                Text("What should I call you?")
+                                Text("Can I find local resources?")
                                     .font(.title)
                                     .fontWeight(.semibold)
                                     .padding()
                                 
-                                Text("You're real name or a nickname - it's totally up to you!")
+                                Text("If you would like for me to use your location to find local resources then click the balloon above.")
                                     .multilineTextAlignment(.center)
-                                    .lineLimit(2)
-                                    .frame(width: 300.0, height: 50.0)
+                                    .lineLimit(5)
+                                    .frame(width: 300.0, height: 90.0)
                                     .padding()
                             }
-                            
-                            // Text box
-                        TextField("   My name is...", text: self.$name)
-                                .frame(width: 300.0, height: 50.0)
-                                .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.3))
-                                .cornerRadius(7)
-                             
+                                                    
                             // Link to next view
                             NavigationLink(
-                                destination: AskLocationView(tab: $tab),
-                                tag: 3,
+                                destination: NewUserView3(tab: $tab),
+                                tag: 2,
                                 selection: $choice) {
                                     EmptyView()
                                 }
@@ -56,15 +64,17 @@ struct NewUserView2: View {
                             
                             // Button
                             Button(action: {
-                                let username = User(context: self.managedObjectContext)
-                                username.name = self.name
+                                let userLatitude = Location(context: self.managedObjectContext)
+                                userLatitude.latitude = currentLatitude
+                                let userLongitude = Location(context: self.managedObjectContext)
+                                userLongitude.longitude = currentLongitude
+                                let defaultRadius = Location(context: self.managedObjectContext)
+                                defaultRadius.radius = "50"
                                 do {
                                     try self.managedObjectContext.save()
-                                } catch {
-                                    
-                                }
+                                } catch { }
                                 // Next view
-                                self.choice = 3
+                                self.choice = 2
                                 
                                 }) {
                                     Text("Next step")
@@ -80,13 +90,12 @@ struct NewUserView2: View {
                             Spacer()
                             Spacer()
                             Spacer()
-                            
-                    }
-            }
+                }
         }
+}
 
-    struct NewUserView2_Previews: PreviewProvider {
-        static var previews: some View {
-            NewUserView2(tab: Binding.constant(0))
-        }
+struct AskLocationView_Previews: PreviewProvider {
+    static var previews: some View {
+        AskLocationView(tab: Binding.constant(0))
     }
+}
