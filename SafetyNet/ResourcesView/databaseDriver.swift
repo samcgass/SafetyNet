@@ -75,7 +75,7 @@ func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: Str
     let latitudeEnd = calculateLatitudeRadius(coordStr: latitude, radiusOffset: radius)
     let longitudeEnd = calculateLongitudeRadius(coordLatStr: latitude, coordLongStr: longitude, radiusOffset: radius)
     
-    if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE latitude BETWEEN \(latitude) AND \(latitudeEnd) AND longitude BETWEEN \(longitude) AND \(longitudeEnd)", -1, &statement, nil) != SQLITE_OK {
+    if sqlite3_prepare_v2(db, "SELECT * FROM Resources WHERE latitude BETWEEN \(latitude) AND \(latitudeEnd) AND longitude BETWEEN \(longitude) AND \(longitudeEnd) ORDER BY latitude ASC", -1, &statement, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error preparing select: \(errmsg)")
     }

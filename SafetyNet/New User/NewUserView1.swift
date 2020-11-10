@@ -14,11 +14,7 @@ struct NewUserView1: View {
     @State private var choice: Int? = 0
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    @ObservedObject var locationManager = LocationManager()
-    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
-    }
-    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
-    }
+    
             
             var body: some View {
                 
@@ -60,18 +56,8 @@ struct NewUserView1: View {
                             EmptyView()
                         }
                             
-                            // Button
+                        // Button
                         Button(action: {
-                            
-                            let userLatitude = Location(context: self.managedObjectContext)
-                            userLatitude.latitude = currentLatitude
-                            let userLongitude = Location(context: self.managedObjectContext)
-                            userLongitude.longitude = currentLongitude
-                            let defaultRadius = Location(context: self.managedObjectContext)
-                            defaultRadius.radius = "50"
-                            do {
-                                try self.managedObjectContext.save()
-                            } catch { }
                             
                             self.choice = 1
                         }) {

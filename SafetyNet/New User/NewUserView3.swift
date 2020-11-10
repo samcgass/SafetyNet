@@ -54,7 +54,8 @@ struct NewUserView3: View {
                         
                         // Spacer
                         Spacer()
-                        
+                        Spacer()
+                    
                         // Button
                         Button(action: {
                             self.tab = 0

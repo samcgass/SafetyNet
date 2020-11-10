@@ -47,8 +47,8 @@ struct NewUserView2: View {
                              
                             // Link to next view
                             NavigationLink(
-                                destination: NewUserView3(tab: $tab),
-                                tag: 2,
+                                destination: AskLocationView(tab: $tab),
+                                tag: 3,
                                 selection: $choice) {
                                     EmptyView()
                                 }
@@ -64,7 +64,7 @@ struct NewUserView2: View {
                                     
                                 }
                                 // Next view
-                                self.choice = 2
+                                self.choice = 3
                                 
                                 }) {
                                     Text("Next step")
