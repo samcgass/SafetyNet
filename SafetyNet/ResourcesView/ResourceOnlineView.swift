@@ -19,11 +19,22 @@ struct ResourceOnlineView: View {
             LazyVStack {
                 
                 ForEach(resources, id: \.id) {resource in
-                    ButtonView(buttonLabel: resource.name,
-                        buttonColor: Color(red: 25/255, green: 160/255, blue: 235/255),
-                        buttonAction: {
-                            UIApplication.shared.open(URL(string: resource.website)!)
-                     })
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: resource.website)!)
+                 }) {
+                        VStack (alignment: .leading) {
+                            Text("\(resource.name)")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color("resourceText"))
+                            Text("\(resource.description)")
+                                .font(.subheadline)
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.gray)
+                            }
+                    }.buttonStyle(CheckInButtonStyle(
+                        stripeColor: Color(red: 25/255, green: 160/255, blue: 235/255)))
+                    .padding(.vertical, 10)
 
                 }
                 

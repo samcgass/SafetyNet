@@ -180,8 +180,8 @@ class OnlineResource {
         self.id = Int(values[0]) ?? 0
         self.name = values[1]
         self.website = values[2]
-        self.description = values[3]
-        self.cost = values[4]
+        self.cost = values[3]
+        self.description = values[4]
         self.category = values[5]
     }
 }
