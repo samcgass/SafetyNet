@@ -35,12 +35,12 @@ struct ThanksView: View {
             Spacer()
             
             ButtonView(buttonLabel: "See Progress",
-                       buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                       buttonColor: Color("Good"),
                        buttonAction: {
                         self.tab = 1
             })
             
-        }.navigationBarItems(trailing:
+        }.navigationBarBackButtonHidden(true).navigationBarItems(trailing:
                                 BuoyButton(destination: Emergency())
         )
     }

@@ -34,12 +34,12 @@ struct ThanksLowScoreView: View {
             Spacer()
             
             ButtonView(buttonLabel: "See Resources",
-                       buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                       buttonColor: Color("ReallyBad"),
                        buttonAction: {
                         self.tab = 2
             })
             
-        }.navigationBarItems(trailing:
+        }.navigationBarBackButtonHidden(true).navigationBarItems(trailing:
                                 BuoyButton(destination: Emergency())
                             )
     }
