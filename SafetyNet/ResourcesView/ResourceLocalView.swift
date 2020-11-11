@@ -46,26 +46,12 @@ struct ResourceLocalView: View {
             LazyVStack {
                 // Default resource
                 if (resources[0].name1 == "None") {
-                    Button(action: {
-                        // Resource detail info
-                    }) {
-                        HStack(spacing: 40) {
-
-                            //Image(systemName: "person")
-                            
-                            VStack (alignment: .leading) {
-                                Text("Default resource")
-                                    .font(.title)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color("resourceText"))
-                                Text("This resource appears when no resources found locally")
-                                    .font(.subheadline)
-                                    .fontWeight(.regular)
-                                    .foregroundColor(Color.gray)
-                            }
-                        }
-                    }.frame(height: 50.0)
-                    .padding()
+                    Text("No nearby resources")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.vertical, 10)
+                    Text("Try increasing your search radius in Settings or check out some of the online resources available to you.")
+                        .padding(.horizontal, 30)
                     
                 } else {
                     // Database resources
@@ -74,7 +60,7 @@ struct ResourceLocalView: View {
                                 // bug here where row remains highlighted after viewing detailed view and coming back
                                 //Image(systemName: "person")
 
-                                VStack (alignment: .leading) {
+                                VStack {
                                     Text("\(resources[index].name1)")
                                         .font(.title3)
                                         .fontWeight(.semibold)
@@ -87,7 +73,7 @@ struct ResourceLocalView: View {
                                     }
 
                                 }
-                        }.buttonStyle(CheckInButtonStyle(stripeColor: Color(red: 25/255, green: 160/255, blue: 235/255)))
+                        }.buttonStyle(CheckInButtonStyle(stripeColor: Color("Resource")))
                         .padding(.vertical, 5)
                         .multilineTextAlignment(.center)
                     }
