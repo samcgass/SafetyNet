@@ -39,17 +39,17 @@ struct HistoryRow: View {
     fileprivate func scoreToColor(score: Int64) -> Color{
         switch score {
         case 5:
-            return Color(red: 30/255, green: 150/255, blue: 50/255)
+            return Color("Great")
         case 4:
-            return Color(red: 100/255, green: 200/255, blue: 20/255)
+            return Color("Good")
         case 3:
-            return Color(red: 255/255, green: 191/255, blue: 0/255)
+            return Color("Okay")
         case 2:
-            return Color(red: 230/255, green: 130/255, blue: 0/255)
+            return Color("NotGood")
         case 1:
-            return Color(red: 210/255, green: 34/255, blue: 45/255)
+            return Color("ReallyBad")
         default:
-            return Color(red: 255/255, green: 191/255, blue: 0/255)
+            return Color("Okay")
         }
     }
     

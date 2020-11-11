@@ -44,7 +44,7 @@ struct MayICallView: View {
             Spacer()
             
             ButtonView(buttonLabel: "Yes, call them please.",
-                       buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                       buttonColor: Color("Good"),
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
                         checkin.score = score
@@ -60,7 +60,7 @@ struct MayICallView: View {
             
             
             ButtonView(buttonLabel: "No, I will seek help",
-                       buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                       buttonColor: Color("ReallyBad"),
                        buttonAction: {
                         self.goToDescribe = true
             })

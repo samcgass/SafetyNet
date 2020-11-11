@@ -47,14 +47,14 @@ struct FeelSafeView: View {
             Spacer()
             
             ButtonView(buttonLabel: "Yes",
-                       buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                       buttonColor: Color("Good"),
                        buttonAction: {
                         self.choice = "Yes"
                        })
             
             
             ButtonView(buttonLabel: "No",
-                       buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                       buttonColor: Color("ReallyBad"),
                        buttonAction: {
                         self.choice = "No"
                        })

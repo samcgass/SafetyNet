@@ -42,7 +42,7 @@ struct SecondQuestionsView: View {
             Spacer()
             
             ButtonView(buttonLabel: "Let's start",
-                       buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                       buttonColor: Color("Good"),
                        buttonAction: {
                         self.start = true
             })

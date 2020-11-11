@@ -50,14 +50,14 @@ struct QuestionsView: View {
             VStack {
                 
                 ButtonView(buttonLabel: "Not at all.",
-                           buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                           buttonColor: Color("Good"),
                            buttonAction: {
                             self.questionNumber += 1
                             self.path = finishedCheck(questionNumber: self.questionNumber, score: secondScore)
                            })
                 
                 ButtonView(buttonLabel: "A few times.",
-                           buttonColor: Color(red: 255/255, green: 191/255, blue: 0/255),
+                           buttonColor: Color("Okay"),
                            buttonAction: {
                             self.questionNumber += 1
                             self.secondScore += 1
@@ -65,7 +65,7 @@ struct QuestionsView: View {
                            })
                 
                 ButtonView(buttonLabel: "Many times.",
-                           buttonColor: Color(red: 230/255, green: 130/255, blue: 0/255),
+                           buttonColor: Color("NotGood"),
                            buttonAction: {
                             self.questionNumber += 1
                             self.secondScore += 2
@@ -73,7 +73,7 @@ struct QuestionsView: View {
                            })
                 
                 ButtonView(buttonLabel: "Almost all the time.",
-                           buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                           buttonColor: Color("ReallyBad"),
                            buttonAction: {
                             self.questionNumber += 1
                             self.secondScore += 3

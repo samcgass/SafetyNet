@@ -60,7 +60,7 @@ struct DescribeMoodView: View {
             Spacer()
             
             ButtonView(buttonLabel: "Done.",
-                       buttonColor: Color(red: 100/255, green: 200/255, blue: 20/255),
+                       buttonColor: Color("Good"),
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
                         checkin.score = self.score
@@ -80,7 +80,7 @@ struct DescribeMoodView: View {
             
             
             ButtonView(buttonLabel: "Skip for today",
-                       buttonColor: Color(red: 210/255, green: 34/255, blue: 45/255),
+                       buttonColor: Color("ReallyBad"),
                        buttonAction: {
                         let checkin = CheckIn(context: self.managedObjectContext)
                         checkin.score = self.score

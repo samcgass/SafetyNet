@@ -23,7 +23,7 @@ struct ResourceOnlineView: View {
                     Text("\(categories[category])").font(.title).fontWeight(.bold).foregroundColor(.black)
                     HStack {
                         Text("Change Category").font(.body).foregroundColor(.gray)
-                        Image(systemName: "arrow.right").foregroundColor(Color(red: 25/255, green: 160/255, blue: 235/255))
+                        Image(systemName: "arrow.right").foregroundColor(Color("Resource"))
                     }
                 }
 
@@ -46,7 +46,7 @@ struct ResourceOnlineView: View {
                                 .foregroundColor(Color.gray)
                             }
                     }.buttonStyle(CheckInButtonStyle(
-                        stripeColor: Color(red: 25/255, green: 160/255, blue: 235/255)))
+                        stripeColor: Color("Resource")))
                     .padding(.vertical, 10)
 
                 }
