@@ -23,6 +23,7 @@
 		225FFAE72500A2CE0030887F /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE62500A2CE0030887F /* AnswersView.swift */; };
 		225FFAE92500A50B0030887F /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAE82500A50B0030887F /* QuestionsView.swift */; };
 		225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FFAEA2500A9560030887F /* SecondQuestionsView.swift */; };
+		2279DDA0255B8F470001AA3E /* PickCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279DD9F255B8F470001AA3E /* PickCategoryView.swift */; };
 		229BA4AA24FF05AA00BB0A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */; };
 		229BA4AC24FF05AA00BB0A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */; };
 		229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BA4B024FF05AA00BB0A56 /* ContentView.swift */; };
@@ -98,6 +99,7 @@
 		225FFAE62500A2CE0030887F /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		225FFAE82500A50B0030887F /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		225FFAEA2500A9560030887F /* SecondQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondQuestionsView.swift; sourceTree = "<group>"; };
+		2279DD9F255B8F470001AA3E /* PickCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCategoryView.swift; sourceTree = "<group>"; };
 		229BA4A624FF05AA00BB0A56 /* SafetyNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafetyNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BA4A924FF05AA00BB0A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BA4AB24FF05AA00BB0A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				2202410D253BA48B00D9A7ED /* ResourceDetailView.swift */,
 				22024112253BAB3A00D9A7ED /* databaseDriver.swift */,
 				F75174B825438DE00019E064 /* RadiusCalculator.swift */,
+				2279DD9F255B8F470001AA3E /* PickCategoryView.swift */,
 			);
 			path = ResourcesView;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				F793D3812558F3FD00AFC809 /* AskLocationView.swift in Sources */,
 				229BA4E524FF0DEA00BB0A56 /* EmergencyView.swift in Sources */,
 				F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */,
+				2279DDA0255B8F470001AA3E /* PickCategoryView.swift in Sources */,
 				225FFAEB2500A9560030887F /* SecondQuestionsView.swift in Sources */,
 				69ACEAEC253E9BBC00ECBCF6 /* BarView.swift in Sources */,
 				22024113253BAB3A00D9A7ED /* databaseDriver.swift in Sources */,

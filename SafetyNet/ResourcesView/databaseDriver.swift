@@ -109,12 +109,20 @@ func getResourceFromLocation(db: OpaquePointer, latitude: String, longitude: Str
     return result
 }
 
-func getOnlineResource(db: OpaquePointer) -> [OnlineResource] {
+func getOnlineResource(db: OpaquePointer, category: String) -> [OnlineResource] {
     var statement: OpaquePointer?
     var columns = [String]()
     var result = [OnlineResource]()
     
-    if sqlite3_prepare_v2(db, "SELECT * FROM OnlineResources", -1, &statement, nil) != SQLITE_OK {
+    var cat: String
+    if category == "All Resources" {
+        cat = "NOT NULL"
+    }
+    else {
+        cat = "\"" + category + "\""
+    }
+    
+    if sqlite3_prepare_v2(db, "SELECT * FROM OnlineResources WHERE category IS \(cat)", -1, &statement, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error preparing select: \(errmsg)")
     }
@@ -144,6 +152,34 @@ func getOnlineResource(db: OpaquePointer) -> [OnlineResource] {
     statement = nil
     if (result.count == 0) {
         return [OnlineResource(values: Array(repeating: "None", count: 6))]
+    }
+    return result
+}
+
+func getOnlineResourceCategories(db: OpaquePointer) -> [String] {
+    var statement: OpaquePointer?
+    var result = [String]()
+    result.append("All Resources")
+    
+    if sqlite3_prepare_v2(db, "SELECT DISTINCT category FROM OnlineResources", -1, &statement, nil) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error preparing select: \(errmsg)")
+    }
+    
+    while sqlite3_step(statement) == SQLITE_ROW {
+        if let column = sqlite3_column_text(statement, 0) {
+            result.append(String(cString: column))
+        }
+    }
+    
+    if sqlite3_finalize(statement) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error finalizing prepared statement: \(errmsg)")
+    }
+    
+    statement = nil
+    if (result.count == 0) {
+        return ["All Resources"]
     }
     return result
 }

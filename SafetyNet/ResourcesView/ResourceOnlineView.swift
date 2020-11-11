@@ -9,12 +9,25 @@
 import SwiftUI
 
 struct ResourceOnlineView: View {
+    let db = openDatabase()
+    @State private var category = 0
     
     var body: some View {
-        let db = openDatabase()
-        let resources: [OnlineResource] = getOnlineResource(db: db!)
+        let categories = getOnlineResourceCategories(db: db!)
+        let resources: [OnlineResource] = getOnlineResource(db: db!, category: categories[category])
         
         ScrollView {
+            
+            NavigationLink(destination: PickCategoryView(categories: categories, selection: $category)) {
+                VStack {
+                    Text("\(categories[category])").font(.title).fontWeight(.bold).foregroundColor(.black)
+                    HStack {
+                        Text("Change Category").font(.body).foregroundColor(.gray)
+                        Image(systemName: "arrow.right").foregroundColor(Color(red: 25/255, green: 160/255, blue: 235/255))
+                    }
+                }
+
+            }.padding(.top, 10)
             
             LazyVStack {
                 
