@@ -184,6 +184,45 @@ func getOnlineResourceCategories(db: OpaquePointer) -> [String] {
     return result
 }
 
+func getEmergencyResources(db: OpaquePointer) -> [EmergencyResource] {
+    var statement: OpaquePointer?
+    var columns = [String]()
+    var result = [EmergencyResource]()
+    
+    if sqlite3_prepare_v2(db, "SELECT * FROM Emergency", -1, &statement, nil) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error preparing select: \(errmsg)")
+    }
+    
+    while sqlite3_step(statement) == SQLITE_ROW {
+        var i: Int32 = 0
+        columns = [String]()
+        
+        while i < 4 {
+            if let column = sqlite3_column_text(statement, i) {
+                columns.append(String(cString: column))
+            }
+            else {
+                columns.append("")
+            }
+            i += 1
+        }
+        result.append(EmergencyResource(values: columns))
+    }
+    
+    
+    if sqlite3_finalize(statement) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error finalizing prepared statement: \(errmsg)")
+    }
+    
+    statement = nil
+    if (result.count == 0) {
+        return [EmergencyResource(values: Array(repeating: "None", count: 4))]
+    }
+    return result
+}
+
 class Resource {
     let id: Int
     let name1, name2, street1, street2, city, state, zip, zip4, county, phone, intake_prompt, intake1, intake2, website: String
@@ -219,5 +258,16 @@ class OnlineResource {
         self.cost = values[3]
         self.description = values[4]
         self.category = values[5]
+    }
+}
+
+class EmergencyResource {
+    let id: Int
+    let name, number, description: String
+    init(values: Array<String>) {
+        self.id = Int(values[0]) ?? 0
+        self.name = values[1]
+        self.number = values[2]
+        self.description = values[3]
     }
 }
