@@ -42,8 +42,9 @@ struct GraphView: View {
                 VStack(alignment: .leading) {
 
                     HStack {
-
+                     //   ScrollView(.horizontal) {
                         weekView()
+               //     }
                     }.padding(.horizontal, 75)
                 }
                 }
@@ -54,10 +55,10 @@ struct GraphView: View {
                                     emptyAllTimeGraph()
                                 }
                                 else {
-                                allTimeView(dataPoints: ChartData.oneMonth.normalized)
-                                    .stroke(Color.green)
-                                    .frame(width: 300, height: 300)
-                                    .border(Color.black)
+                              //  allTimeView(dataPoints: ChartData.oneMonth.normalized)
+                                //    .stroke(Color.green)
+                                  //  .frame(width: 350, height: 300)
+                                   // .border(Color.black)
                                 }
                             }.padding(.horizontal, 75)
                         }
@@ -65,18 +66,18 @@ struct GraphView: View {
                 VStack {
                 
                     NavigationLink(destination: CheckInHistoryView()) {
-                        Text("Journal")
-                            .foregroundColor(.white)
-                            .padding(12)
+                        ButtonView(buttonLabel: "Journal", buttonColor: Color.blue, buttonAction: {})
                     }
-                    .background(Color.blue)
+                    
                     .cornerRadius(12)
                     
                 }
                     HStack {
-                       TipView()
+                       StreakView()
                     }
-            
+                    HStack {
+                        TipView()
+                }
             }
             
                 Spacer()
@@ -100,7 +101,7 @@ struct GraphView: View {
 
 
 struct weekView: View {
-
+    var oneMonth: [CGFloat] = []
     @FetchRequest(
         entity: CheckIn.entity(),
         sortDescriptors: [
@@ -121,11 +122,14 @@ struct weekView: View {
         else {
             ForEach(checkins, id: \.self) { checkin in
                 BarView(score: checkin.score, date: checkin.date!)
+   //             oneMonth.append(CGFloat(checkin.score))
+                
 
             }
+            
         }
      }.padding(.top, 24)
-     .frame(width: 300, height: 300)
+     .frame(width: 350, height: 300)
      .border(Color.black)
     }
     
@@ -163,7 +167,7 @@ struct emptyAllTimeGraph: View {
         VStack {
             Text("\t\tNot enough data.\n Try doing more check-ins!")
         }.padding(.top, 24)
-        .frame(width: 300, height: 300)
+        .frame(width: 400, height: 300)
         .border(Color.black)    }
     
 }

@@ -9,7 +9,19 @@
 import Foundation
 import SwiftUI
 
-struct ChartData {
-    static let oneMonth: [CGFloat] = [1, 5, 4, 1, 3, 1, 5, 6, 6, 5, 2,
-                                      1, 2, 6, 5, 6, 5, 4, 4, 2, 5, 2, 3, 1, 5, 4, 3, 1, 1, 4, 4]
-}
+/*struct ChartData {
+    var arrayHolder: [CGFloat] = []
+    @FetchRequest(
+        entity: CheckIn.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \CheckIn.date, ascending: false)
+        ]
+    ) var checkins: FetchedResults<CheckIn>
+    
+    ForEach(checkins, id: \.self) {
+        arrayHolder.append(checkins.score)
+        
+    }
+        let oneMonth: [CGFloat] = []
+    
+} */
