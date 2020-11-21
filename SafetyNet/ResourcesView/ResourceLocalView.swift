@@ -55,7 +55,7 @@ struct ResourceLocalView: View {
                     
                 } else {
                     // Database resources
-                    ForEach(0 ..< resources.count) {index in
+                    ForEach(0 ..< resources.count, id: \.self) {index in
                         NavigationLink(destination: ResourceDetailView(db: db!, id: resources[index].id)) {
                                 // bug here where row remains highlighted after viewing detailed view and coming back
                                 //Image(systemName: "person")

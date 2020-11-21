@@ -1,48 +1,53 @@
-//
 //  EditLocationView.swift
 //  SafetyNet
 //
-//  Created by Naeem Ghossein on 10/31/20.
+//  Created by Haden Stuart on 11/19/20.
 //  Copyright © 2020 SafetyNet. All rights reserved.
 //
 
 import SwiftUI
 import CoreData
+import CoreLocation
 
 struct EditLocationView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    let locationPrompt = CLLocationManager()
     var location: Location
     
     @FetchRequest(fetchRequest: Location.allLocationFetchRequest()) var locations: FetchedResults<Location>
     
-    @State private var updatedRadius: Double = 0
-    @State private var updatedRadiusStr: String = ""
+    @ObservedObject var locationManager = LocationManager()
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
     
     var body: some View {
         
+        Spacer().frame(height: 15)
+        
+        Text("Change your preferred location")
+            .fontWeight(.medium)
+        
         List {
             
-            let currentRadius = locations[0].radius
-            let currentRadiusNum = Double(currentRadius!) ?? 0
-            
-            Text("Change your preferred radius")
-                .fontWeight(.medium)
-            
-            Slider(value: $updatedRadius, in: 1...50, step: 1) {_ in 
-                updatedRadiusStr = String(updatedRadius)
+            // Allow location
+            Button (action: {
+                locationPrompt.requestWhenInUseAuthorization()
+                
+            }) {
+                Text("Allow Location Services")
+                    .fontWeight(.bold)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             }
             
-            Text("Current Radius: \(currentRadiusNum, specifier: "%.f") miles")
-                .font(.subheadline)
-            
-            Text("New Radius: \(updatedRadius, specifier: "%.f") miles")
-                .font(.subheadline)
-            
+            // Update
             Button(action: ({
 
-                self.location.radius = updatedRadiusStr
+                self.location.latitude = currentLatitude
+                self.location.longitude = currentLongitude
                 
                 do {
                     try self.managedObjectContext.save()
@@ -56,7 +61,7 @@ struct EditLocationView: View {
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             }
             
-        }.navigationBarTitle("Radius", displayMode: .inline)
+        }.navigationBarTitle("Edit Location", displayMode: .inline)
         .navigationBarItems(trailing:
                                 BuoyButton(destination: Emergency())
         )
@@ -64,6 +69,7 @@ struct EditLocationView: View {
     }
 }
 
+                    
 //struct EditLocationView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        EditLocationView()

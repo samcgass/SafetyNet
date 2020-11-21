@@ -21,20 +21,35 @@ struct ChangeLocationView: View {
             // Location Settings
             List {
 
-                // Radius Setting
+                // Edit Location
                 ForEach(locations) { location in
                     NavigationLink(destination: EditLocationView(location: location)) {
                         VStack(alignment: .leading) {
-                            Text("Radius")
+                            Text("Edit Location")
                                 .fontWeight(.medium)
                         }
                     }
                 }
                 
-                Text("Choose how far you'd like to search for resources")
+                Text("Change your desired location")
                     .font(.footnote)
                     .opacity(0.8)
-                // End Radius Setting
+                // End Edit Location
+                                
+                // Edit Radius
+                ForEach(locations) { location in
+                    NavigationLink(destination: EditRadiusView(location: location)) {
+                        VStack(alignment: .leading) {
+                            Text("Edit Radius")
+                                .fontWeight(.medium)
+                        }
+                    }
+                }
+                
+                Text("Change how far away to search for resources")
+                    .font(.footnote)
+                    .opacity(0.8)
+                // End Edit Radius
                 
             }.navigationBarTitle("Location", displayMode: .automatic)
             .navigationBarItems(trailing:
