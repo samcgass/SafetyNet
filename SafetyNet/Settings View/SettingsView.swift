@@ -59,8 +59,16 @@ struct SettingsView: View {
                                 self.setting = 3
                                })
                     
+                    // Delete Data Button
+                    NavigationLink(
+                        destination: DeleteDataView(),
+                        tag: 4,
+                        selection: $setting) {
+                        EmptyView()
+                    }
+                    
                     SettingsButtonView(buttonLabel: "Your data",
-                               buttonAction: {})
+                                       buttonAction: {self.setting = 4})
                     
                 }.navigationBarTitle("Settings", displayMode: .large)
                 

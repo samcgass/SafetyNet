@@ -41,7 +41,6 @@ struct ChangeNameView: View {
             Spacer()
             
             List {
-                Section(header: Text("Tap your name to change it")) {
                     ForEach(self.users) { user in
                         NavigationLink(destination: EditUserView(user: user)) {
                             VStack(alignment: .leading) {
@@ -50,7 +49,6 @@ struct ChangeNameView: View {
                             }
                         }
                     }
-                }
                 .font(.headline)
             }
             

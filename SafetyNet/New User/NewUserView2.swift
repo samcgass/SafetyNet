@@ -32,7 +32,7 @@ struct NewUserView2: View {
                                     .fontWeight(.semibold)
                                     .padding()
                                 
-                                Text("You're real name or a nickname - it's totally up to you!")
+                                Text("Your real name or a nickname - it's totally up to you!")
                                     .multilineTextAlignment(.center)
                                     .lineLimit(2)
                                     .frame(width: 300.0, height: 50.0)

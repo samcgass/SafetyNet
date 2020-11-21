@@ -45,6 +45,8 @@
 		69ACEAEC253E9BBC00ECBCF6 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACEAEB253E9BBC00ECBCF6 /* BarView.swift */; };
 		69B40DD8252128B100F05250 /* AllTimeGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B40DD7252128B100F05250 /* AllTimeGraphData.swift */; };
 		69BDC39B25645EFC00F04610 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BDC39A25645EFC00F04610 /* StreakView.swift */; };
+		F6005DBE256875FC0026A651 /* DeleteDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6005DBD256875FC0026A651 /* DeleteDataView.swift */; };
+		F6005DC3256876240026A651 /* DeleteDataConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6005DC2256876240026A651 /* DeleteDataConfirmationView.swift */; };
 		F60F6C2B25032E110038A7CF /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */; };
 		F651C4BF2503739B00B9B08B /* EmergencyOptionsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */; };
 		F666A1BB254E0A8E00DA2AB0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F666A1BA254E0A8E00DA2AB0 /* Location.swift */; };
@@ -128,6 +130,8 @@
 		69ACEAEB253E9BBC00ECBCF6 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		69B40DD7252128B100F05250 /* AllTimeGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimeGraphData.swift; sourceTree = "<group>"; };
 		69BDC39A25645EFC00F04610 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		F6005DBD256875FC0026A651 /* DeleteDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDataView.swift; sourceTree = "<group>"; };
+		F6005DC2256876240026A651 /* DeleteDataConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDataConfirmationView.swift; sourceTree = "<group>"; };
 		F60F6C2A25032E110038A7CF /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		F651C4BE2503739B00B9B08B /* EmergencyOptionsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyOptionsButtonView.swift; sourceTree = "<group>"; };
 		F666A1BA254E0A8E00DA2AB0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -286,6 +290,15 @@
 			path = ProgressViews;
 			sourceTree = "<group>";
 		};
+		F6005DB6256874890026A651 /* Delete Data */ = {
+			isa = PBXGroup;
+			children = (
+				F6005DBD256875FC0026A651 /* DeleteDataView.swift */,
+				F6005DC2256876240026A651 /* DeleteDataConfirmationView.swift */,
+			);
+			path = "Delete Data";
+			sourceTree = "<group>";
+		};
 		F651C4BD250371D900B9B08B /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +341,7 @@
 		F6982BE32523A99500C734ED /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				F6005DB6256874890026A651 /* Delete Data */,
 				F666A1BF254E0AF700DA2AB0 /* Change Name */,
 				F6982BE62523A99500C734ED /* ChangeNotificationsView.swift */,
 				F666A1CA254E14CA00DA2AB0 /* Change Location Pref */,
@@ -528,6 +542,7 @@
 				691CAA5A2547128D001861AF /* TipView.swift in Sources */,
 				225FFADC25007C690030887F /* ButtonView.swift in Sources */,
 				F666A1C1254E0B2400DA2AB0 /* ChangeLocationView.swift in Sources */,
+				F6005DC3256876240026A651 /* DeleteDataConfirmationView.swift in Sources */,
 				229BA4DD24FF0CBC00BB0A56 /* CheckInView.swift in Sources */,
 				F6A99DED2504080A00242302 /* AreYouSureView.swift in Sources */,
 				F70182DF253D0446004DB533 /* ResourceOnlineView.swift in Sources */,
@@ -538,6 +553,7 @@
 				F6A99DEF25040F7400242302 /* DialingView.swift in Sources */,
 				22B414292522C1EA00583047 /* TextBoxView.swift in Sources */,
 				229BA4E124FF0D2E00BB0A56 /* ResourcesView.swift in Sources */,
+				F6005DBE256875FC0026A651 /* DeleteDataView.swift in Sources */,
 				F68CFBF42542691500E6014E /* EditUserView.swift in Sources */,
 				F783B3622541345F00A4005D /* LocationManager.swift in Sources */,
 				229BA4B124FF05AA00BB0A56 /* ContentView.swift in Sources */,
