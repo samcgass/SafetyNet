@@ -8,40 +8,34 @@
 import SwiftUI
 import CoreData
 import CoreLocation
+import MapKit
 
 struct EditLocationView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @State private var currentLocation = CLLocationCoordinate2D()
+
     let locationPrompt = CLLocationManager()
     var location: Location
-    
-    @FetchRequest(fetchRequest: Location.allLocationFetchRequest()) var locations: FetchedResults<Location>
-    
+        
     @ObservedObject var locationManager = LocationManager()
-    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
-    }
-    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
-    }
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)" }
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)" }
     
     var body: some View {
         
         Spacer().frame(height: 15)
         
         Text("Change your preferred location")
-            .fontWeight(.medium)
+            .font(.headline)
+            .fontWeight(.bold)
+            .padding()
         
         List {
             
-            // Allow location
-            Button (action: {
-                locationPrompt.requestWhenInUseAuthorization()
-                
-            }) {
-                Text("Allow Location Services")
-                    .fontWeight(.bold)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            }
+            // Location Change Map
+            LocationChangeMap().frame(height: 200)
             
             // Update
             Button(action: ({
@@ -68,7 +62,6 @@ struct EditLocationView: View {
         
     }
 }
-
                     
 //struct EditLocationView_Previews: PreviewProvider {
 //    static var previews: some View {

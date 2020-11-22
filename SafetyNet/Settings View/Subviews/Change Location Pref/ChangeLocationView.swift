@@ -7,22 +7,22 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ChangeLocationView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     @FetchRequest(fetchRequest: Location.allLocationFetchRequest()) var locations: FetchedResults<Location>
-    
     @State private var choice: Int? = 0
     
     var body: some View {
         
             // Location Settings
             List {
-
+                
                 // Edit Location
                 ForEach(locations) { location in
+                    
                     NavigationLink(destination: EditLocationView(location: location)) {
                         VStack(alignment: .leading) {
                             Text("Edit Location")
@@ -57,7 +57,6 @@ struct ChangeLocationView: View {
             )
         
     }
-    
 }
 
 struct ChangeLocationView_Previews: PreviewProvider {

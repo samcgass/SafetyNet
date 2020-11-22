@@ -70,6 +70,8 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location is required to find local resources in your area</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location is required to find local resources in your area</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required to find local resources in your area</string>
 </dict>

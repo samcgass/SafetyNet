@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct SettingsView: View {
     
     @State private var setting: Int? = 0
+    let locationPrompt = CLLocationManager()
     
     var body: some View {
         
@@ -54,9 +56,21 @@ struct SettingsView: View {
                             EmptyView()
                         }
                     
+                    NavigationLink(
+                        destination: NotAuthorizedLocationView(),
+                        tag: 5,
+                        selection: $setting) {
+                            EmptyView()
+                        }
+                    
                     SettingsButtonView(buttonLabel: "Location",
                                buttonAction: {
-                                self.setting = 3
+                                if (locationPrompt.authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse) {
+                                    self.setting = 3
+                                } else {
+                                    locationPrompt.requestWhenInUseAuthorization()
+                                    self.setting = 5
+                                }
                                })
                     
                     // Delete Data Button

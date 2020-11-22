@@ -17,10 +17,8 @@ struct AskLocationView: View {
     let locationPrompt = CLLocationManager()
     
     @ObservedObject var locationManager = LocationManager()
-    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
-    }
-    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
-    }
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"}
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"}
                     
                 var body: some View {
                     VStack(alignment: .center,
@@ -29,7 +27,6 @@ struct AskLocationView: View {
                             // Top image
                         Button (action: {
                             locationPrompt.requestWhenInUseAuthorization()
-                            
                         }) {
                             Image("NewUser1")
                                 .frame(height: 260.0)
