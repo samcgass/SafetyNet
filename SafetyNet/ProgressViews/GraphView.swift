@@ -35,7 +35,7 @@ struct GraphView: View {
                     Text("This Week").tag(0)
                     Text("All Time").tag(1)
                 }.pickerStyle(SegmentedPickerStyle())
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 6)
              
        
                 if pickerSelectedItem == 0 {
@@ -45,7 +45,7 @@ struct GraphView: View {
                      //   ScrollView(.horizontal) {
                         weekView()
                //     }
-                    }.padding(.horizontal, 75)
+                    }//.padding(.horizontal, 75)
                 }
                 }
                     else if pickerSelectedItem == 1 {
@@ -60,7 +60,7 @@ struct GraphView: View {
                                   //  .frame(width: 350, height: 300)
                                    // .border(Color.black)
                                 }
-                            }.padding(.horizontal, 75)
+                            }//.padding(.horizontal, 75)
                         }
                     }
                 VStack {
