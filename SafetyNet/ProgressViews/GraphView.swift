@@ -12,6 +12,7 @@ struct GraphView: View {
     
 
     @State var pickerSelectedItem = 0
+    @State var journalLink: Bool = false
     
     @FetchRequest(
         entity: CheckIn.entity(),
@@ -65,11 +66,14 @@ struct GraphView: View {
                     }
                 VStack {
                 
-                    NavigationLink(destination: CheckInHistoryView()) {
-                        ButtonView(buttonLabel: "Journal", buttonColor: Color.blue, buttonAction: {})
-                    }
+                    NavigationLink(
+                        destination: CheckInHistoryView(),
+                        isActive: $journalLink,
+                        label: {
+                            ButtonView(buttonLabel: "Journal", buttonColor: Color.blue, buttonAction: {journalLink = true})
+                        })
                     
-                    .cornerRadius(12)
+                    
                     
                 }
                     HStack {
