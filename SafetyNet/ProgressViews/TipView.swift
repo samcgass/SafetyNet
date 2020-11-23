@@ -14,13 +14,13 @@ struct TipView: View {
     var body: some View {
         switch randomTip {
         case 1:
-            ButtonView(buttonLabel: "TIP: Getting enough sleep may improve your mood.", buttonColor: Color.blue, buttonAction: {})
+            ButtonView(buttonLabel: "TIP: Getting enough sleep may improve your mood.", buttonColor: Color.white, buttonAction: {})
         case 2:
-            ButtonView(buttonLabel: "TIP: Make sure to drink enough water!", buttonColor: Color.blue, buttonAction: {})
+            ButtonView(buttonLabel: "TIP: Make sure to drink enough water!", buttonColor: Color.white, buttonAction: {})
         case 3:
-            ButtonView(buttonLabel: "TIP: 2020 will end!", buttonColor: Color.blue, buttonAction: {})
+            ButtonView(buttonLabel: "TIP: 2020 will end!", buttonColor: Color.white, buttonAction: {})
         default:
-            ButtonView(buttonLabel: "TIP: Your mood has improved since yesterday!", buttonColor: Color.blue, buttonAction:{})
+            ButtonView(buttonLabel: "TIP: Your mood has improved since yesterday!", buttonColor: Color.white, buttonAction:{})
         }
     }
 }

@@ -18,9 +18,9 @@ struct StreakView: View {
     ) var checkins: FetchedResults<CheckIn>
             var body: some View {
             if checkins.count == 0 {
-                ButtonView(buttonLabel: "You have no streaks. Try making a Check-in!", buttonColor: Color.blue, buttonAction: {})
+                ButtonView(buttonLabel: "You have no streaks. Try making a Check-in!", buttonColor: Color.white, buttonAction: {})
             } else {
-                ButtonView(buttonLabel: "Streaks: " + String(checkins.count), buttonColor: Color.blue, buttonAction: {})
+                ButtonView(buttonLabel: "Streaks: " + String(checkins.count), buttonColor: Color.white, buttonAction: {})
                // Text("Streaks: " + String(checkins.count))
             }
     }

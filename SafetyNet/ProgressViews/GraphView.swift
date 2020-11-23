@@ -52,7 +52,7 @@ struct GraphView: View {
                     else if pickerSelectedItem == 1 {
                         VStack(alignment: .leading) {
                             HStack {
-                                if checkins.count < 7 {
+                                if checkins.count != 700 {
                                     emptyAllTimeGraph()
                                 }
                                 else {
@@ -171,7 +171,7 @@ struct emptyAllTimeGraph: View {
         VStack {
             Text("\t\tNot enough data.\n Try doing more check-ins!")
         }.padding(.top, 24)
-        .frame(width: 400, height: 300)
+        .frame(width: 350, height: 300)
         .border(Color.black)    }
     
 }
