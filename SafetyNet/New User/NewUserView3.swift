@@ -7,11 +7,17 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct NewUserView3: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
     @State private var choice: Int? = 0
+    
+    @ObservedObject var locationManager = LocationManager()
+    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"}
+    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"}
         
     // Core data request variable
     @FetchRequest(
@@ -58,6 +64,17 @@ struct NewUserView3: View {
                     
                         // Button
                         Button(action: {
+                            let userLatitude = Location(context: self.managedObjectContext)
+                            userLatitude.latitude = currentLatitude
+                            let userLongitude = Location(context: self.managedObjectContext)
+                            userLongitude.longitude = currentLongitude
+                            let defaultRadius = Location(context: self.managedObjectContext)
+                            defaultRadius.radius = "50"
+                            
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch { }
+                            // Next view
                             self.tab = 0
                             }) {
                                 Text("Begin!")

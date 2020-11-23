@@ -11,28 +11,18 @@ import CoreLocation
 
 struct AskLocationView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var tab: Int
     @State private var choice: Int? = 0
-    let locationPrompt = CLLocationManager()
     
-    @ObservedObject var locationManager = LocationManager()
-    var currentLatitude: String { return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"}
-    var currentLongitude: String { return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"}
-                    
                 var body: some View {
                     VStack(alignment: .center,
                            spacing: 30) {
                             
                             // Top image
-                        Button (action: {
-                            locationPrompt.requestWhenInUseAuthorization()
-                        }) {
                             Image("NewUser1")
                                 .frame(height: 260.0)
                                 .padding()
-                        }
-                            
+                        
                             Spacer()
                         
                             // Text stack
@@ -43,7 +33,7 @@ struct AskLocationView: View {
                                     .fontWeight(.semibold)
                                     .padding()
                                 
-                                Text("If you would like for me to use your location to find local resources then click the balloon above.")
+                                Text("Local resources are gathered using you current location.")
                                     .multilineTextAlignment(.center)
                                     .lineLimit(5)
                                     .frame(width: 300.0, height: 90.0)
@@ -61,16 +51,7 @@ struct AskLocationView: View {
                             
                             // Button
                             Button(action: {
-                                let userLatitude = Location(context: self.managedObjectContext)
-                                userLatitude.latitude = currentLatitude
-                                let userLongitude = Location(context: self.managedObjectContext)
-                                userLongitude.longitude = currentLongitude
-                                let defaultRadius = Location(context: self.managedObjectContext)
-                                defaultRadius.radius = "50"
-                                do {
-                                    try self.managedObjectContext.save()
-                                } catch { }
-                                // Next view
+
                                 self.choice = 2
                                 
                                 }) {

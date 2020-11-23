@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct NewUserView2: View {
     
@@ -14,6 +15,7 @@ struct NewUserView2: View {
     @Binding var tab: Int
     @State private var name: String = ""
     @State private var choice: Int? = 0
+    let locationPrompt = CLLocationManager()
                     
                 var body: some View {
                     VStack(alignment: .center,
@@ -64,6 +66,7 @@ struct NewUserView2: View {
                                     
                                 }
                                 // Next view
+                                locationPrompt.requestWhenInUseAuthorization()
                                 self.choice = 3
                                 
                                 }) {
